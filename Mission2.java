@@ -488,13 +488,22 @@ public class Mission2 {
          
          if (GameTools.checkRiddleAnswer(answer, riddle2Keywords)) {
             GameTools.typeText("Correct! The answer is 'gluttony'.");
+
             secondRiddleSolved = true;
+         }else if(GameTools.checkRiddleAnswer(answer, riddle2Keywords) && attempts == 1){
+            GameTools.typeText("Correct on 2nd attempt?'.");
+
+            secondRiddleSolved = true;
+         
          } else {
             attempts++;
-            if (attempts < 3) {
-               GameTools.typeText("Wrong! Try again.");
+            if (attempts == 1) {
+               GameTools.typeText("1st Attempt failed");
+            }else if(attempts == 2){
+               GameTools.typeText("2nd Attempt failed");
+
             } else {
-               GameTools.typeText("Wrong again! You have failed and return to Limbo.");
+               GameTools.typeText("3rd Attempt Failed You have failed and return to Limbo.");
                GameState.setSinCounter(0);
                return false;
             }
