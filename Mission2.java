@@ -382,7 +382,7 @@ public class Mission2 {
          
             GameTools.typeText("\n\nThe soul retches,");GameTools.delay(0.3);
             GameTools.typeText(" spitting black bile,");GameTools.delay(0.3);
-            GameTools.typeText("and shrieks its condemnation.");
+            GameTools.typeText(" and shrieks its condemnation.");
             GameTools.delay(0.5);
             GameTools.typeText("\n\n\"Liars!");
             GameTools.delay(0.5);
@@ -449,7 +449,6 @@ public class Mission2 {
       int attempts = 0;
       boolean secondRiddleSolved = false;
       
-      while (attempts < 3 && !secondRiddleSolved) {
       
          GameTools.typeText("\n<Gatekeeper of Gluttony:>\n");
          GameTools.delay(0.7);
@@ -478,6 +477,9 @@ public class Mission2 {
          GameTools.typeText("\"Tell me - \"\n\n"); GameTools.delay(0.5);
          GameTools.delay(1);
       
+
+      while (attempts < 3 && !secondRiddleSolved) {
+
          GameTools.typeText("\"When a soul feeds on everything yet remains empty, \n"); GameTools.delay(0.3);
          GameTools.delay(0.7);
          GameTools.typeText("what sin binds it?\"\n"); GameTools.delay(0.5);
