@@ -102,16 +102,95 @@ public class Mission3 {
         // Choice 1
         boolean choiceCompleted = false;
         while (!choiceCompleted) {
-            GameTools.typeText("=== CRITICAL CHOICE ===");
+            System.out.println();
+            GameTools.typeText("<Unknown Demon:> \n");
+            GameTools.delay(0.2);
+            GameTools.typeText("\"Behold,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" The Arbor Lucis\"", 70);
+
+            GameTools.delay(0.7);
+            GameTools.typeText("\n\n\"This fruit purges corruption,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" a reset for tainted existence.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nI am Mephis,", 70);
+            GameTools.typeText(" its curator.\"", 70);
+
+            GameTools.delay(1.5);
+
+            GameTools.typeText("\n\nMephis shifts his gaze to you...", 60);
+            GameTools.typeText("\nNo.");
+            GameTools.delay(0.7);
+            GameTools.typeText("\nINSIDE of you.", 60);
+
+            GameTools.delay(1.5);
+
+
+            GameTools.typeText("\n\n<Mephis:> \n");
+            GameTools.delay(0.5);
+            GameTools.typeText("\"You are running on corrupted logic.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nI see the fatal error pulsing beneath your skin...\"");
+            GameTools.delay(0.7);
+            GameTools.typeText("\n\"If only there were a debugger for such a primitive model.", 70);
+            GameTools.delay(1);
+            GameTools.typeText(" Oh, wait.\"");
+
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\nHe produces the fruit,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" holding it out carelessly.");
+
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"THIS clears the crash.", 60);
+            GameTools.delay(0.3);
+            GameTools.typeText("\nA factory reset.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nIt is 'sufficient' to keep you functioning.\"", 60);
+
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\nHe then holds up the feather,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" his eyes narrowing intensely.");
+
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"But this is the update.");
+            GameTools.delay(0.3);
+            GameTools.typeText(" You could walk away merely 'repaired,'");
+            GameTools.delay(0.5);
+            GameTools.typeText(" remaining the glitch you are...");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nBut why choose to be obsolete...", 70);
+            GameTools.delay(0.5);
+            GameTools.typeText(" When you can be rewritten?\"", 70);
+
+            GameTools.delay(1.3);
+
+            GameTools.typeText("\n\n\" won't reset you only to leave you obsolete.\"", 60);
+
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"So, choose:");
+            GameTools.typeText("\nAccept both the upgrade and the purge to continue,", 60);
+            GameTools.typeText(" or refuse", 70);
+            GameTools.typeText(" and let the corruption terminate you.\"", 60);
+
+            GameTools.typeText("\n\n===== CRITICAL CHOICE =====\n\n");
             GameTools.typeText("Current State:");
-            GameTools.typeText("- Status Effect Taint: " + GameState.hasStatusEffectTaint());
-            GameTools.typeText("- Sin Counter: " + GameState.getSinCounter());
+            GameTools.typeText("\n- Status Effect Taint: " + GameState.hasStatusEffectTaint());
+            GameTools.typeText("\n- Sin Counter: " + GameState.getSinCounter());
             
-            GameTools.typeText("\nChoose your path:");
-            System.out.println("1. Path of Purity - Cleanse the taint and gain the feather");
-            System.out.println("2. Path of Renewal - Reset everything and start over");
-            System.out.println("3. Path of Knowledge - Solve the riddle of doubt");
-            System.out.print("Enter your choice (1, 2, or 3): ");
+            GameTools.typeText("\nChoose:");
+            GameTools.typeText("\n[1] \"Yes. I will take the feather and the fruit.\"");
+            GameTools.typeText("\n[2] \"No. I will accept neither.\"");
+            GameTools.delay(10);
+            GameTools.typeText("\n[3] \"No. I only want the fruit.\"");
+            System.out.print("Enter your choice: ");
             
             String choice = scanner.nextLine();
             

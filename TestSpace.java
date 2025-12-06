@@ -6,35 +6,58 @@ public class TestSpace{
       
 
 //[Mission 3 - Scene 4]
-//In the center stands a magnificent silver tree adorning a single, crystalline fruit.
+/* 
+Unknown Demon: 
+"Behold the Arbor Lucis."
 
-//Then, a figure detaches itself from the silver bark of the tree, 
-//not emerging, but simply resolving into existence as if he was always part of the scene.
+"This fruit purges corruption, a reset for tainted existence. I am Mephis, its curator.
 
-//He is a demon who looks like a weary scholar, his eyes holding a library's worth of quiet amusement.
-//He gestures with a slender hand to the magnificent tree.
+Mephis shifts his gaze to you... 
+No.
+Inside of you.
 
-GameTools.typeText("\nIn the center stands a magnificent silver tree.");
-GameTools.delay(0.5);
-GameTools.typeText("\nAdorning a single,", 60);
-GameTools.typeText(" crystalline fruit.", 60);
-GameTools.delay(0.7);
-GameTools.typeText("\n\nThen,");
-GameTools.delay(0.3);
-GameTools.typeText(" a figure detaches itself from the silver bark of the tree, ");
-GameTools.delay(0.5);
-GameTools.typeText("\nnot emerging,");
-GameTools.delay(0.3);
-GameTools.typeText(" but simply resolving into existence as if he was always part of the scene.");
-GameTools.delay(0.7);
-GameTools.typeText("\n\nHe is a demon who looks like a weary scholar,");
-GameTools.delay(0.3);
-GameTools.typeText(" his eyes holding a library's worth of quiet amusement.");
-GameTools.delay(0.7);
-GameTools.typeText("\nHe gestures with a slender hand to the magnificent tree.");
-GameTools.delay(0.7);
+<Mephis:> 
+"You are running on corrupted logic. I see the fatal error pulsing beneath your skin..."
+
+"If only there were a debugger for such a primitive model. Oh, wait."
+
+He produces the fruit, holding it out carelessly.
+
+"THIS clears the crash. A factory reset. It is **sufficient** to keep you functioning."
+
+He then holds up the feather, his eyes narrowing intensely.
+
+"But this is the _update_. You could walk away merely 'repaired,' remaining the glitch you are... but why choose to be obsolete when you can be rewritten?"
+
+I won't reset you only to leave you obsolete. 
+
+So, choose: accept both the upgrade and the purge to continue, or refuse and let the corruption terminate you."
+*/
 
 //Scene 
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"So, choose:", 100);
+            GameTools.delay(0.9);
+            GameTools.typeText("\nAccept both the upgrade and the purge to continue,", 60);
+            GameTools.typeText(" or refuse", 70);
+            GameTools.typeText(" and let the corruption terminate you.\"", 60);
+
+            GameTools.typeText("\n\n===== CRITICAL CHOICE =====\n\n");
+            GameTools.typeText("Current State:");
+            GameTools.typeText("\n- Status Effect Taint: " + GameState.hasStatusEffectTaint());
+            GameTools.typeText("\n- Sin Counter: " + GameState.getSinCounter());
+            
+            GameTools.typeText("\n\nChoose:");
+            GameTools.typeText("\n[1] \"Yes. I will take the feather and the fruit.\"");
+            GameTools.typeText("\n[2] \"No. I will accept neither.\"");
+            GameTools.delay(25);
+            GameTools.typeText("\n[3] \"No. I only want the fruit.\"");
+            System.out.print("Enter your choice: ");
+            
+            String choice = scanner.nextLine();
+
+
 
 
 GameTools.pressToContinue(scanner);
