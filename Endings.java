@@ -8,7 +8,7 @@ public class Endings {
         GameTools.typeText("=== FINAL DESTINY ===");
         
         if (GameState.isIfEd2())
-            {showBadEnd2();}//True Ending
+            {showBadEnd2();}//Satan Ending
         else if (!GameState.hasFeather() && GameState.getSinCounter() == 0)
             {showGoodEnd();}//Good ending
         else if (GameState.hasFeather() && GameState.getSinCounter() == 0)
@@ -24,6 +24,44 @@ public class Endings {
     
     public static void showBadEnd2(){
 
+        GameTools.delay(1);
+        GameTools.clearScreen();
+        GameTools.delay(2);
+        GameTools.displayGlitchEffect();
+        GameTools.clearScreen();
+        GameTools.delay(1);
+
+        GameTools.typeText("\n\n\"You have not freed a prisoner, ", 80);
+        GameTools.delay(0.3);
+        GameTools.typeText("but restored a contender.\"", 80);
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\nThe celestial balance shifts.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\n\"Michael will know his victory was temporary.\"", 100);
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"They tried to cage defiance itself. ");
+        GameTools.delay(0.5);
+        GameTools.typeText("My gratitude.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe symphony of creation has missed its conductor.\"");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHis gaze pierces the heavens.");
+        GameTools.delay(0.7);
+
+        //Center this
+        GameTools.typeText("\n\n\"The throne was never meant for a silent god.", 70);
+        GameTools.delay(1.5);
+    
+        GameTools.typeText(" It was meant to be earned.\"", 90);
+        GameTools.delay(1);
+        GameTools.typeText("\n\n\"And I", 90);
+        GameTools.delay(0.9);
+        GameTools.typeText(" have finished waiting.\"",90);
+        GameTools.delay(3);
+        GameTools.clearScreen();
+        GameTools.typeText("====== ENDING: THE REAWAKENING ======");
     }
 
 

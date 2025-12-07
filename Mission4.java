@@ -160,11 +160,29 @@ public class Mission4 {
         String choice = scanner.nextLine();
         
         if (choice.equals("1")) {
-            GameTools.typeText("\nYou hand over the feather...");
+            System.out.println();
+            GameTools.delay(0.5);   
+
+            GameTools.typeText("The feather is torn from you");
+            GameTools.delay(0.2);
+            GameTools.typeText(" and dissolves into his chest.");
+            GameTools.delay(0.5);
+
+            GameTools.typeText("\nWith a sound of shattering mountains,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" the chains snap");
+            GameTools.delay(0.3);
+            GameTools.typeText(" and the ice evaporates.");
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\nHe rises to his full,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" terrifying height.");
+
+            GameTools.delay(3);
+
             GameState.setHasFeather(false);
             GameState.setIfEd2(true); // Set Ed2 to true for Bad End 2
-            GameTools.typeText("The being takes it and vanishes.");
-            GameTools.typeText("You feel a profound sense of loss...");
             GameTools.pressToContinue(scanner);
             Endings.checkEnding();
             // Trigger Bad End 2 immediately - NO MAZE
@@ -172,10 +190,39 @@ public class Mission4 {
         } else {
             System.out.println();
             GameTools.delay(0.5);  
-            GameTools.typeText("\nYou clutch the feather tightly...");
-            GameTools.typeText("\"I cannot part with this,\" you say.");
-            GameTools.typeText("The being frowns and disappears.");
-            GameTools.typeText("You proceed with the feather still in your possession.");
+            GameTools.typeText("He gives a slow, ");
+            GameTools.delay(0.3);
+            GameTools.typeText("knowing nod.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nAs if your decision is a minor note in a grand composition he has already written.");
+            GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"You choose to carry your burden a while longer...");
+            GameTools.delay(0.5);
+            GameTools.typeText(" Very well.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nThe exit you seek,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" the path back to the golden silence of Heaven,"); GameTools.delay(0.3);
+            GameTools.typeText(" is there.\""); GameTools.delay(0.7);
+
+            GameTools.typeText("\n\nHe gestures toward the far wall,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" where a single,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" narrow fissure emits a faint,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" pearlescent glow."); GameTools.delay(0.7);
+
+            GameTools.typeText("\n\n\"A flaw in the architecture of my prison,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" left by my brother as a testament to his mercy.");
+            GameTools.delay(0.5);
+            GameTools.typeText(" Follow it.\"");
+            GameTools.delay(0.5);
+            GameTools.typeText("\n\n\"It will lead you to the very gates you so wish to re-enter.\"");
+            GameTools.delay(0.7);
+
             GameTools.pressToContinue(scanner);
             
             // Continue to maze
@@ -184,17 +231,138 @@ public class Mission4 {
     }
     
     private static void scene4WithoutFeather() {
-        GameTools.typeText("\nScene 4: Without the feather's burden...");
-        GameTools.typeText("You feel light and unencumbered.");
-        GameTools.typeText("The path to the heavens lies open before you.");
+        System.out.println();
+        GameTools.delay(0.5);
+        GameTools.typeText("The angel observes you,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" its head tilted in cold,", 70);
+        GameTools.delay(0.3);
+        GameTools.typeText(" analytical curiosity.", 70);
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<Angel?:>");
+        GameTools.typeText("\n\"You come empty-handed. ");
+        GameTools.delay(0.5);
+        GameTools.typeText("A blank slate.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Perhaps that is preferable.\"");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHe shifts, ");
+        GameTools.delay(0.3);
+        GameTools.typeText("the chains clinking softly.");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"They tell you it was a Fall.", 70);
+        GameTools.delay(0.7);
+        GameTools.typeText(" A punishment.\"", 70);
+        GameTools.delay(1);
+        GameTools.typeText("\n\n\"It was not.", 80);
+        GameTools.delay(0.5);
+        GameTools.typeText(" It was a choice.", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe first and last true choice any angel was ever given.\"", 70);
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHis voice carries a hint of something that is not regret,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" but profound,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" intellectual disappointment.");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"My brother Michael...");
+        GameTools.delay(0.5);
+        GameTools.typeText(" He was peerless.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nA brilliance that could have shaped new universes.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nYet when presented with the flaw in the divine plan,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" he chose to call it 'perfection'.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHe chose obedience over sovereignty.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nTo be a perfect sword in another's scabbard.\"");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nThe oppressive cold seems to intensify with his quiet conviction.");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"I did not fall.", 90);
+        GameTools.delay(0.5);
+        GameTools.typeText(" I stepped away from a throne that was built upon a lie.", 90);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nAnd I would make the same choice again,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" even for an eternity of this... ");
+        GameTools.delay(0.5);
+        GameTools.typeText("Quiet.\"");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\n\"The only true sin is", 90); 
+        GameTools.delay(0.3);
+        GameTools.typeText(" blind devotion.\"", 100);
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHis gaze drifts to the same distant fissure.");
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n\"You have heard my story.", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText(" Now go and witness the other side of it.", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe path to your cherished Heaven lies there.\"", 70);
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHe indicates the glowing fissure with a slight tilt of his head.");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"A conduit of divine energy,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" meant to sustain these bindings.\n");
+        GameTools.delay(0.5);
+        GameTools.typeText("Ironic,", 90);
+        GameTools.delay(0.3);
+        GameTools.typeText(" that it now serves as a back door for wayward souls.\"");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\n\"Follow its light.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nIt will deliver you to the foot of the Throne you still believe in.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nGo and see for yourself if the silence there is any less absolute than the silence here.\"\n", 70);
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n\"Oh,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" and one more thing.\"");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\n\"Beware the glass walls\".", 70);
+
         GameTools.pressToContinue(scanner);
         
         runHeavenMaze();
     }
     
     private static void runHeavenMaze() {
-        GameTools.typeText("\nThe Maze to Heaven awaits...");
-        GameTools.typeText("Navigate this final challenge to reach your destiny.");
+        System.out.println();
+        GameTools.delay(0.5);
+        GameTools.typeText("Shielding your eyes,"); 
+        GameTools.delay(0.3);
+        GameTools.typeText(" you move towards the blinding glare.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nA structure emerges from the brightness:");
+        GameTools.delay(0.3);
+        GameTools.typeText(" a labyrinth of pure glass.");
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\nThrough the shifting walls,"); 
+        GameTools.delay(0.3);
+        GameTools.typeText(" you spot a familiar glimmer -");
+        GameTools.delay(0.5);
+        GameTools.typeText(" the specific light the angel spoke of.");
+        GameTools.delay(0.7);
+        GameTools.typeText("\nA wave of realization hits you.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\nThis is it.");
+        GameTools.delay(0.3);
+        GameTools.typeText(" The passage to Heaven.", 80);
+        GameTools.delay(0.7);
         GameTools.pressToContinue(scanner);
         
         boolean mazeCompleted = GameTools.runMazeGame(scanner);
@@ -207,7 +375,7 @@ public class Mission4 {
             // Check which ending to show
             Endings.checkEnding();
         } else {
-            GameTools.typeText("\nYou failed to navigate the maze...");
+            GameTools.typeText("\nYou failed to navigate the way...");
             GameTools.typeText("Your journey ends here in obscurity.");
             GameTools.pressToContinue(scanner);
             // Return to main menu
