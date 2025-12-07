@@ -36,12 +36,6 @@ public class GameState {
     // SET: GameState.setHasFeather(false);
     private static boolean hasFeather = false;
     
-    // NEW VARIABLE: True Ending Unlock Status
-    // HOW TO USE: Check if true ending has been unlocked (for secret mission)
-    // CHECK: if (GameState.isTrueEndUnlocked()) { ... }
-    // SET: GameState.setTrueEndUnlocked(true);
-    // ONLY NEW VARIABLE WE ACTUALLY NEED!
-    private static boolean trueEndUnlocked = false;
 
     // GETTER METHODS
     
@@ -87,12 +81,7 @@ public class GameState {
      */
     public static boolean hasFeather() { return hasFeather; }
     
-    /**
-     * Check if true ending has been unlocked (for secret mission access)
-     * USAGE: if (GameState.isTrueEndUnlocked()) { Unnamed.start(); }
-     */
-    public static boolean isTrueEndUnlocked() { return trueEndUnlocked; }
-    
+
     // SETTER METHODS
     
     /**
@@ -146,11 +135,7 @@ public class GameState {
      */
     public static void setHasFeather(boolean feather) { hasFeather = feather; }
     
-    /**
-     * Set true ending unlock status (grants access to secret mission)
-     * USAGE: GameState.setTrueEndUnlocked(true); // unlocks secret level
-     */
-    public static void setTrueEndUnlocked(boolean unlocked) { trueEndUnlocked = unlocked; }
+
     
     // Reset all game states to default for new game
     /**
@@ -165,7 +150,6 @@ public class GameState {
         ifEd3 = false;
         ifEd2 = false;
         hasFeather = true;
-        trueEndUnlocked = false; // Reset this too
     }
     
     // Display current game state (for debugging)
@@ -181,7 +165,6 @@ public class GameState {
         System.out.println("ifEd3: " + ifEd3);
         System.out.println("ifEd2: " + ifEd2);
         System.out.println("Has Feather: " + hasFeather);
-        System.out.println("True End Unlocked: " + trueEndUnlocked);
         System.out.println("==========================");
     }
 }

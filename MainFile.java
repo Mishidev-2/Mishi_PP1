@@ -44,7 +44,7 @@ public class MainFile {
       Mission1.start();
       
       // Check if True End was unlocked after Mission 1
-      if (GameState.isTrueEndUnlocked()) {
+      if (GameState.isIfEd3()) {
          // If True End unlocked, go to secret mission instead of Mission 2
          Unnamed.start();
       } else {
@@ -73,9 +73,14 @@ public class MainFile {
              GameState.resetGame();
              configureMission1State();
              Mission1.start();
-             Mission2.start();
-             Mission3.start();
-             Mission4.start();
+            if(GameState.isIfEd3()){
+               Unnamed.start();
+             }
+             else{
+              Mission2.start();
+              Mission3.start();
+              Mission4.start();
+            }
            }
          case "2" -> {
              // Mission 2: Only needs name
@@ -210,22 +215,20 @@ public class MainFile {
     
    private static void configureMission4State() {
       GameTools.clearScreen();
-      GameTools.typeText("=== Cocyutus Config ===");
+      GameTools.typeText("=== Cocyutus Config ===\n\n");
     
     // Reset game state first
       GameState.resetGame();
     
     // Set name
-      GameTools.typeText("Enter your name:");
-      System.out.print("Name: ");
+      GameTools.typeText("Enter your name: ");
       String name = scanner.nextLine();
       if (!name.trim().isEmpty()) {
          GameState.setPlayerName(name);
       }
     
     // Set sin count (0-2) with direct input
-      GameTools.typeText("\nSet sin counter (0 to 2):");
-      System.out.print("Enter sin count (0-2): ");
+      GameTools.typeText("\nSet sin counter (0 to 2): ");
       String sinInput = scanner.nextLine();
     
       int sinCount = 0;
@@ -242,9 +245,9 @@ public class MainFile {
     
     // Set feather status
       GameTools.typeText("\nSet feather status:");
-      System.out.println("1. Has Feather = true");
-      System.out.println("2. Has Feather = false");
-      System.out.print("Choose (1 or 2): ");
+      GameTools.typeText("\n[1] Has Feather = true");
+      GameTools.typeText("\n[2] Has Feather = false");
+      GameTools.typeText("\nChoose (1 or 2): ");
       String featherChoice = scanner.nextLine();
       GameState.setHasFeather(featherChoice.equals("1"));
     
@@ -253,10 +256,10 @@ public class MainFile {
       GameState.setIfEd3(false); // Default to false for Mission 4
     
       GameTools.typeText("\nConfiguration complete!");
-      GameTools.typeText("Name: " + GameState.getPlayerName());
-      GameTools.typeText("Sin Counter: " + GameState.getSinCounter());
-      GameTools.typeText("Has Feather: " + GameState.hasFeather());
-      GameTools.typeText("Fighting the Heavens...");
+      GameTools.typeText("\nName: " + GameState.getPlayerName());
+      GameTools.typeText("\nSin Counter: " + GameState.getSinCounter());
+      GameTools.typeText("\nHas Feather: " + GameState.hasFeather());
+      GameTools.typeText("\n\nFighting the Heavens...");
       GameTools.delay(2);
    }
 }

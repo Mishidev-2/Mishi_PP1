@@ -14,7 +14,6 @@ public class Mission2 {
          GameTools.delay(2.5);
          GameTools.clearScreen();
       
-         
          // LScene 1
          GameTools.delay(1);
       

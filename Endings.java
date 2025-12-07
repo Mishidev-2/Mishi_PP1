@@ -7,24 +7,33 @@ public class Endings {
         GameTools.clearScreen();
         GameTools.typeText("=== FINAL DESTINY ===");
         
-        // Check conditions for each ending
-        if (GameState.hasFeather() && GameState.getSinCounter() > 0) {
-            showBadEnd(); // Has feather AND sins > 0
-            
-        } else if (GameState.hasFeather()) {
-            showNormalBadEnd(); // Has feather but no sins
-            
-        } else if (GameState.getSinCounter() > 0) {
-            showSinBadEnd(); // Has sins but no feather
-            
-        } else if (GameState.isIfEd3()) {
-            showTrueEnd();
-        } else {
-            showGoodEnd();
-        }
+        if (GameState.isIfEd2())
+            {showBadEnd2();}//True Ending
+        else if (!GameState.hasFeather() && GameState.getSinCounter() == 0)
+            {showGoodEnd();}//Good ending
+        else if (GameState.hasFeather() && GameState.getSinCounter() == 0)
+            {showTrueGoodEnd();}//Good Ending but fades to black
+
+        else if (!GameState.hasFeather() && GameState.getSinCounter() > 0)
+            {showNormalBadEnd();}//Bad Ending Normal
+        else if(GameState.hasFeather() && GameState.getSinCounter() > 0)
+            {showTrueBadEnd();}//Bad Ending True
+
+
     }
     
-    public static void showGoodEnd() {
+    public static void showBadEnd2(){
+
+    }
+
+
+    public static void showGoodEnd(){//No feather + NO SIN
+        
+        GameState.resetGame();
+        returnToMainMenu();
+    }
+
+    public static void showTrueGoodEnd() {//Feather true + NO SIN
         GameTools.typeText("ENDING: The Pure Heart");
         GameTools.typeText("======================");
         GameTools.typeText("Without sin and without worldly attachments...");
@@ -34,26 +43,20 @@ public class Endings {
         GameTools.typeText("You find eternal peace in the celestial realms.");
         GameTools.pressToContinue(scanner);
         
-        // Return to main menu
+        GameState.resetGame();
         returnToMainMenu();
     }
     
-    public static void showNormalBadEnd() {
-        GameTools.typeText("ENDING: The Feather's Burden");
-        GameTools.typeText("============================");
-        GameTools.typeText("You kept the celestial feather...");
-        GameTools.typeText("But without any sins to weigh you down,");
-        GameTools.typeText("you find yourself trapped between worlds.");
-        GameTools.typeText("\nThe feather grants you immortality,");
-        GameTools.typeText("but at the cost of true enlightenment.");
-        GameTools.typeText("You are forever a guardian, never to ascend.");
+    public static void showNormalBadEnd() {//NO FEATHER + SINNED
+        GameTools.typeText("ENDING: Bad ending normal main menu");
+
         GameTools.pressToContinue(scanner);
         
-        // Return to main menu without reset
+        GameState.resetGame();
         returnToMainMenu();
     }
     
-    public static void showBadEnd() {
+    public static void showTrueBadEnd() {//KEPT FEATHER BUT HIGH SINS
         GameTools.typeText("ENDING: The Weight of Sin and Feather");
         GameTools.typeText("======================================");
         GameTools.typeText("Your sins have followed you to the heavens...");
@@ -72,20 +75,7 @@ public class Endings {
         // Mission 1 will automatically detect Ed3=true and run Unnamed after
         Mission1.start();
     }
-    
-    public static void showSinBadEnd() {
-        GameTools.typeText("ENDING: The Weight of Sin");
-        GameTools.typeText("=========================");
-        GameTools.typeText("Your sins have followed you to the heavens...");
-        GameTools.typeText("The gates close before you.");
-        GameTools.typeText("\nYour burden is too heavy for heaven to bear.");
-        GameTools.typeText("You are cast back to the mortal realm.");
-        GameTools.typeText("\nSin leaves marks that even eternity cannot erase.");
-        GameTools.pressToContinue(scanner);
-        
-        // Return to main menu without reset
-        returnToMainMenu();
-    }
+
     
     public static void showTrueEnd() {
         GameTools.typeText("ENDING: The Ed3 Revelation");
@@ -109,9 +99,7 @@ public class Endings {
         // Reset all progress but keep Ed3 enabled
         GameState.setSinCounter(0);
         GameState.setHasFeather(false); // Reset the feather
-        GameState.setIfEd3(true);  // This is the key - enables the secret path
-        GameState.setTrueEndUnlocked(false);
-        
+        GameState.setIfEd3(true);  // This is the key - enables the secret path        
         GameTools.typeText("Reality reshapes itself around you...");
         GameTools.typeText("Ed3 energy courses through your being!");
         GameTools.delay(2);
