@@ -100,8 +100,6 @@ public class Mission3 {
         GameTools.delay(0.7);
 
         // Choice 1
-        boolean choiceCompleted = false;
-        while (!choiceCompleted) {
             System.out.println();
             GameTools.typeText("<Unknown Demon:> \n");
             GameTools.delay(0.2);
@@ -174,7 +172,8 @@ public class Mission3 {
             GameTools.typeText("\n\n\"I won't reset you only to leave you obsolete.\"", 60);
 
             GameTools.delay(0.7);
-
+        boolean choiceCompleted = false;
+        while (!choiceCompleted) {
             GameTools.typeText("\n\n\"So, choose:");
             GameTools.typeText("\nAccept both the upgrade and the purge to continue,", 60);
             GameTools.typeText(" or refuse", 70);
@@ -359,15 +358,14 @@ public class Mission3 {
         boolean riddleSolved = false;
         
         while (attempts < 2 && !riddleSolved) {
-            System.out.print("\nYour answer (attempt " + (attempts + 1) + "/2): ");
+            System.out.print("\n\nYour answer (attempt " + (attempts + 1) + "/2): ");
             String answer = scanner.nextLine();
             
             if (GameTools.checkRiddleAnswer(answer, riddleKeywords)) {
                 riddleSolved = true;
                 if (attempts == 0) {
-                    
+
                     System.out.println();
-                    GameTools.typeText("Correct on first try! Your wisdom shines.");
                     GameTools.delay(1);
 
                     GameTools.typeText("Mephis looks genuinely impressed,");
@@ -399,33 +397,95 @@ public class Mission3 {
                     
                     GameState.setStatusEffectTaint(false);
                     // hasFeather remains false (no change)
-                    GameTools.typeText("The taint is cleansed but you gain no feather.");
                 } else {
-                    GameTools.typeText("Correct! Better late than never.");
+
+                    System.out.println();
+                    GameTools.delay(1);
+
+                    GameTools.typeText("He lets out a soft,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" breathy chuckle,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" a sound like rustling pages.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\n\n\"Ah, there it is.", 70);
+                    GameTools.delay(0.5);
+                    GameTools.typeText(" You stumbled on the threshold,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText("but you crossed it nonetheless.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nThe insight is correct,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" if delayed.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nIt seems there is yet a spark within the rubble worth preserving.\"");
+                    GameTools.delay(0.7);
+                    GameTools.typeText("\n\n\"The purge is yours,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" you may proceed.\"", 60);
                     GameState.setStatusEffectTaint(false);
                     // hasFeather remains false (no change)
-                    GameTools.typeText("The taint is gone but the feather remains elusive.");
                 }
-                GameTools.typeText("Status Effect Taint: " + GameState.hasStatusEffectTaint());
-                GameTools.typeText("Has Feather: " + GameState.hasFeather());
+                GameTools.typeText("\nStatus Effect Taint: " + GameState.hasStatusEffectTaint());
+                GameTools.typeText("\nHas Feather: " + GameState.hasFeather());
                 GameTools.pressToContinue(scanner);
             } else {
                 attempts++;
                 if (attempts == 1) {
-                    GameTools.typeText("Wrong! The voice gives you one more chance...");
+                    //Wrong 1
+                    System.out.println();
+                    GameTools.delay(1);
+
+                    GameTools.typeText("Mephis tilts his head,", 60);
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" a look of quiet amusement mixed with slight pity.");
+                    GameTools.delay(0.7);
+                    GameTools.typeText("\n\n\"An understandable error.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nThe obvious answer is often the most seductive trap.");
+                    GameTools.delay(0.7);
+                    GameTools.typeText("\nLook past the stated function.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nConsider the foundation upon which it is built,");
+                    GameTools.delay(0.5);
+                    GameTools.typeText(" not the structure itself.\"");
+                    GameTools.delay(0.7);
+                    GameTools.typeText("\n\n\"You have one more attempt to grasp the truth of this place.\"", 60);
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\n(Hint: D__BT)");
                 } else {
-                    GameTools.typeText("Wrong again! The voice whispers a hint: 'do__t'");
-                    GameTools.typeText("Your failure has consequences...");
-                    GameTools.delay(2);
+                    System.out.println();
+                    GameTools.delay(1);
+
+                    GameTools.typeText("Mephis's weary expression solidifies into one of finality.", 60);
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nHe gives a slight,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" dismissive shake of his head.");
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\n\n\"No.", 60);
+                    GameTools.delay(0.7);
+                    GameTools.typeText(" The capacity for higher understanding is simply not there.", 60);
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nThe corruption has run too deep,");
+                    GameTools.delay(0.3);
+                    GameTools.typeText(" or the original code was too limited.", 60);
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\nA pity.");
+                    GameTools.delay(0.7);
+                    GameTools.typeText(" The terminal must be reset.\"", 60);
+                    GameTools.delay(0.5);
+                    GameTools.typeText("\n\n\"Our discourse is over.\"", 60);
                     
-                    // Reset and return to Mission 1
+                    // Reset and new game
                     GameState.resetGame();
-                    GameTools.typeText("Everything fades away...");
+                    System.out.println();
                     GameTools.delay(2);
-                    GameTools.typeText("Returning to Mission 1...");
+                    GameTools.typeText("\nData lost...", 100);
                     GameTools.delay(2);
+                    GameTools.typeText("\nRecovering...", 90);
                     GameState.resetGame();
-                    Mission1.start();
+                    MainFile.startNewGame();
                     return false; // Mission failed, don't continue Mission 3
                 }
             }
