@@ -368,10 +368,25 @@ public class Mission4 {
         boolean mazeCompleted = GameTools.runMazeGame(scanner);
         
         if (mazeCompleted) {
-            GameTools.typeText("\nYou have reached the heavens!");
-            GameTools.typeText("Your journey culminates here...");
-            GameTools.pressToContinue(scanner);
-            
+
+            System.out.println();
+            GameTools.delay(0.5);
+            GameTools.typeText("The climb ends at a threshold.");
+            GameTools.delay(0.3);
+            GameTools.typeText("\nBefore you stand the Gates of Heaven.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nMade of immense,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" living gold...", 60); 
+            GameTools.delay(0.5);
+            GameTools.typeText(" Cracked yet holding.");
+            GameTools.delay(0.5);
+            GameTools.typeText("\nThrough these wounds pours a light of pure grace,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" washing over you in a silence that is not empty,");
+            GameTools.delay(0.3);
+            GameTools.typeText(" but full.");
+            GameTools.delay(1.5);
             // Check which ending to show
             Endings.checkEnding();
         } else {
