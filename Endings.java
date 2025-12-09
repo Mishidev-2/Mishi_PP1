@@ -19,7 +19,6 @@ public class Endings {
         else if(GameState.hasFeather() && GameState.getSinCounter() > 0)
             {showTrueBadEnd();}//Bad Ending True
 
-
     }
     
     public static void showBadEnd2(){
@@ -65,7 +64,6 @@ public class Endings {
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
     }
-
 
     public static void showGoodEnd(){//No feather + NO SIN
         
@@ -612,8 +610,13 @@ public class Endings {
         GameState.resetGame();
         returnToMainMenu();
     }
-    
+    //
     public static void showTrueBadEnd() {//KEPT FEATHER BUT HIGH SINS
+        GameTools.delay(1);
+        GameTools.clearScreen();
+        GameTools.delay(2);
+
+        GameTools.typeText("A voice,");
         GameTools.typeText("ENDING: The Weight of Sin and Feather");
         GameTools.typeText("======================================");
         GameTools.typeText("Your sins have followed you to the heavens...");
@@ -627,6 +630,15 @@ public class Endings {
         GameTools.typeText("\nIn your darkest moment...");
         GameTools.typeText("A forbidden knowledge awakens within you...");
         GameTools.typeText("The path of Ed3 reveals itself!");
+
+        GameTools.pressToContinue(scanner);
+        GameTools.delay(2);
+        GameTools.clearScreen();
+        GameTools.typeText("====== ENDING: ~~~~~ ======");
+        GameTools.pressToContinue(scanner);
+        GameTools.delay(2);
+
+
         resetForTrueEnding();
         
         // Mission 1 will automatically detect Ed3=true and run Unnamed after
@@ -638,6 +650,7 @@ public class Endings {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
+        
         GameTools.typeText("ENDING: The Ed3 Revelation");
         GameTools.typeText("===========================");
         GameTools.typeText("With Ed3 activated and a pure heart...");
@@ -647,6 +660,8 @@ public class Endings {
         GameTools.typeText("This is not an end, but a new beginning...");
         GameTools.typeText("\nYou have transcended beyond mere mortal understanding.");
         GameTools.typeText("The cosmos is yours to explore.");
+
+
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
