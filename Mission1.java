@@ -13,42 +13,88 @@ public class Mission1 {
       
       // Scene 1
       if (GameState.isIfEd3()) {
-         GameTools.typeText("You feel a familiar energy coursing through you...");
-      
+         GameTools.typeText("You awaken in the endless void.");
+         GameTools.delay(0.5);
+         GameTools.typeText(" Again.", 50);
+         GameTools.delay(0.7);
+         GameTools.typeText("\nIt's a formless nothing stretching infinitely -");
+         GameTools.typeText(" Standard issue oblivion.");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nBefore you,"); 
+         GameTools.delay(0.3);
+         GameTools.typeText(" a vast black hole looms...");
+         GameTools.delay(0.5);
+         GameTools.typeText("\nIts presence is oppressive,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" but It just hangs there...");
+         GameTools.delay(0.5);
+         GameTools.typeText(" Waiting.", 70);
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nAs usual its hunger knows no bounds,", 50);
+         GameTools.delay(0.3);
+         GameTools.typeText(" taking in all the light for itself.");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nIts grand,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" terrifying,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" and exhausting to look at.", 60);
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nNo light reaches you...");
+         GameTools.delay(0.5);
+         GameTools.typeText(" It feels as if the light itself has forsaken you,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" refusing to guide your way");
+         GameTools.delay(0.5);
+
+         GameTools.typeText("\nOr maybe it just couldn't be bothered.", 70);
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nMuch like you.", 70);
       
       } else {
       // Scene 1
          GameTools.typeText("You awaken in an endless void, ");GameTools.delay(0.2);
          GameTools.typeText("a formless nothing stretching infinitely.\n");
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
          GameTools.typeText("Before you, ");GameTools.delay(0.2);
          GameTools.typeText("a vast black hole looms.\n");
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
          GameTools.typeText("Its presence so oppressive, ");GameTools.delay(0.2);
          GameTools.typeText("it should devour you.\n\n");
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
          GameTools.typeText("And yet, ", 100);GameTools.delay(0.2);
          GameTools.typeText("it does not.", 100);
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
          GameTools.typeText("\n\n");
       
          GameTools.typeText("At its heart: ");GameTools.delay(0.2);
          GameTools.typeText("A cosmic hunger, ");GameTools.delay(0.2);
          GameTools.typeText("a nihility.\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
          GameTools.typeText("Surroundings, ");GameTools.delay(0.2);
          GameTools.typeText("devoid of luster.\n");GameTools.delay(0.5); // period pause
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
          GameTools.typeText("It generates a gravity so strong, ");GameTools.delay(0.2);
          GameTools.typeText("it forms a blazing ring of stolen radiance around it.\n\n");
-         GameTools.delay(0.7); // paragraph break
+         GameTools.delay(0.7);
       
-         GameTools.typeText("No light reaches you, ");GameTools.delay(0.2);
+         GameTools.typeText("No light reaches you, ");
+         GameTools.delay(0.2);
          GameTools.typeText("it feels as if the light itself has forsaken you.", 100);
          GameTools.delay(1);
          GameTools.typeText("\n");
@@ -104,11 +150,8 @@ public class Mission1 {
       if (GameState.isIfEd3()) {
          GameTools.typeText("You feel a familiar energy coursing through you...");
       
-      
       } else {  
       // Scene 3
-         
-      
          GameTools.typeText("[0] \"Journey?\"\n[Enter to Continue]");
          scanner.nextLine();
          System.out.println();

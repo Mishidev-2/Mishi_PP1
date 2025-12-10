@@ -5,7 +5,6 @@ public class Mission2 {
    
    public static void start() {
    
-      
       boolean missionCompleted = false;
       
       while (!missionCompleted) {
@@ -17,30 +16,36 @@ public class Mission2 {
          // LScene 1
          GameTools.delay(1);
       
-         GameTools.typeText("A heavy, ");GameTools.delay(0.2);
-         GameTools.typeText("iron sky greets you, ");GameTools.delay(0.2);
-         GameTools.typeText("the air thick with the scent of ash and regret.\n");GameTools.delay(0.5);
+         GameTools.typeText("A heavy, ");
+         GameTools.delay(0.2);
+         GameTools.typeText("iron sky greets you, ");
+         GameTools.delay(0.2);
+         GameTools.typeText("the air thick with the scent of ash and regret.\n");
          GameTools.delay(0.7);
       
-         GameTools.typeText("Exiting the Void has deposited you at the foot of a colossal castle, ");GameTools.delay(0.2);
+         GameTools.typeText("Exiting the Void has deposited you at the foot of a colossal castle, ");
+         GameTools.delay(0.2);
          GameTools.typeText("\n");
-         GameTools.typeText("its walls hewn from blackened, ");GameTools.delay(0.2);
-         GameTools.typeText("seamless rock that stretches into the gloom.\n\n");GameTools.delay(0.5);
+         GameTools.typeText("its walls hewn from blackened, ");
+         GameTools.delay(0.2);
+         GameTools.typeText("seamless rock that stretches into the gloom.\n\n");
          GameTools.delay(0.7);
       
          GameTools.typeText("You wait, ");GameTools.delay(0.2);
-         GameTools.typeText("expecting the familiar Voice to dictate your next move.\n");GameTools.delay(0.5);
+         GameTools.typeText("expecting the familiar Voice to dictate your next move.\n");
          GameTools.delay(1);
-         GameTools.typeText("It offers no counsel. ");GameTools.delay(0.5);
+         GameTools.typeText("It offers no counsel. ");
          GameTools.delay(1);
-         GameTools.typeText("The silence is its own kind of instruction.", 50);GameTools.delay(0.5);
+         GameTools.typeText("The silence is its own kind of instruction.", 50);
+         GameTools.delay(0.5);
       
          // LScene 2
          GameTools.pressToContinue(scanner);
          System.out.println();
          GameTools.delay(0.5);
       
-         GameTools.typeText("You head inside the labyrinth of shadow and despair.\n");GameTools.delay(0.5);
+         GameTools.typeText("You head inside the labyrinth of shadow and despair.\n");
+         GameTools.delay(0.5);
          GameTools.delay(0.7);
       
          GameTools.typeText("Its interior is silent, ");GameTools.delay(0.2);
