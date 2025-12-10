@@ -21,9 +21,8 @@ public class GameTools {
     
     // Default speed (30ms)
    public static void typeText(String text) {
-      typeText(text, 25);
+      typeText(text, 1);
    }
-    
     // Adjustable speed - just change the number for speed in milliseconds
    public static void typeText(String text, int speed) {
       for(char c : text.toCharArray()) {
@@ -34,7 +33,9 @@ public class GameTools {
          } catch (InterruptedException e) {}
       }
    }
-    
+
+
+
     // Riddle
    public static boolean checkRiddleAnswer(String userInput, String[] keywords) {
       String input = userInput.toLowerCase();

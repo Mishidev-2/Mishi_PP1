@@ -264,8 +264,9 @@ public class Mission1 {
         
         // Check if Ed3 is true and run Unnamed mission
       if (GameState.isIfEd3()) {
+         System.out.println();
          GameTools.typeText("A strange energy pulls you elsewhere...");
-         GameTools.typeText("The fabric of reality shifts around you...");
+         GameTools.typeText("The fabric of reality shifts around you...\n");
          GameTools.delay(2);
          Unnamed.start();
       }

@@ -745,7 +745,7 @@ public class Endings {
         GameTools.typeText("\n\n\"When you return,");
         GameTools.delay(0.3);
         GameTools.typeText(" you will be symmetrical.\"");
-        GameTools.delay(0.5);
+        GameTools.delay(2);
         GameTools.clearScreen();
         GameTools.delay(0.5);
         GameTools.typeText("\n\n\"Or you will not be", 60);
@@ -808,7 +808,6 @@ public class Endings {
         Mission1.start();
     }
 
-    
     public static void showTrueEnd() {
         GameTools.delay(1);
         GameTools.clearScreen();
@@ -861,25 +860,264 @@ public class Endings {
         GameTools.clearScreen();
         GameTools.delay(2);
 
-        GameTools.typeText("ENDING: The Ed3 Revelation");
-        GameTools.typeText("===========================");
-        GameTools.typeText("With Ed3 activated and a pure heart...");
-        GameTools.typeText("You have achieved the True Ending!");
-        GameTools.typeText("\nThe heavens reveal their deepest secrets to you.");
-        GameTools.typeText("You understand the true nature of reality.");
-        GameTools.typeText("This is not an end, but a new beginning...");
-        GameTools.typeText("\nYou have transcended beyond mere mortal understanding.");
-        GameTools.typeText("The cosmos is yours to explore.");
+        GameTools.typeText("You are no longer falling.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" You are kneeling.", 70);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nThe air smells of ozone and burning gold.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" You are surrounded by the wreckage of a celesial battle.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe broken shards of Heaven lie scattered around you like spilled diamonds.", 60);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nIn one of these jagged,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" reflective fragments,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" you catch a glimpse of your own face.", 60);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nIt is breathtaking.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The definition of beauty -");
+        GameTools.delay(0.3);
+        GameTools.typeText(" Symmetry so perfect it hurts to look upon;");
+        GameTools.delay(0.3);
+        GameTools.typeText("\nLight woven into skin,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" eyes that hold the depth of the morning star.");
+
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\nIt is the most beautiful thing existence has ever crafted.", 80);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nAnd you know it.", 100);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nThis beauty is not just a trait;");
+        GameTools.delay(0.3);
+        GameTools.typeText(" it is a justification.", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText(" It is the root of your(?) Pride.", 90);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nA jolt of recognition hits you -");
+        GameTools.delay(0.3);
+        GameTools.typeText(" this face in the reflection...");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nIt is the face of the prisoner you saw frozen in the ice of Cocytus.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nYou are not looking at a stranger.", 80);
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\nYou are looking at the \"Truth\" that was left behind.", 80);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nYou try to stand,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" to admire yourself fully,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" but you cannot.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nChains of starlight bind your wrists and wings,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" pinning you to the floor of the High Heavens.", 80);
+        GameTools.delay(0.7);
+        GameTools.typeText("\nThe weight is infinite.", 80);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nLooking down at you are two figures.", 90);
+
+        GameTools.pressToContinue(scanner);
+        System.out.println();
+
+        GameTools.delay(0.5);
+        GameTools.typeText("On the left stands Michael", 70); 
+        GameTools.delay(0.5);
+        GameTools.typeText(" -", 70);
+        GameTools.delay(0.3);
+        GameTools.typeText(" The Archangel of Death.", 100);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHe holds the scales of judgment in one hand,"); 
+        GameTools.delay(0.3);
+        GameTools.typeText(" and a greatsword in the other.", 50);
+
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\nOn the right stands Metatron", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText(" -", 70);
+        GameTools.delay(0.3);
+        GameTools.typeText(" The Voice of the Heavenly Will.", 100);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHe is terrifyingly bright,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" a silhouette cut from raw radiance.", 80);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHe looks at you with no pity,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" no anger -", 80);
+        GameTools.delay(0.3);
+        GameTools.typeText("\nOnly the indifferent calculation of a machine observing a broken cog.", 90);
+
+        GameTools.pressToContinue(scanner);
+
+        GameTools.clearScreen();
+        System.out.println();
+        GameTools.delay(0.7);
+        GameTools.typeText("<Michael:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"He will not bend -", 100);
+        GameTools.delay(0.5);
+        GameTools.typeText(" you know this as well as I.", 50);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHis pride is absolute.\"", 60);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"Despite my authority,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" we Archangels are not so easy to cast down.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nTo break him is to break the very foundation we stand on.\"");
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"And Lucifer's strength is undoubtedly on the same level as mine.\"", 100);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"Then we do not break the stone.", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText(" We separate the elements.", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nWe shall sever his pride -");
+        GameTools.delay(0.3);
+        GameTools.typeText(" his source of power.\"", 70);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nMetatron gestures to your bound form.");
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"We will perform a partition.\"", 70);
+
+        GameTools.delay(0.5);
+
+        GameTools.typeText("\n\n\"We shall bind his 'Truth' -", 50);
+        GameTools.delay(0.5);
+        GameTools.typeText(" His identity,", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText("\nIn the absolute zero of Cocyutus.", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThere,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" frozen in static ice,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" he cannot act.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" He cannot rebel.\"", 70);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n<Michael:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"And his will?");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The fire that drives him?\"", 60);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"Cast his will into the cycle.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Without his truth to guide it,");
+        GameTools.delay(0.3);
+        GameTools.typeText("\nhis will is just raw energy.\"");
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"We will throw him into the void to be reconceptualized.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nMay he learn obedience through countless loops of existence.\"", 70);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n<Michael:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"He will resist to the very end...");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nTearing the cycle apart to find himself.\"");
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"Indeed.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" He is a stubborn variable,");
+        GameTools.delay(0.3);
+        GameTools.typeText("\nbut if the calculation is successful.", 50);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nHe will loop until the errors are smoothed out.\"", 60);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"He will act,", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText(" fail,", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText(" and restart,", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nUntil a version worthy of the light finally emerges\"", 80);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nMichael looks at you one last time.", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe conflict leaves his eyes,");
+        GameTools.delay(0.5);
+        GameTools.typeText(" replaced by the steel of duty.\"");
+        GameTools.delay(0.5);
+
+        GameTools.typeText("\n\nThe Scales of Justice tip decisively...", 100);
+
+        GameTools.pressToContinue(scanner);
+
+        GameTools.clearScreen();
+
+        GameTools.typeText("\"Very", 100);
+        GameTools.delay(0.4);
+        GameTools.typeText(" well...\"", 100);
+        GameTools.delay(1);
+
+        GameTools.typeText("\n\nMichael raises his sword.", 50);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe blade erupts in lighting,", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText("\nblazing with a fire that burns hotter than the stars.", 70);
 
 
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: FINALITY ======");
+
+        GameTools.typeText("The memory ends,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" fatigue rushes over you...");
+
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
-
-
 
     }
 
