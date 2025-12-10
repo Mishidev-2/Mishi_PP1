@@ -120,7 +120,7 @@ public static boolean runMazeGame(Scanner scanner) {
         int playerY = 1; 
 
         // Intro text
-        typeText("Get to the Heavens. (Use W,A,S,D to move.)");
+        typeText("Get to the Heavensgate. (Use W,A,S,D to move.)");
         delay(0.5);
         pressToContinue(scanner);
 
@@ -225,7 +225,7 @@ public static boolean runMazeGame(Scanner scanner) {
     // ==========================================
     private static void displayMaze(int[][] maze) {
         clearScreen();
-        System.out.println("===== MAZE =====");
+        System.out.println("===== MAZE OF ETERNAL COLD =====");
         
         // Loop through every Row (i)
         for (int i = 0; i < 9; i++) {
