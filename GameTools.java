@@ -6,26 +6,20 @@ public class GameTools {
     public static void showTitleCard(Scanner scanner) {
         clearScreen();
         
-       
-        System.out.println("                                         "); 
-        
+        System.out.println("                                         ");   
         
         typeText("======== THE BROKEN PARADIGM ========", 20); 
         
         System.out.println(); 
         System.out.println("                                         "); 
 
-        
         delay(1.5);
-        
         
         System.out.println("\n      [ Press Enter to Begin ]");
         
-        
         scanner.nextLine();
         
-        clearScreen();
-        
+        clearScreen();       
     }
 
 
@@ -64,7 +58,7 @@ public class GameTools {
 
    //YN choices
    //Usecase: 'choice' char GameTools.getyn(scanner);
-
+   //basically just loops until a valid input is given
    public static char getyn(Scanner scanner) {
       char input;
       while (true) {
@@ -82,7 +76,7 @@ public class GameTools {
    }
 
 
-    // Riddle
+    //Riddle
    public static boolean checkRiddleAnswer(String userInput, String[] keywords) {
       String input = userInput.toLowerCase();
       for (String keyword : keywords) {
@@ -93,6 +87,8 @@ public class GameTools {
       return false;
    }
     
+   //this one was a bit weird - basically just prints out some glitches to make it look cool
+    //GameTools.displayGlitchEffect(); - usecase
    public static void displayGlitchEffect() {
       String chars = "!@#$%^&*()_+-=[]{}|;:,.<>?/~`0123456789";
    
@@ -140,7 +136,6 @@ public class GameTools {
          catch (InterruptedException e) {}
       }
    }
-   //GameTools.displayGlitchEffect(); - usecase
     
     
     // Maze game utility
