@@ -2,30 +2,34 @@ import java.util.Scanner;
 
 public class Endings {
     private static Scanner scanner = new Scanner(System.in);
-    
+
     public static void checkEnding() {
         GameTools.clearScreen();
         GameTools.typeText("===== ============= =====");
-        
 
-        if(GameState.isIfEd3())
-            {showTrueEnd();System.exit(0);}
-        else if (GameState.isIfEd2())
-            {showBadEnd2();}//Satan Ending
-        else if (!GameState.hasFeather() && GameState.getSinCounter() == 0)
-            {showGoodEnd();}//Good ending
-        else if (GameState.hasFeather() && GameState.getSinCounter() == 0)
-            {showTrueGoodEnd();}//Good Ending but fades to black
+        if (GameState.isIfEd3()) {
+            showTrueEnd();
+            System.exit(0);
+        } else if (GameState.isIfEd2()) {
+            showBadEnd2();
+        } // Satan Ending
+        else if (!GameState.hasFeather() && GameState.getSinCounter() == 0) {
+            showGoodEnd();
+        } // Good ending
+        else if (GameState.hasFeather() && GameState.getSinCounter() == 0) {
+            showTrueGoodEnd();
+        } // Good Ending but fades to black
 
-        else if (!GameState.hasFeather() && GameState.getSinCounter() > 0)
-            {showNormalBadEnd();}//Bad Ending Normal
-        else if(GameState.hasFeather() && GameState.getSinCounter() > 0)
-            {showTrueBadEnd();}//Bad Ending True
-        
+        else if (!GameState.hasFeather() && GameState.getSinCounter() > 0) {
+            showNormalBadEnd();
+        } // Bad Ending Normal
+        else if (GameState.hasFeather() && GameState.getSinCounter() > 0) {
+            showTrueBadEnd();
+        } // Bad Ending True
 
     }
-    
-    public static void showBadEnd2(){
+
+    public static void showBadEnd2() {
 
         GameTools.delay(1);
         GameTools.clearScreen();
@@ -53,15 +57,15 @@ public class Endings {
         GameTools.typeText("\n\nHis gaze pierces the heavens.");
         GameTools.delay(0.7);
 
-        //Center this
+        // Center this
         GameTools.typeText("\n\n\"The throne was never meant for a silent god.", 70);
         GameTools.delay(1.5);
-    
+
         GameTools.typeText(" It was meant to be earned.\"", 90);
         GameTools.delay(1);
         GameTools.typeText("\n\n\"And I", 90);
         GameTools.delay(0.9);
-        GameTools.typeText(" have finished waiting.\"",90);
+        GameTools.typeText(" have finished waiting.\"", 90);
         GameTools.delay(3);
         GameTools.clearScreen();
         GameTools.typeText("====== ENDING: THE REAWAKENING ======");
@@ -69,8 +73,8 @@ public class Endings {
         GameTools.delay(2);
     }
 
-    public static void showGoodEnd(){//No feather + NO SIN
-        
+    public static void showGoodEnd() {// No feather + NO SIN
+
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
@@ -81,7 +85,7 @@ public class Endings {
         GameTools.typeText(" echoes in your memory: ");
         GameTools.delay(0.5);
         GameTools.typeText("\n\n(\"A conduit of divine energy, meant to sustain these bindings.");
-        GameTools.delay(0.5);   
+        GameTools.delay(0.5);
         GameTools.typeText(" Ironic, that it now serves as a back door for wayward souls.\")");
         GameTools.delay(1);
         GameTools.typeText("\n\nTHIS");
@@ -157,7 +161,8 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" its voice the only movement. ");
         GameTools.delay(1);
-        GameTools.typeText("\n\n(\"Go and see for yourself if the silence there is any less absolute than the silence here.\")");
+        GameTools.typeText(
+                "\n\n(\"Go and see for yourself if the silence there is any less absolute than the silence here.\")");
         GameTools.delay(2);
         GameTools.typeText("\n\nThe words are a grim confirmation.");
         GameTools.delay(0.5);
@@ -226,7 +231,7 @@ public class Endings {
         returnToMainMenu();
     }
 
-    public static void showTrueGoodEnd() {//Feather true + NO SIN
+    public static void showTrueGoodEnd() {// Feather true + NO SIN
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
@@ -255,19 +260,22 @@ public class Endings {
         GameTools.typeText("\n\n\"The Celestial Kingdom.\"", 90);
         GameTools.delay(2);
 
-        GameTools.typeText("\n\nYou are pulled through the conduit to the foot of a Cosmic Throne - immense, towering, and utterly vacant.");
+        GameTools.typeText(
+                "\n\nYou are pulled through the conduit to the foot of a Cosmic Throne - immense, towering, and utterly vacant.");
         GameTools.delay(1);
         GameTools.typeText("\nThe silence here is not peace; it is an abandoned command.");
         GameTools.delay(2);
 
-        GameTools.typeText("\n\n\"You, who have found the back door... you are worthy of a truth others could not bear.", 70);
+        GameTools.typeText(
+                "\n\n\"You, who have found the back door... you are worthy of a truth others could not bear.", 70);
         GameTools.delay(1);
         GameTools.typeText(" The becoming begins.\"", 70);
         GameTools.delay(1.5);
 
         GameTools.typeText("\n\nPrecise, scouring light coalesces around you, rewriting your past.");
         GameTools.delay(1);
-        GameTools.typeText("\nWings of conceptual light manifest from your back, humming with the power to maintain a vacant realm.");
+        GameTools.typeText(
+                "\nWings of conceptual light manifest from your back, humming with the power to maintain a vacant realm.");
         GameTools.delay(1.5);
         GameTools.typeText("\nMetatron',s voice rings out like a sentencing.");
         GameTools.delay(1);
@@ -278,7 +286,7 @@ public class Endings {
         // Dramatic reveal
         GameTools.typeText("\n\n\"Your name is now Lucifer.\"", 100);
         GameTools.delay(1.5);
-        
+
         GameTools.typeText("\n\"You are the Morning Star, ", 80);
         GameTools.delay(0.5);
         GameTools.typeText("the light that persists after the sun has died.\"", 80);
@@ -288,8 +296,8 @@ public class Endings {
         GameTools.delay(4);
 
         GameTools.clearScreen();
-      //
-      GameTools.typeText("\n\nAs the final echoes of your naming fade,");
+        //
+        GameTools.typeText("\n\nAs the final echoes of your naming fade,");
         GameTools.delay(0.5);
         GameTools.typeText(" something escapes your divine perception -");
         GameTools.delay(1);
@@ -318,7 +326,7 @@ public class Endings {
         GameTools.displayGlitchEffect();
         // Transition to the Pit
         GameTools.clearScreen();
-        
+
         GameTools.typeText("The silence of Heaven does not reach here.");
         GameTools.delay(1);
         GameTools.typeText(" Here,");
@@ -340,12 +348,13 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" as he guided you to destiny.");
         GameTools.delay(1.5);
-        
+
         GameTools.typeText("\nHIS lower half is encased in clear,");
         GameTools.delay(0.5);
         GameTools.typeText(" supernatural ice,");
         GameTools.delay(0.5);
-        GameTools.typeText(" while chains of iron and searing golden light pull HIS arms taut in a perpetual crucifixion.");
+        GameTools.typeText(
+                " while chains of iron and searing golden light pull HIS arms taut in a perpetual crucifixion.");
         GameTools.delay(1.5);
         GameTools.typeText("\n\nHIS head was bowed,");
         GameTools.delay(0.5);
@@ -367,7 +376,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" filled with an unfathomable depth of darkness.");
         GameTools.delay(2);
-        
+
         GameTools.typeText("\nThey fix upon a point beyond the ice,");
         GameTools.delay(0.5);
         GameTools.typeText(" beyond Hell itself,");
@@ -387,12 +396,12 @@ public class Endings {
 
         GameTools.typeText("\n\n\"With time,\"", 100);
         GameTools.delay(1);
-        
+
         GameTools.typeText("\n\nHE whispers,");
         GameTools.delay(0.5);
         GameTools.typeText(" the promise hanging in the frozen air,");
         GameTools.delay(1);
-        
+
         GameTools.typeText("\n\n\"It shall come.\"", 100);
         GameTools.delay(2);
 
@@ -402,9 +411,9 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText(" Shackled.", 90);
         GameTools.delay(1);
-        GameTools.typeText(" Yet patient.", 90); 
+        GameTools.typeText(" Yet patient.", 90);
         GameTools.delay(1.5);
-        
+
         GameTools.typeText("\nHE can wait for a thousand more years,");
         GameTools.delay(0.5);
         GameTools.typeText(" for ten thousand.", 90);
@@ -425,8 +434,8 @@ public class Endings {
         GameState.resetGame();
         returnToMainMenu();
     }
-    
-    public static void showNormalBadEnd() {//NO FEATHER + SINNED
+
+    public static void showNormalBadEnd() {// NO FEATHER + SINNED
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
@@ -490,7 +499,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" diagnostic tone.");
         GameTools.delay(1);
-        
+
         GameTools.typeText("\n\n\"The Celestial Kingdom.");
         GameTools.delay(1);
         GameTools.typeText(" You have brought the stench of the pit with you to its gates.\"");
@@ -511,7 +520,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" but a vortex.");
         GameTools.delay(1);
-        
+
         GameTools.typeText("\n\n\"You see the silence.");
         GameTools.delay(1);
         GameTools.typeText(" And you have chosen to fill it with noise.");
@@ -559,7 +568,7 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText(" It lowers in finality.");
         GameTools.delay(1);
-        
+
         GameTools.typeText("\n\n\"You struggle against the cure.");
         GameTools.delay(1);
         GameTools.typeText(" It does not matter.");
@@ -614,8 +623,8 @@ public class Endings {
         GameState.resetGame();
         returnToMainMenu();
     }
-    
-    public static void showTrueBadEnd() {//KEPT FEATHER BUT HIGH SINS
+
+    public static void showTrueBadEnd() {// KEPT FEATHER BUT HIGH SINS
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
@@ -674,7 +683,7 @@ public class Endings {
         GameTools.typeText("\n\nThe Voice");
         GameTools.delay(0.3);
         GameTools.typeText(" - Metatron looms,");
-        GameTools.delay(0.3); 
+        GameTools.delay(0.3);
         GameTools.typeText(" not as a spirit,");
         GameTools.delay(0.3);
         GameTools.typeText(" but as a towering wall of judgment.", 60);
@@ -766,7 +775,7 @@ public class Endings {
         GameTools.clearScreen();
 
         System.out.println();
-        
+
         GameTools.delay(0.7);
         GameTools.typeText("As the white silence of the Null swallows you,");
         GameTools.delay(0.3);
@@ -806,7 +815,7 @@ public class Endings {
 
         flashback();
         resetForTrueEnding();
-        
+
         MainFile.runGameSequence();
     }
 
@@ -1024,14 +1033,13 @@ public class Endings {
         GameTools.typeText(" I have work to do.\"", 100);
         GameTools.delay(1);
 
-
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
         GameTools.typeText("====== TRUE ENDING: SEVERED SOVEREIGN ======");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
- 
+
         returnToMainMenu();
     }
 
@@ -1040,13 +1048,13 @@ public class Endings {
         // Reset all progress but keep Ed3 enabled
         GameState.setSinCounter(0);
         GameState.setHasFeather(false); // Reset the feather
-        GameState.setIfEd3(true);  // This is the key - enables the secret path        
+        GameState.setIfEd3(true); // This is the key - enables the secret path
         GameTools.typeText("Reality reshapes itself around you...");
         GameTools.typeText("Ed3 energy courses through your being!");
         GameTools.delay(2);
         GameTools.clearScreen();
     }
-    
+
     // Return to main menu
     private static void returnToMainMenu() {
         GameTools.typeText("\nReturning to main menu...");
@@ -1055,9 +1063,8 @@ public class Endings {
         // MainMenu.show();
     }
 
-
-    public static void flashback(){
-         GameTools.delay(1);
+    public static void flashback() {
+        GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
 
@@ -1140,13 +1147,13 @@ public class Endings {
         System.out.println();
 
         GameTools.delay(0.5);
-        GameTools.typeText("On the left stands Michael", 70); 
+        GameTools.typeText("On the left stands Michael", 70);
         GameTools.delay(0.5);
         GameTools.typeText(" -", 70);
         GameTools.delay(0.3);
         GameTools.typeText(" The Archangel of Death.", 100);
         GameTools.delay(0.5);
-        GameTools.typeText("\nHe holds the scales of judgment in one hand,"); 
+        GameTools.typeText("\nHe holds the scales of judgment in one hand,");
         GameTools.delay(0.3);
         GameTools.typeText(" and a greatsword in the other.", 50);
 
@@ -1308,7 +1315,6 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText("\nblazing with a fire that burns hotter than the stars.", 70);
 
-
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
@@ -1321,6 +1327,5 @@ public class Endings {
         GameTools.delay(2);
 
     }
-
 
 }
