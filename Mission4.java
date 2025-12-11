@@ -10,7 +10,7 @@ public class Mission4 {
         GameTools.clearScreen();
 
         GameTools.delay(1);
-        // Scene 1
+        //Scene 1
         GameTools.typeText("The path ahead does not so much end as it is severed.");
         GameTools.delay(0.7);
         GameTools.typeText("\nOne moment you are walking on the grey, ");
@@ -39,7 +39,7 @@ public class Mission4 {
         GameTools.delay(0.5);
         
 
-        // Scene 2
+        //Scene 2
         GameTools.pressToContinue(scanner);
         System.out.println();
         GameTools.delay(0.5);   
@@ -359,7 +359,7 @@ public class Mission4 {
         GameTools.delay(0.7);
         GameTools.typeText("\nA wave of realization hits you.");
         GameTools.delay(0.5);
-        GameTools.typeText("\n\nThis is it.");
+        GameTools.typeText("\n\nThis is it -");
         GameTools.delay(0.3);
         GameTools.typeText(" The passage to Heaven.", 80);
         GameTools.delay(0.7);

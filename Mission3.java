@@ -1,9 +1,11 @@
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
+
 public class Mission3 {
     private static Scanner scanner = new Scanner(System.in);
     
-    public static void start() {
+    //
+    public static boolean start() {
         GameTools.clearScreen();
         GameTools.typeText("===== The Last Circle =====");
         GameTools.delay(2.5);
@@ -40,10 +42,10 @@ public class Mission3 {
         System.out.println();
         
         // Scene 2
-        GameTools.typeText("You step through the door.\n");
+        GameTools.typeText("You step through the door.");
         GameTools.delay(0.7);
 
-        GameTools.typeText("The world shifts in a disorienting lurch as the heat and stink of the previous circle vanish.", 50);
+        GameTools.typeText("\n\nThe world shifts in a disorienting lurch as the heat and stink of the previous circle vanish.", 50);
         GameTools.delay(0.5);
 
         GameTools.typeText("\nReplaced by a silent plain of grey dust");
@@ -100,79 +102,81 @@ public class Mission3 {
         GameTools.delay(0.7);
 
         // Choice 1
-            System.out.println();
-            GameTools.typeText("<Unknown Demon:> \n");
-            GameTools.delay(0.2);
-            GameTools.typeText("\"Behold,");
-            GameTools.delay(0.3);
-            GameTools.typeText(" The Arbor Lucis\"", 70);
+        System.out.println();
+        GameTools.typeText("<Unknown Demon:> \n");
+        GameTools.delay(0.2);
+        GameTools.typeText("\"Behold,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" The Arbor Lucis\"", 70);
 
-            GameTools.delay(0.7);
-            GameTools.typeText("\n\n\"This fruit purges corruption,");
-            GameTools.delay(0.3);
-            GameTools.typeText(" a reset for tainted existence.");
-            GameTools.delay(0.5);
-            GameTools.typeText("\nI am Mephis,", 70);
-            GameTools.typeText(" its curator.\"", 70);
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n\"This fruit purges corruption,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" a reset for tainted existence.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nI am Mephis,", 70);
+        GameTools.typeText(" its curator.\"", 70);
 
-            GameTools.delay(1.5);
+        GameTools.delay(1.5);
 
-            GameTools.typeText("\n\nMephis shifts his gaze to you...", 60);
-            GameTools.typeText("\nNo.");
-            GameTools.delay(0.7);
-            GameTools.typeText("\nINSIDE of you.", 60);
+        GameTools.typeText("\n\nMephis shifts his gaze to you...", 60);
+        GameTools.typeText("\nNo.");
+        GameTools.delay(0.7);
+        GameTools.typeText("\nINSIDE of you.", 60);
 
-            GameTools.delay(1.5);
+        GameTools.delay(1.5);
 
 
-            GameTools.typeText("\n\n<Mephis:> \n");
-            GameTools.delay(0.5);
-            GameTools.typeText("\"You are running on corrupted logic.");
-            GameTools.delay(0.5);
-            GameTools.typeText("\nI see the fatal error pulsing beneath your skin...\"");
-            GameTools.delay(0.7);
-            GameTools.typeText("\n\"If only there were a debugger for such a primitive model.", 70);
-            GameTools.delay(1);
-            GameTools.typeText(" Oh, wait.\"");
+        GameTools.typeText("\n\n<Mephis:> \n");
+        GameTools.delay(0.5);
+        GameTools.typeText("\"You are running on corrupted logic.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nI see the fatal error pulsing beneath your skin...\"");
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\"If only there were a debugger for such a primitive model.", 70);
+        GameTools.delay(1);
+        GameTools.typeText(" Oh, wait.\"");
 
-            GameTools.delay(0.7);
+        GameTools.delay(0.7);
 
-            GameTools.typeText("\n\nHe produces the fruit,");
-            GameTools.delay(0.3);
-            GameTools.typeText(" holding it out carelessly.");
+        GameTools.typeText("\n\nHe produces the fruit,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" holding it out carelessly.");
 
-            GameTools.delay(0.7);
+        GameTools.delay(0.7);
 
-            GameTools.typeText("\n\n\"THIS clears the crash.", 60);
-            GameTools.delay(0.3);
-            GameTools.typeText("\nA factory reset.");
-            GameTools.delay(0.5);
-            GameTools.typeText("\nIt is 'sufficient' to keep you functioning.\"", 60);
+        GameTools.typeText("\n\n\"THIS clears the crash.", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText("\nA factory reset.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nIt is 'sufficient' to keep you functioning.\"", 60);
 
-            GameTools.delay(0.7);
+        GameTools.delay(0.7);
 
-            GameTools.typeText("\n\nHe then holds up the feather,");
-            GameTools.delay(0.3);
-            GameTools.typeText(" his eyes narrowing intensely.");
+        GameTools.typeText("\n\nHe then holds up the feather,");
+        GameTools.delay(0.3);
+        GameTools.typeText(" his eyes narrowing intensely.");
 
-            GameTools.delay(0.7);
+        GameTools.delay(0.7);
 
-            GameTools.typeText("\n\n\"But this is the update.");
-            GameTools.delay(0.3);
-            GameTools.typeText(" You could walk away merely 'repaired,'");
-            GameTools.delay(0.5);
-            GameTools.typeText(" remaining the glitch you are...");
-            GameTools.delay(0.5);
-            GameTools.typeText("\n\nBut why choose to be obsolete...", 70);
-            GameTools.delay(0.5);
-            GameTools.typeText(" When you can be rewritten?\"", 70);
+        GameTools.typeText("\n\n\"But this is the update.");
+        GameTools.delay(0.3);
+        GameTools.typeText(" You could walk away merely 'repaired,'");
+        GameTools.delay(0.5);
+        GameTools.typeText(" remaining the glitch you are...");
+        GameTools.delay(0.5);
+        GameTools.typeText("\n\nBut why choose to be obsolete...", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText(" When you can be rewritten?\"", 70);
 
-            GameTools.delay(1.3);
+        GameTools.delay(1.3);
 
-            GameTools.typeText("\n\n\"I won't reset you only to leave you obsolete.\"", 60);
+        GameTools.typeText("\n\n\"I won't reset you only to leave you obsolete.\"", 60);
 
-            GameTools.delay(0.7);
+        GameTools.delay(0.7);
+        //Loops until valid
         boolean choiceCompleted = false;
+        
         while (!choiceCompleted) {
             GameTools.typeText("\n\n\"So, choose:");
             GameTools.typeText("\nAccept both the upgrade and the purge to continue,", 60);
@@ -184,64 +188,71 @@ public class Mission3 {
             GameTools.typeText("\n- Status Effect Taint: " + GameState.hasStatusEffectTaint());
             GameTools.typeText("\n- Sin Counter: " + GameState.getSinCounter());
             
-            // 1. Display only the first two options
+            //2 options first
             GameTools.typeText("\nChoose:");
             GameTools.typeText("\n[1] \"Yes. I will take the feather and the fruit.\"");
             GameTools.typeText("\n[2] \"No. I will accept neither.\"");
             System.out.print("\nEnter your choice: ");
             
-            // 2. Setup the Thread-Safe Flag
-            // This allows the timer and the main program to talk to each other
+            //Boolean that doesnt freak out when being read by 2 things
             AtomicBoolean hasAnswered = new AtomicBoolean(false);
 
-            // 3. Create the Timer Thread (15 Seconds)
+            // Create the Timer Thread (15 Seconds)
             Thread secretTimer = new Thread(() -> {
                 try {
-                    // 15 seconds
+                    // wait 15 seconds
                     Thread.sleep(15000); 
 
-                    // If user hasn't typed yet, show the secret option
+                    //havent typed for 15 secs - show the next option
                     if (!hasAnswered.get()) {
                         GameTools.typeText("\n\n[3] \"No. I only want the fruit.\"");
-                        System.out.print("\nEnter your choice: "); // Re-print prompt
+                        System.out.print("\nEnter your choice: ");
                     }
                 } catch (InterruptedException e) {
-                    // Thread interrupted (user answered early), do nothing
+                   
                 }
             });
 
             // Start the timer in the background
             secretTimer.start();
-
-            // 4. Input
+     
             String choice = scanner.nextLine();
 
-            // 5. Stop timer if answered
+            //Stop timer if answered
             hasAnswered.set(true);
             secretTimer.interrupt();
 
             switch (choice) {
-                case "1":
+                case "1" -> {
                     handleChoice1();
-                    choiceCompleted = true; // Assumes you have this boolean controlling a loop
-                    break;
-                case "2":
+                    choiceCompleted = true; //Loop ends, proceeds to return true
+                }
+                case "2" -> {
                     handleChoice2();
-                    return; // Return to Mission 1
-                case "3":
-                    // They can type "3" even before the text appears!
-                    choiceCompleted = handleChoice3(); 
-                    break;
-                default:
+                    //Return false immediately to returning false means unable to progress to mission 4
+                    return false; 
+                }
+                case "3" -> {
+                    // handleChoice3 returns boolean: true if solved, false if died
+                    boolean result = handleChoice3();
+                    if (result) {
+                        choiceCompleted = true; // Solved! Continue.
+                    } else {
+                        return false; // false
+                    }
+                }
+                default -> {
                     GameTools.typeText("Invalid choice. Please enter 1, 2, or 3.");
-                    // Small delay for error message reading
                     try { Thread.sleep(2000); } catch (InterruptedException e) {} 
+                }
             }
         }
         
+        //Choice completed successfully
         GameTools.typeText("\nMission 3 completed!");
         GameState.displayState();
         GameTools.pressToContinue(scanner);
+        return true; // Survived Mission 3
     }
     
     private static void handleChoice1() {
@@ -263,7 +274,7 @@ public class Mission3 {
         GameTools.typeText(" but now carry the seed of your own downfall.", 60);
         GameTools.delay(0.7);
         GameState.setStatusEffectTaint(false);
-        GameState.setHasFeather(true); // NOW you get the feather!
+        GameState.setHasFeather(true); //feather is true
         GameTools.typeText("\n*The taint has been cleansed from your spirit.*");
         GameTools.typeText("\n*A mystical feather materializes and attaches to you.*");
 
@@ -295,7 +306,7 @@ public class Mission3 {
         GameTools.typeText("\n\nYour strength fails you. ");
         GameTools.delay(0.5);
         GameTools.typeText("The black taint spreads, ");
-        GameTools.delay(0.3);
+        GameTools.delay(    0.3);
         GameTools.typeText("freezing you from inside out.");
         GameTools.delay(0.5);
         GameTools.typeText("\nYou collapse,");
@@ -303,14 +314,11 @@ public class Mission3 {
         GameTools.typeText(" and your light extinguishes...", 60);
         GameTools.delay(0.5);
         
-        // Reset game state and return to Mission 1
-        GameState.resetGame();
         GameTools.typeText("\n\nDeconceptualizing...", 90);
         GameTools.delay(2);
-        MainFile.startNewGame();
     }
     
-    private static boolean handleChoice3() {//RIDDLEEE
+    private static boolean handleChoice3() {
         GameTools.delay(0.5);
         System.out.println();
 
@@ -363,7 +371,7 @@ public class Mission3 {
             
             if (GameTools.checkRiddleAnswer(answer, riddleKeywords)) {
                 riddleSolved = true;
-                if (attempts == 0) {
+                if (attempts == 0) {//Correct 1st try
 
                     System.out.println();
                     GameTools.delay(1);
@@ -397,7 +405,7 @@ public class Mission3 {
                     
                     GameState.setStatusEffectTaint(false);
                     // hasFeather remains false (no change)
-                } else {
+                } else {//2nd attempt correct
 
                     System.out.println();
                     GameTools.delay(1);
@@ -431,8 +439,7 @@ public class Mission3 {
                 GameTools.pressToContinue(scanner);
             } else {
                 attempts++;
-                if (attempts == 1) {
-                    //Wrong 1
+                if (attempts == 1) {//1st attempt wrong
                     System.out.println();
                     GameTools.delay(1);
 
@@ -453,7 +460,7 @@ public class Mission3 {
                     GameTools.typeText("\n\n\"You have one more attempt to grasp the truth of this place.\"", 60);
                     GameTools.delay(0.5);
                     GameTools.typeText("\n(Hint: D__BT)");
-                } else {
+                } else {//2nd attempt wrong - death
                     System.out.println();
                     GameTools.delay(1);
 
@@ -477,20 +484,21 @@ public class Mission3 {
                     GameTools.delay(0.5);
                     GameTools.typeText("\n\n\"Our discourse is over.\"", 60);
                     
-                    // Reset and new game
+                    // Reset variables
                     GameState.resetGame();
+                    
                     System.out.println();
                     GameTools.delay(2);
                     GameTools.typeText("\nData lost...", 100);
                     GameTools.delay(2);
                     GameTools.typeText("\nRecovering...", 90);
-                    GameState.resetGame();
-                    MainFile.startNewGame();
-                    return false; // Mission failed, don't continue Mission 3
+                    
+                    //Return false
+                    return false; 
                 }
             }
         }
-        //
+        
         return true; // Riddle solved, continue Mission 3
     }
 }

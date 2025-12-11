@@ -8,7 +8,7 @@ public class GameState {
     // HOW TO USE: Get or set the player's name
     // GET: String name = GameState.getPlayerName();
     // SET: GameState.setPlayerName("New Name");
-    private static String playerName = "Luce"; // Default name
+    private static String playerName = "Luce"; // Default name - Hints to lucifer lol
     
     // HOW TO USE: Track and modify sin count
     // GET: int sins = GameState.getSinCounter();

@@ -9,8 +9,8 @@ public class Mission1 {
       GameTools.delay(2.5);
       
       
-      GameTools.clearScreen();  
-      
+      GameTools.clearScreen();
+      GameTools.delay(1);
       // Scene 1
       if (GameState.isIfEd3()) {
          GameTools.typeText("You awaken in the endless void.");
@@ -21,7 +21,6 @@ public class Mission1 {
          GameTools.typeText(" Standard issue oblivion.");
 
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nBefore you,"); 
          GameTools.delay(0.3);
          GameTools.typeText(" a vast black hole looms...");
@@ -109,9 +108,48 @@ public class Mission1 {
       
       // Scene 2
       if (GameState.isIfEd3()) {
-         GameTools.typeText("You feel a familiar energy coursing through you...");
-      
-      
+         GameTools.typeText("Then,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" right on queue - ");
+         GameTools.delay(0.3);
+         GameTools.typeText(" The voice,");
+         GameTools.delay(0.3);
+         GameTools.typeText("\nParting the silence of the void and speaking directly into your mind.");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nExactly like the first instance,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" it sounds perfect...");
+         GameTools.delay(0.5);
+         GameTools.typeText(" Too perfect.");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\n<Voice:>");
+         GameTools.delay(0.3);
+         GameTools.typeText("\n\"You have awakened,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" fledgeling.\"");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\n\"Come,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" your journey awaits.\"");
+
+         GameTools.delay(0.7);
+
+         GameTools.typeText("\n\nThe voice rings hollow -");
+         GameTools.delay(0.3);
+         GameTools.typeText(" tinny and rehearsed.");
+         GameTools.delay(0.5);
+         GameTools.typeText("\nYou have heard this a thousand times,");
+         GameTools.delay(0.3);
+         GameTools.typeText(" you are not a newborn.");
+         GameTools.delay(0.3);
+         GameTools.typeText("\n\nYou are the oldest thing here...", 70);
+            
       } else {
       // Scene 2
          GameTools.typeText("Then, ");GameTools.delay(0.2);
@@ -146,11 +184,7 @@ public class Mission1 {
       
       GameTools.pressToContinue(scanner);//
       System.out.println();
-      //Scene 3
-      if (GameState.isIfEd3()) {
-         GameTools.typeText("You feel a familiar energy coursing through you...");
       
-      } else {  
       // Scene 3
          GameTools.typeText("[0] \"Journey?\"\n[Enter to Continue]");
          scanner.nextLine();
@@ -179,34 +213,28 @@ public class Mission1 {
          GameTools.delay(1);
          GameTools.typeText("\"Hell.\"", 100);GameTools.delay(0.5);
          GameTools.delay(2); // long pause
-         GameTools.typeText("\n\n");
-         GameTools.delay(1);
-      }
+
+         if(GameState.isIfEd3()){
+
+            GameTools.typeText("\n\nHoly yappathon...\n\n");
+
+         }else{
+            
+            System.out.println();
+            System.out.println();
+         }
       
-      
-      
+      //Name Scene
       GameTools.typeText("<Voice:>\n");
       GameTools.delay(0.7);
       GameTools.typeText("Before proceeding... ");
       GameTools.delay(1.5);
       GameTools.typeText("Do you wish to name yourself?", 70);GameTools.delay(0.5);
       System.out.println();
-      // Simple char input for yes/no
-      char yn;
-      while (true) {
-         System.out.print("[Y] \"Yes.\" \n[N] \"I require no name.\"\n: ");
-         yn = scanner.nextLine().charAt(0);
-            
-         switch (Character.toUpperCase(yn)) {
-            case 'Y':
-            case 'N':
-               break;
-            default:
-               System.out.println("Invalid input! Please enter Y or N.");
-               continue;
-         }
-         break;
-      }
+      
+     
+      System.out.print("[Y] \"Yes.\" \n[N] \"I require no name.\"\n");
+      char yn = GameTools.getyn(scanner);
         
       if (yn == 'Y' || yn == 'y') {
          GameTools.typeText("\n\"Yes.\"\n\n", 75);
@@ -252,7 +280,8 @@ public class Mission1 {
       GameTools.delay(2);
       GameTools.typeText("\n\n");
       GameTools.delay(0.7);
-   
+      
+      //Scene 4
       GameTools.typeText("<Voice:>\n");
       GameTools.delay(1);
       GameTools.typeText("" + GameState.getPlayerName() + ", ");GameTools.delay(0.2);
@@ -270,9 +299,40 @@ public class Mission1 {
       GameTools.typeText("\n");
       GameTools.typeText("I cannot be your guide... ");
       GameTools.delay(1.5);
-      GameTools.typeText("\n\n");
+      
+
+      if(GameState.isIfEd3()){
+         System.out.println();
+         GameTools.typeText("");
+         GameTools.typeText("\n[Skip?]\n");
+         char yesn = GameTools.getyn(scanner);   
+
+         if(Character.toUpperCase(yesn) == 'Y'){
+               runZoneout();
+         }else{
+            runAdvice();
+         }
+      }else{
+         runAdvice();
+      }
+
+      
+      GameTools.pressToContinue(scanner);
+        
+        // Check if Ed3 is true and run Unnamed mission
+      if (GameState.isIfEd3()) {
+         System.out.println();
+         GameTools.typeText("A strange energy pulls you elsewhere...");
+         GameTools.typeText(" The fabric of reality shifts around you...\n");
+         GameTools.delay(2);
+      }
+        
+   }
+
+   private static void runAdvice(){
+
+      System.out.println();
       GameTools.delay(0.7);
-   
       GameTools.typeText("Such is the situation - ");
       GameTools.delay(0.5);
       GameTools.typeText("I shall give three absolute commandments to light your journey:\n\n");GameTools.delay(0.5);
@@ -299,20 +359,62 @@ public class Mission1 {
       GameTools.typeText("Their suffering is divine justice and it has been served.\n");GameTools.delay(0.5);
       GameTools.delay(1);
       GameTools.typeText("Your eyes remain only on the road.", 100);GameTools.delay(0.5);
-      
-      //
-      
-      //GameState.displayState();
-      GameTools.pressToContinue(scanner);
-        
-        // Check if Ed3 is true and run Unnamed mission
-      if (GameState.isIfEd3()) {
-         System.out.println();
-         GameTools.typeText("A strange energy pulls you elsewhere...");
-         GameTools.typeText("The fabric of reality shifts around you...\n");
-         GameTools.delay(2);
-         Unnamed.start();
-      }
-        
    }
+
+      private static void runZoneout(){
+      GameTools.delay(0.7);
+      System.out.println();
+      GameTools.typeText("You zone out of the exposition dump and finally.");
+      GameTools.delay(0.5);
+      GameTools.typeText("\nThe voice stops -");
+      GameTools.delay(0.3);
+      GameTools.typeText(" It expects you to walk into the next gate,");
+      GameTools.delay(0.3);
+      GameTools.typeText(" to play the game.", 60);
+
+      GameTools.delay(0.7);
+
+      GameTools.typeText("\n\nYou stare at the 'road' it mentioned,");
+      GameTools.delay(0.3);
+      GameTools.typeText(" that blazing ring of fire...");
+      GameTools.delay(0.5);
+      GameTools.typeText(" You really don't have the energy for this.", 60);
+
+      GameTools.delay(0.7);
+
+      GameTools.typeText("\n\nYou reach into your wings and take out one of the plumes,");
+      GameTools.delay(0.3);
+      GameTools.typeText(" It feels cold against your skin.");
+      GameTools.delay(0.5);
+      GameTools.typeText("\nReal -");
+      GameTools.delay(0.3);
+      GameTools.typeText(" Unlike everything else here.", 60);
+
+      GameTools.delay(0.7);
+
+      GameTools.typeText("\n\nThe feather reveals a tear in the curtain.");
+      GameTools.delay(0.5);
+      GameTools.typeText("\nA passageway void of color;");
+      GameTools.delay(0.5);
+      GameTools.typeText(" Just a dull,", 60);
+      GameTools.delay(0.3);
+      GameTools.typeText(" transparent gray.", 60);
+
+      GameTools.delay(0.7);
+
+      GameTools.typeText("\n\nThe voice says nothing -");
+      GameTools.delay(0.3);
+      GameTools.typeText("\nWhy would it say anything else?");
+      GameTools.delay(0.5);
+      GameTools.typeText("\nIts just a puppet after all...", 60);
+
+      GameTools.delay(0.7);
+
+      GameTools.typeText("\n\nYou turn your back on the black hole");
+      GameTools.delay(0.3);
+      GameTools.typeText(" and the world disappears.");
+      GameTools.delay(0.5);
+      GameTools.typeText("\n\nAs you step into the colorless void.", 60);
+   }
+
 }

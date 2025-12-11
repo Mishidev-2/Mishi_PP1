@@ -23,7 +23,7 @@ public class GameTools {
    public static void typeText(String text) {
       typeText(text, 1);
    }
-    // Adjustable speed - just change the number for speed in milliseconds
+    // just change the number for speed in milliseconds
    public static void typeText(String text, int speed) {
       for(char c : text.toCharArray()) {
          System.out.print(c);
@@ -34,6 +34,25 @@ public class GameTools {
       }
    }
 
+
+   //YN choices
+   //Usecase: 'choice' char GameTools.getyn(scanner);
+
+   public static char getyn(Scanner scanner) {
+      char input;
+      while (true) {
+         System.out.print("[Y/N]: ");
+         String line = scanner.nextLine().trim();
+
+         if (!line.isEmpty()) {
+               input = Character.toUpperCase(line.charAt(0));
+               if (input == 'Y' || input == 'N') {
+                  return input;
+               }
+         }
+         System.out.println("Invalid input. Please type 'Y' or 'N'.");
+      }
+   }
 
 
     // Riddle

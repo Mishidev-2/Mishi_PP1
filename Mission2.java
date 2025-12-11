@@ -13,7 +13,7 @@ public class Mission2 {
          GameTools.delay(2.5);
          GameTools.clearScreen();
       
-         // LScene 1
+//LScene 1
          GameTools.delay(1);
       
          GameTools.typeText("A heavy, ");
@@ -31,7 +31,8 @@ public class Mission2 {
          GameTools.typeText("seamless rock that stretches into the gloom.\n\n");
          GameTools.delay(0.7);
       
-         GameTools.typeText("You wait, ");GameTools.delay(0.2);
+         GameTools.typeText("You wait, ");
+         GameTools.delay(0.2);
          GameTools.typeText("expecting the familiar Voice to dictate your next move.\n");
          GameTools.delay(1);
          GameTools.typeText("It offers no counsel. ");
@@ -39,7 +40,7 @@ public class Mission2 {
          GameTools.typeText("The silence is its own kind of instruction.", 50);
          GameTools.delay(0.5);
       
-         // LScene 2
+//LScene 2
          GameTools.pressToContinue(scanner);
          System.out.println();
          GameTools.delay(0.5);
@@ -65,7 +66,7 @@ public class Mission2 {
          GameTools.typeText("It is not your task to comfort the condemned, ");GameTools.delay(0.2);
          GameTools.typeText("even if it is a mere child.", 100);GameTools.delay(0.5);
          
-         // LChoice 1 - Sin counter increment
+// LChoice 1 - Sin counter increment
          System.out.println();
          GameTools.delay(1);
          GameTools.typeText("\nChoose...");
@@ -75,25 +76,11 @@ public class Mission2 {
          GameTools.typeText("\n[2] Help The Child");
          GameTools.delay(0.5);
          GameTools.typeText("\nEnter choice (1 or 2): ");
+
          String choice = scanner.nextLine();
          System.out.println();
-         switch (choice) {
-            case "1" -> {
-                //NOsin
-                GameTools.delay(0.5);
-                
-                GameTools.typeText("The soul continues to cry - ");
-                GameTools.delay(0.5);
-                GameTools.typeText("wandering and lost.\n");GameTools.delay(0.5);
-                GameTools.delay(0.7);
-                
-                GameTools.typeText("It may never find its way...");
-                GameTools.delay(0.5);
-                GameTools.typeText("\n\n");
-                GameTools.delay(1);
-                GameTools.typeText("Forever.", 100);GameTools.delay(0.5);
-              }
-            
+
+         switch (choice) { 
             case "2" -> {
                 //Sinpath
                 GameState.incrementSinCounter();
@@ -109,12 +96,18 @@ public class Mission2 {
                 GameTools.typeText("wrapping around the soul and pulling it gently into the depths.");GameTools.delay(0.5);
               }
             default -> {
-                GameTools.typeText("Invalid choice.");
-                GameTools.delay(0.5);
+               if(!choice.equals("1")){
+                  GameTools.typeText("Invalid choice.");
+                  GameTools.delay(0.5);
+                  GameTools.typeText("\nIgnoring by default");
+                  GameTools.delay(0.5);
+               }
+
                 System.out.println();
                 GameTools.typeText("The soul continues to cry - ");
                 GameTools.delay(0.5);
-                GameTools.typeText("wandering and lost.\n");GameTools.delay(0.5);
+                GameTools.typeText("wandering and lost.\n");
+                GameTools.delay(0.5);
                 GameTools.delay(0.7);
                 
                 GameTools.typeText("It may never find its way...");
@@ -123,12 +116,13 @@ public class Mission2 {
                 GameTools.delay(1);
                 GameTools.typeText("\n");
                 GameTools.delay(1);
-                GameTools.typeText("Forever.", 100);GameTools.delay(0.5);
+                GameTools.typeText("Forever.", 100);
+                GameTools.delay(0.5);
               }
          }         
          GameTools.typeText("\n\nSin counter: " + GameState.getSinCounter());         
       
-         // LScene 3
+// LScene 3
          GameTools.pressToContinue(scanner);
          System.out.println();
          GameTools.delay(0.5);
@@ -156,7 +150,7 @@ public class Mission2 {
          System.out.println();
          GameTools.delay(0.5);
          
-         //LChoice 2
+//LChoice 2 - Riddle Setup
          GameTools.typeText("\n<Gatekeeper?>\n");
          GameTools.delay(1);
          GameTools.typeText("Hushh, ");GameTools.delay(0.2);
@@ -188,7 +182,8 @@ public class Mission2 {
       
       
          
-         // LChoice 2 - Riddle game
+// LChoice 2 - Riddle game
+
          String[] riddle1Keywords = {"stillborn", "unborn", "stillborn child", "unborn child", "miscarriage"};
          boolean riddleSolved = false;
          
@@ -203,10 +198,12 @@ public class Mission2 {
             GameTools.typeText("\n");
             GameTools.typeText("and the memory of a name never spoken.\n\n");GameTools.delay(0.5);
             GameTools.delay(1.5);
+
             GameTools.typeText("What am I?\"\n: ", 100);GameTools.delay(0.5);
             String answer = scanner.nextLine();
             
             if (GameTools.checkRiddleAnswer(answer, riddle1Keywords)) {
+               //Succeed
                GameTools.typeText("\n\"Correct... ");
                GameTools.delay(1);
                GameTools.typeText("though few speak it aloud.\n");GameTools.delay(0.5);
@@ -222,7 +219,9 @@ public class Mission2 {
                GameTools.delay(1);
                GameTools.typeText("forever crying for a world that never heard them.\"", 100);GameTools.delay(0.5);
                riddleSolved = true;
+            
             } else {
+               //Fail
                GameTools.typeText("\nThe gatekeeper's eyes dim.\n");GameTools.delay(0.5);
                GameTools.delay(0.5);
                GameTools.typeText("The child's cry comes hither - ");
@@ -258,7 +257,7 @@ public class Mission2 {
                GameTools.delay(1);
                GameTools.typeText("heavier than before.", 100);GameTools.delay(0.5);
                
-               break;
+               break;//goes directly to if!riddleSolved
             }
          }
          
@@ -268,10 +267,10 @@ public class Mission2 {
             GameTools.delay(2);
             GameTools.typeText(" Reforming...");
             GameTools.delay(2);
-            continue;
+            continue;//Go back to the start();
          }
          
-         // If we get here, continue with Mission 2
+         // If we get here, continue with Mission 2 - gluttony
          missionCompleted = continueMission2();
       }
       
@@ -280,9 +279,8 @@ public class Mission2 {
    }
    
    private static boolean continueMission2() {
-      // GScene 1 - State something changing scene maybe even clear screen use it here 
+// GScene 1
       GameTools.clearScreen();
-      
       GameTools.delay(1);
    
       GameTools.typeText("Clearing the challenge, ");GameTools.delay(0.2);
@@ -314,7 +312,7 @@ public class Mission2 {
       
       GameTools.pressToContinue(scanner);
       
-      // GScene 2
+// GScene 2
       GameTools.typeText("\n");
       GameTools.delay(0.7);
    
@@ -336,7 +334,8 @@ public class Mission2 {
    
       GameTools.typeText("It gurgles, ");GameTools.delay(0.2);
       GameTools.typeText("voice a wet bubble from the muck.", 100);GameTools.delay(0.5);
-      // GChoice 1
+
+// GChoice 1
       System.out.println();
       GameTools.delay(1);
       GameTools.typeText("\nChoose...");
@@ -347,6 +346,7 @@ public class Mission2 {
       GameTools.delay(0.5);
       GameTools.typeText("\nEnter choice (1 or 2): ");      
       String gChoice = scanner.nextLine();
+
       switch (gChoice) {
          case "1" -> {
              //status effect
@@ -395,8 +395,8 @@ public class Mission2 {
              GameTools.delay(0.5);
              GameTools.typeText("\n\n\"Liars!");
              GameTools.delay(0.5);
-             GameTools.typeText("Demons in light's clothing!");
-             GameTools.typeText("Your mercy is a disease!\"");
+             GameTools.typeText(" Demons in light's clothing!");
+             GameTools.typeText(" Your mercy is a disease!\"");
              GameTools.delay(0.7);
              
              GameTools.typeText("\n\nThe soul condemns you,");GameTools.delay(0.3);
@@ -414,14 +414,19 @@ public class Mission2 {
              GameTools.delay(0.3);
              GameTools.typeText("Wither", 100);
            }
-         default -> GameTools.typeText("Invalid choice. Defaulting to option 1.");
+         default -> {
+               GameTools.typeText("Invalid choice. The indecision invites the taint regardless.");
+               GameState.setStatusEffectTaint(true);
+               GameTools.typeText("\n\nStatus effect: Wither");
+         }
+
       }
       
       GameTools.typeText("\n\nSin counter: " + GameState.getSinCounter());
    
       GameTools.pressToContinue(scanner);
       
-      // GScene 3
+// GScene 3
       System.out.println();
       GameTools.delay(0.5);
       
@@ -575,7 +580,7 @@ public class Mission2 {
                      GameTools.typeText("\n\nYou wither away and join the Gluttonous in their endless supper.", 70);
                      GameTools.delay(1);
                      GameState.setSinCounter(0);
-                     return false;
+                     return false;//start() loop to repeat from the beginning
                  }
              }//
          }

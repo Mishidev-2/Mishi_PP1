@@ -5,10 +5,10 @@ public class MainFile {
     
    public static void main(String[] args) {
       boolean running = true;
-        
+      //TITLE CARD ======The Broken Paradigm======
       while (running) {
          GameTools.clearScreen();
-         System.out.println("===== MAIN MENU =====");
+         System.out.println("===== THE BROKEN PARADIGM =====");
          System.out.println("1. New Game");
          System.out.println("2. Mission Select - Debug");
          System.out.println("3. Quit");
@@ -20,7 +20,7 @@ public class MainFile {
             case "1" -> {
                 // New Game: Reset to default and start from Mission 1
                 GameState.resetGame();
-                startNewGame();
+                runGameSequence();
               }
             case "2" -> {
                 GameState.resetGame();
@@ -38,22 +38,25 @@ public class MainFile {
       }
       scanner.close();
    }
-    
-   public static void startNewGame() {//Public to call on during mission 3
-        // Start with Mission 1 and progress through missions naturally
-      Mission1.start();
-      
-      // Check if True End was unlocked after Mission 1
-      if (GameState.isIfEd3()) {
-         // If True End unlocked, go to secret mission instead of Mission 2
-         Unnamed.start();
-      } else {
-         // Otherwise continue normal progression
-         Mission2.start();
-         Mission3.start();
-         Mission4.start();
-      }
+
+   public static void runGameSequence() {
+    Mission1.start();
+
+    if(GameState.isIfEd3()){
+      Unnamed.start();
+    } else {
+      Mission2.start();
+      boolean survivedM3 = Mission3.start();
+
+        if(!survivedM3){
+          return;
+        }
+
+        Mission4.start();
+
+    }
    }
+
     
    private static void missionSelect() {
       GameTools.clearScreen();
@@ -80,6 +83,7 @@ public class MainFile {
               Mission2.start();
               Mission3.start();
               Mission4.start();
+              
             }
            }
          case "2" -> {
@@ -116,13 +120,7 @@ public class MainFile {
         
         // Reset game state first
       GameState.resetGame();
-        
-        // Set name
-      GameTools.typeText("Enter your name: ");
-      String name = scanner.nextLine();
-      if (!name.trim().isEmpty()) {
-         GameState.setPlayerName(name);
-      }  
+         
         // Set ifEd3
       GameTools.typeText("\nSet ifEd3 status:");
       System.out.println("\n1. ifEd3 = true");
@@ -132,7 +130,6 @@ public class MainFile {
       GameState.setIfEd3(edChoice.equals("1"));
         
       GameTools.typeText("\nConfiguration complete!");
-      GameTools.typeText("\nName: " + GameState.getPlayerName());
       GameTools.typeText("\nifEd3: " + GameState.isIfEd3());
       GameTools.typeText("\n\nConceptualizing...");
       GameTools.delay(2);
@@ -154,7 +151,6 @@ public class MainFile {
         
         // Mission 2 defaults
       GameState.setStatusEffectTaint(false);
-      GameState.setIfEd3(false); // Default to false for Mission 2 - Useless for M2
         
       GameTools.typeText("\nConfiguration complete!");
       GameTools.typeText("\nName: " + GameState.getPlayerName());
@@ -203,7 +199,6 @@ public class MainFile {
         // Mission 3 defaults
       GameState.setStatusEffectTaint(true); // Mission 3 starts with taint active
       GameState.setHasFeather(false); // Mission 3 starts WITHOUT feather
-      GameState.setIfEd3(false); // Default to false for Mission 3
     
       GameTools.typeText("\nConfiguration complete!");
       GameTools.typeText("\n\nName: " + GameState.getPlayerName());
@@ -242,7 +237,7 @@ public class MainFile {
          sinCount = 0;
       }
       GameState.setSinCounter(sinCount);
-    //
+
     // Set feather status
       GameTools.typeText("\nSet feather status:");
       GameTools.typeText("\n[1] Has Feather = true");
@@ -253,7 +248,6 @@ public class MainFile {
     
     // Mission 4 defaults
       GameState.setStatusEffectTaint(true); // Mission 4 has taint active
-      GameState.setIfEd3(false); // Default to false for Mission 4
     
       GameTools.typeText("\nConfiguration complete!");
       GameTools.typeText("\nName: " + GameState.getPlayerName());

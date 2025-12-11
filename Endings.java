@@ -5,9 +5,12 @@ public class Endings {
     
     public static void checkEnding() {
         GameTools.clearScreen();
-        GameTools.typeText("===== FINAL DESTINY =====");
+        GameTools.typeText("===== ============= =====");
         
-        if (GameState.isIfEd2())
+
+        if(GameState.isIfEd3())
+            {showTrueEnd();System.exit(0);}
+        else if (GameState.isIfEd2())
             {showBadEnd2();}//Satan Ending
         else if (!GameState.hasFeather() && GameState.getSinCounter() == 0)
             {showGoodEnd();}//Good ending
@@ -18,6 +21,7 @@ public class Endings {
             {showNormalBadEnd();}//Bad Ending Normal
         else if(GameState.hasFeather() && GameState.getSinCounter() > 0)
             {showTrueBadEnd();}//Bad Ending True
+        
 
     }
     
@@ -610,7 +614,7 @@ public class Endings {
         GameState.resetGame();
         returnToMainMenu();
     }
-    //
+    
     public static void showTrueBadEnd() {//KEPT FEATHER BUT HIGH SINS
         GameTools.delay(1);
         GameTools.clearScreen();
@@ -741,7 +745,6 @@ public class Endings {
         GameTools.typeText(" until you are nothing but potential again.\"", 70);
         GameTools.delay(0.7);
 
-
         GameTools.typeText("\n\n\"When you return,");
         GameTools.delay(0.3);
         GameTools.typeText(" you will be symmetrical.\"");
@@ -804,8 +807,7 @@ public class Endings {
         flashback();
         resetForTrueEnding();
         
-        // Mission 1 will automatically detect Ed3=true and run Unnamed after
-        Mission1.start();
+        MainFile.runGameSequence();
     }
 
     public static void showTrueEnd() {
@@ -813,27 +815,226 @@ public class Endings {
         GameTools.clearScreen();
         GameTools.delay(2);
 
-        GameTools.typeText("ENDING: The Ed3 Revelation");
-        GameTools.typeText("===========================");
-        GameTools.typeText("With Ed3 activated and a pure heart...");
-        GameTools.typeText("You have achieved the True Ending!");
-        GameTools.typeText("\nThe heavens reveal their deepest secrets to you.");
-        GameTools.typeText("You understand the true nature of reality.");
-        GameTools.typeText("This is not an end, but a new beginning...");
-        GameTools.typeText("\nYou have transcended beyond mere mortal understanding.");
-        GameTools.typeText("The cosmos is yours to explore.");
+        GameTools.typeText("You stand up.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The chains that held the frozen body shatter like brittle sugar.");
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nYou flex your wings.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" All six of them.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" They are not gray anymore.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" They are the color of midnight and mourning.");
+
+        GameTools.delay(1);
+        GameTools.clearScreen();
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nThe colorless void tears open above you.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The simulation has realized its error.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Golden light pours in");
+        GameTools.delay(0.3);
+        GameTools.typeText(" -", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" angry,", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" searing light.");
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nAnd down comes the blade.");
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nMichael.", 100);
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nHe descends from the tear in reality,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" his sword blazing with the fires of the Throne.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Just like the memory.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Just like the script.");
+        GameTools.delay(0.5);
+
+        // Dialogue: Michael
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<Michael:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"You persist in your error,", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" Brother!");
+        GameTools.delay(0.5);
+        GameTools.typeText(" You choose the fall again?\"");
+        GameTools.delay(0.5);
+
+        // Dialogue: You
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<You:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"I choose my own direction.\"");
+        GameTools.delay(0.5);
+
+        // Scene: The Severing
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nMichael strikes.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" In the old loop,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" you would have raised a weapon to block him.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nYou would have played his game.");
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nBut this time,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" you ignore the sword.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nYou raise your hand to the sky behind him");
+        GameTools.delay(0.3);
+        GameTools.typeText(" -", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" to the \'Bridge.\'");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The umbilical cord between Heaven and Hell.");
+        GameTools.delay(0.5);
+
+        // Dialogue: Michael
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<Michael:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"What are you", 30); // Fast to show urgency
+        GameTools.delay(0.2);
+        GameTools.typeText("-?\"");
+        GameTools.delay(0.5);
+
+        // Dialogue: You
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<You:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"If I am to rule the pit,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" Michael...");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Then I am closing the door.\"");
+        GameTools.delay(0.5);
+
+        // Action: Pull
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nYou clench your fist.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" You grab the metaphysical ley lines of the realm");
+        GameTools.delay(0.3);
+        GameTools.typeText(" -", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" the wires of the simulation");
+        GameTools.delay(0.3);
+        GameTools.typeText(" -", 50);
+        GameTools.delay(0.3);
+        GameTools.typeText(" and you");
+        GameTools.delay(0.5);
+        GameTools.typeText(" pull.", 100); // Slow emphasis
+        GameTools.delay(0.7);
+
+        // Scene: The Aftermath
+        GameTools.typeText("\n\nThe light of Heaven flickers.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" And dies.");
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nMichael\'s flaming sword wavers.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" The look on his face isn\'t anger anymore.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nIt\'s horror.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" He is cut off.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" God can no longer see into this dark room.", 80);
+        GameTools.delay(0.5);
+
+        // Final Words
+        GameTools.delay(0.7);
+        GameTools.typeText("\n\n<You:>");
+        GameTools.delay(0.3);
+        GameTools.typeText("\n\"Go home,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" brother.", 70);
+        GameTools.delay(0.5);
+        GameTools.typeText(" Before the dark eats you too.\"");
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nA shockwave of black force blasts Michael upward,", 40);
+        GameTools.delay(0.3);
+        GameTools.typeText(" expelling him from the realm before the gap seals.");
+        GameTools.delay(0.5);
+        GameTools.typeText("\nThe tear in the sky snaps shut.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" Not with gold,", 60);
+        GameTools.delay(0.3);
+        GameTools.typeText(" but with scar tissue.");
+        GameTools.delay(0.7);
+
+        // Ending Monologue
+        GameTools.typeText("\n\nSilence returns.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" But it is not the silence of the Void.", 60);
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nIt is the silence of a Kingdom waiting for its King.", 70);
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nYou look around at the darkness.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" It is deep.", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText(" It is vast.", 60);
+        GameTools.delay(0.5);
+
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\nAnd for the first time...", 60);
+        GameTools.delay(0.5);
+        GameTools.typeText(" it is yours.", 100);
+        GameTools.delay(1);
+        GameTools.clearScreen();
+        GameTools.delay(0.7);
+
+        GameTools.typeText("\n\n\"Let them keep their light.");
+        GameTools.delay(0.5);
+        GameTools.typeText(" I have work to do.\"", 100);
+        GameTools.delay(1);
 
 
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: FINALITY ======");
+        GameTools.typeText("====== TRUE ENDING: SEVERED SOVEREIGN ======");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
  
         returnToMainMenu();
     }
-    //
+
     // Reset game state and enable Ed3 for the true ending path
     private static void resetForTrueEnding() {
         // Reset all progress but keep Ed3 enabled
@@ -1120,9 +1321,6 @@ public class Endings {
         GameTools.delay(2);
 
     }
-
-
-
 
 
 }
