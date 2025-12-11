@@ -5,7 +5,7 @@ public class Mission4 {
     
     public static void start() {
         GameTools.clearScreen();
-        GameTools.typeText("==== Cocyutus ====");
+        GameTools.typeText("============= COCYUTUS ==============");
         GameTools.delay(2.5);
         GameTools.clearScreen();
 

@@ -9,7 +9,7 @@ public class Mission2 {
       
       while (!missionCompleted) {
          GameTools.clearScreen();
-         GameTools.typeText("===== Hell =====");
+         GameTools.typeText("=============== HELL ================");
          GameTools.delay(2.5);
          GameTools.clearScreen();
       

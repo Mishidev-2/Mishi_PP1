@@ -6,8 +6,9 @@ public class Mission3 {
     
     //
     public static boolean start() {
+    
         GameTools.clearScreen();
-        GameTools.typeText("===== The Last Circle =====");
+        GameTools.typeText("========== THE LAST CIRCLE ==========");
         GameTools.delay(2.5);
         GameTools.clearScreen();
 
@@ -249,8 +250,6 @@ public class Mission3 {
         }
         
         //Choice completed successfully
-        GameTools.typeText("\nMission 3 completed!");
-        GameState.displayState();
         GameTools.pressToContinue(scanner);
         return true; // Survived Mission 3
     }

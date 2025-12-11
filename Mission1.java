@@ -5,7 +5,7 @@ public class Mission1 {
     
    public static void start() {
       GameTools.clearScreen();
-      GameTools.typeText("===== Void =====");
+      GameTools.typeText("=============== VOID ================");
       GameTools.delay(2.5);
       
       

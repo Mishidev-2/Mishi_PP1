@@ -5,7 +5,7 @@ public class Endings {
 
     public static void checkEnding() {
         GameTools.clearScreen();
-        GameTools.typeText("===== ============= =====");
+        GameTools.typeText("===== ======================= =====");
 
         if (GameState.isIfEd3()) {
             showTrueEnd();
@@ -161,8 +161,7 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" its voice the only movement. ");
         GameTools.delay(1);
-        GameTools.typeText(
-                "\n\n(\"Go and see for yourself if the silence there is any less absolute than the silence here.\")");
+        GameTools.typeText("\n\n\"Go and see for yourself if the silence there is any less absolute than the silence here.\")");
         GameTools.delay(2);
         GameTools.typeText("\n\nThe words are a grim confirmation.");
         GameTools.delay(0.5);
@@ -224,7 +223,7 @@ public class Endings {
         GameTools.typeText(" You are the keeper of the silence.", 100);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: THE BIRTH ======");
+        GameTools.typeText("========= ENDING: THE BIRTH =========");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
@@ -428,7 +427,7 @@ public class Endings {
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: THE SEED OF MALICE ======");
+        GameTools.typeText("===== ENDING: THE SEED OF MALICE ====");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
@@ -617,7 +616,7 @@ public class Endings {
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: FUTILITY ======");
+        GameTools.typeText("========= ENDING: FUTILITY ==========");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
@@ -1036,7 +1035,7 @@ public class Endings {
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("====== TRUE ENDING: SEVERED SOVEREIGN ======");
+        GameTools.typeText("== TRUE ENDING: SEVERED SOVEREIGN ===");
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
 
@@ -1047,10 +1046,9 @@ public class Endings {
     private static void resetForTrueEnding() {
         // Reset all progress but keep Ed3 enabled
         GameState.setSinCounter(0);
-        GameState.setHasFeather(false); // Reset the feather
-        GameState.setIfEd3(true); // This is the key - enables the secret path
+        GameState.setHasFeather(false);
+        GameState.setIfEd3(true); //enables unnamed
         GameTools.typeText("Reality reshapes itself around you...");
-        GameTools.typeText("Ed3 energy courses through your being!");
         GameTools.delay(2);
         GameTools.clearScreen();
     }

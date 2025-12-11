@@ -8,7 +8,7 @@ public class Unnamed {
         GameTools.clearScreen();
         System.out.println();
         GameTools.typeText("???????????");
-        GameTools.typeText("UNKNOWN REALM");
+        GameTools.typeText(" UNKNOWN REALM ");
         GameTools.typeText("???????????");
         GameTools.delay(3);
         GameTools.clearScreen();
@@ -87,7 +87,7 @@ public class Unnamed {
         GameTools.delay(0.3);
         GameTools.typeText(" terrifying,", 60);
         GameTools.delay(0.3);
-        GameTools.typeText("and completely immobile.", 60);
+        GameTools.typeText(" and completely immobile.", 60);
         GameTools.delay(0.5);
         GameTools.typeText("\nHis eyes are open,");
         GameTools.delay(0.3);

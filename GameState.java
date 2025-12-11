@@ -164,7 +164,7 @@ public class GameState {
         statusEffectTaint = false;
         ifEd3 = false;
         ifEd2 = false;
-        hasFeather = true;
+        hasFeather = false;
     }
 
     // Display current game state (for debugging)
