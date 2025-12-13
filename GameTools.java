@@ -2,26 +2,17 @@ import java.util.Scanner;
 
 public class GameTools {
     
-   //usecase: GameTools.showTitleCard();
     public static void showTitleCard(Scanner scanner) {
         clearScreen();
-        
         System.out.println("                                         ");   
-        
-        typeText("======== THE BROKEN PARADIGM ========", 20); 
-        
+        typeText("======== THE BROKEN PARADIGM ========", ConsoleColors.YELLOW_BOLD, 20); 
         System.out.println(); 
         System.out.println("                                         "); 
-
         delay(1.5);
-        
         System.out.println("\n      [ Press Enter to Begin ]");
-        
         scanner.nextLine();
-        
         clearScreen();       
     }
-
 
    public static void clearScreen() {
       for (int i = 0; i < 50; i++) {
@@ -30,35 +21,56 @@ public class GameTools {
    }
     
    public static void delay(double seconds) {
+      // If Instant Text is ON, skip delays
+      if (GameState.isInstantText()) { return; }
+      
       try {
          Thread.sleep((long)(seconds * 1000));
       } catch (InterruptedException e) {}
    }
     
    public static void pressToContinue(Scanner key) {
-      System.out.print("\n\n[Press Enter to continue...]");
+      System.out.print(ConsoleColors.WHITE_BOLD + "\n\n[Press Enter to continue...]" + ConsoleColors.RESET);
       key.nextLine();
    }
     
-    // Default speed (30ms)
+   // Overload: Text only
    public static void typeText(String text) {
       typeText(text, 30);
    }
-    // just change the number for speed in milliseconds
+   // Overload: Text + Color
+   public static void typeText(String text, String color) {
+      typeText(text, color, 30);
+   }
+   // Overload: Text + Color + Speed
+   public static void typeText(String text, String color, int speed) {
+      System.out.print(color);
+      typeText(text, speed);
+      System.out.print(ConsoleColors.RESET);
+   }
+
    public static void typeText(String text, int speed) {
-      for(char c : text.toCharArray()) {
+      //If instant text is enabled, print instantly and return
+      if (GameState.isInstantText()) {
+          System.out.print(text);
+          System.out.flush();
+          return;
+      }
+      
+      for(char c : text.toCharArray()) {//converts text to char to print it one by one
          System.out.print(c);
-         System.out.flush();
+         System.out.flush();//force show character immediately
          try {
-            Thread.sleep(speed);
+             switch (c) {
+                 case '.', '?', '!' -> Thread.sleep(speed + 300);//Delay for Punctuations and such
+                 case ',' -> Thread.sleep(speed + 150);
+                 default -> Thread.sleep(speed);
+             }
          } catch (InterruptedException e) {}
       }
    }
 
-
    //YN choices
-   //Usecase: 'choice' char GameTools.getyn(scanner);
-   //basically just loops until a valid input is given
    public static char getyn(Scanner scanner) {
       char input;
       while (true) {
@@ -75,7 +87,6 @@ public class GameTools {
       }
    }
 
-
     //Riddle
    public static boolean checkRiddleAnswer(String userInput, String[] keywords) {
       String input = userInput.toLowerCase();
@@ -87,8 +98,6 @@ public class GameTools {
       return false;
    }
     
-   //this one was a bit weird - basically just prints out some glitches to make it look cool
-    //GameTools.displayGlitchEffect(); - usecase
    public static void displayGlitchEffect() {
       String chars = "!@#$%^&*()_+-=[]{}|;:,.<>?/~`0123456789";
    
@@ -99,7 +108,7 @@ public class GameTools {
             int randomIndex = (int)(Math.random() * chars.length());
             line.append(chars.charAt(randomIndex));
          }
-         System.out.println(line.toString());
+         System.out.println(ConsoleColors.PURPLE + line.toString() + ConsoleColors.RESET);
          try { Thread.sleep(20); } 
          catch (InterruptedException e) {}
       }
@@ -115,13 +124,13 @@ public class GameTools {
          };
    
       for (String glitch : glitches) {
-         System.out.print(glitch);
+         System.out.print(ConsoleColors.RED + glitch + ConsoleColors.RESET);
          try { Thread.sleep(80); } 
          catch (InterruptedException e) {}
          System.out.print("\r");
       }
    
-      typeText("==================== HE is here ====================", 0);
+      typeText("==================== HE is here ====================", ConsoleColors.RED_BOLD, 0);
       System.out.println();
    
    
@@ -131,7 +140,7 @@ public class GameTools {
             int randomIndex = (int)(Math.random() * chars.length());
             line.append(chars.charAt(randomIndex));
          }
-         System.out.println(line.toString());
+         System.out.println(ConsoleColors.PURPLE + line.toString() + ConsoleColors.RESET);
          try { Thread.sleep(20); } 
          catch (InterruptedException e) {}
       }
@@ -153,7 +162,6 @@ public static boolean runMazeGame(Scanner scanner) {
             {1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
 
-        // Track player coordinates (x = column, y = row)
         int playerX = 1; 
         int playerY = 1; 
 
@@ -162,14 +170,9 @@ public static boolean runMazeGame(Scanner scanner) {
         delay(0.5);
         pressToContinue(scanner);
 
-
-        //runs forever until the player wins (returns true) or quits (returns false)
         while (true) {
-            
-
             displayMaze(maze);
 
-            // Get input
             System.out.print("Enter move (W/A/S/D): ");
             String move = scanner.nextLine().toUpperCase();
 
@@ -178,61 +181,43 @@ public static boolean runMazeGame(Scanner scanner) {
 
             switch (move) {
                 case "W" -> newY--;
-                // Up (decrease row index)
                 case "S" -> newY++;
-                // Down (increase row index)
                 case "A" -> newX--;
-                // Left (decrease column index)
                 case "D" -> newX++;
-                // Right (increase column index)
                 case "Q" -> {
                     typeText("You quit the maze.");
                     return false;
                 }
                 default -> {
                     typeText("Invalid move! Use W, A, S, D.");
-                    continue; // Skip the rest of the loop and ask for input again
+                    continue; 
                 }
             }
 
-            //collision stuffs
-            
-            //array boundaries - if within the 9x9 area or 8x8 rather
             if (newX >= 0 && newX < 9 && newY >= 0 && newY < 9) {
-
-                //travel destination tile
                 int targetTile = maze[newY][newX];
 
-                // IF the tile is a Path (0) or the Exit (3)
                 if (targetTile == 0 || targetTile == 3) {
-                    
-                    //clear current space
                     maze[playerY][playerX] = 0;
-
-                    //update cords
                     playerX = newX;
                     playerY = newY;
 
-                    //if exit tile
                     if (targetTile == 3) {
-                        maze[playerY][playerX] = 2; // Draw player on the exit
+                        maze[playerY][playerX] = 2; 
                         displayMaze(maze);
-                        typeText("You reach a door made of light....");
+                        typeText("You reach a door made of light....", ConsoleColors.YELLOW_BOLD);
                         delay(1);
                         return true;
                     }
-
-                    //place the player in the new spot in the array
                     maze[playerY][playerX] = 2;
 
                 } else {
                   System.out.println();
-                  //Death if hit wall
-                  typeText("Your fingers graze the glass wall.");
+                  typeText("Your fingers graze the glass wall.", ConsoleColors.CYAN);
                   delay(0.5);
                   typeText(" Panic sets in as you try to pull back,");
                   delay(0.3);
-                  typeText(" but the frost binds your skin instantly.");
+                  typeText(" but the frost binds your skin instantly.", ConsoleColors.CYAN);
                   delay(0.7);
                   typeText("\n\nThe cold creeps up your arms,");
                   delay(0.3);
@@ -240,23 +225,16 @@ public static boolean runMazeGame(Scanner scanner) {
                   delay(0.5);
                   typeText(" until finally...");
                   delay(0.7);
-                  typeText(" Even your soul freezes over.");
+                  typeText(" Even your soul freezes over.", ConsoleColors.CYAN_BOLD);
                   delay(0.5);
                   pressToContinue(scanner);
 
-                    //erase player from where they currently are standing
                     maze[playerY][playerX] = 0;
-
-                    //hard reset coordinates back to start (1, 1)
                     playerX = 1;
                     playerY = 1;
-
-                    //put the player back at the start in the array
                     maze[playerY][playerX] = 2;
                 }
-
             } else {
-                //jic goes outside array
                 typeText("Invalid move! You can't go that way.");
             }
         }
@@ -264,23 +242,15 @@ public static boolean runMazeGame(Scanner scanner) {
 
     private static void displayMaze(int[][] maze) {
         clearScreen();
-        System.out.println("=== MAZE OF ETERNAL COLD ===");
+        System.out.println(ConsoleColors.CYAN + "=== MAZE OF ETERNAL COLD ===" + ConsoleColors.RESET);
         
-        //Row (i)
         for (int i = 0; i < 9; i++) {
-            //Column (j)
             for (int j = 0; j < 9; j++) {
-                
-                
                 switch (maze[i][j]) {
                     case 0 -> System.out.print(" ");
-                    //path
-                    case 1 -> System.out.print("█");
-                    //wall
-                    case 2 -> System.out.print("P");
-                    //player
-                    case 3 -> System.out.print("E");
-                    //exit
+                    case 1 -> System.out.print(ConsoleColors.WHITE + "█" + ConsoleColors.RESET);
+                    case 2 -> System.out.print(ConsoleColors.RED + "P" + ConsoleColors.RESET);
+                    case 3 -> System.out.print(ConsoleColors.YELLOW + "E" + ConsoleColors.RESET);
                 }
                 System.out.print(" ");
             }

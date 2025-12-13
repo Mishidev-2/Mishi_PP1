@@ -5,17 +5,16 @@ public class Mission1 {
     
    public static void start() {
       GameTools.clearScreen();
-      GameTools.typeText("=============== VOID ================");
+      GameTools.typeText("=============== VOID ================", ConsoleColors.PURPLE_BOLD);
       GameTools.delay(2.5);
-      
-      
       GameTools.clearScreen();
       GameTools.delay(1);
+
       // Scene 1
       if (GameState.isIfEd3()) {
-         GameTools.typeText("You awaken in the endless void.");
+         GameTools.typeText("You awaken in the endless void.", ConsoleColors.PURPLE);
          GameTools.delay(0.5);
-         GameTools.typeText(" Again.", 50);
+         GameTools.typeText(" Again.", ConsoleColors.PURPLE, 50);
          GameTools.delay(0.7);
          GameTools.typeText("\nIt's a formless nothing stretching infinitely -");
          GameTools.typeText(" Standard issue oblivion.");
@@ -23,7 +22,7 @@ public class Mission1 {
          GameTools.delay(0.7);
          GameTools.typeText("\n\nBefore you,"); 
          GameTools.delay(0.3);
-         GameTools.typeText(" a vast black hole looms...");
+         GameTools.typeText(" a vast black hole looms...", ConsoleColors.WHITE_BOLD);
          GameTools.delay(0.5);
          GameTools.typeText("\nIts presence is oppressive,");
          GameTools.delay(0.3);
@@ -32,42 +31,33 @@ public class Mission1 {
          GameTools.typeText(" Waiting.", 70);
 
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nAs usual its hunger knows no bounds,", 50);
          GameTools.delay(0.3);
          GameTools.typeText(" taking in all the light for itself.");
-
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nIts grand,");
          GameTools.delay(0.3);
          GameTools.typeText(" terrifying,");
          GameTools.delay(0.3);
          GameTools.typeText(" and exhausting to look at.", 60);
-
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nNo light reaches you...");
          GameTools.delay(0.5);
          GameTools.typeText(" It feels as if the light itself has forsaken you,");
          GameTools.delay(0.3);
          GameTools.typeText(" refusing to guide your way");
          GameTools.delay(0.5);
-
          GameTools.typeText("\nOr maybe it just couldn't be bothered.", 70);
-
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nMuch like you.", 70);
-      
       } else {
-      // Scene 1
-         GameTools.typeText("You awaken in an endless void, ");GameTools.delay(0.2);
-         GameTools.typeText("a formless nothing stretching infinitely.\n");
+      // Scene 1 Normal
+         GameTools.typeText("You awaken in an endless void, ", ConsoleColors.PURPLE);GameTools.delay(0.2);
+         GameTools.typeText("a formless nothing stretching infinitely.\n", ConsoleColors.PURPLE);
          GameTools.delay(0.7);
       
          GameTools.typeText("Before you, ");GameTools.delay(0.2);
-         GameTools.typeText("a vast black hole looms.\n");
+         GameTools.typeText("a vast black hole looms.\n", ConsoleColors.WHITE_BOLD);
          GameTools.delay(0.7);
       
          GameTools.typeText("Its presence so oppressive, ");GameTools.delay(0.2);
@@ -85,25 +75,21 @@ public class Mission1 {
          GameTools.delay(0.7);
       
          GameTools.typeText("Surroundings, ");GameTools.delay(0.2);
-         GameTools.typeText("devoid of luster.\n");GameTools.delay(0.5); // period pause
+         GameTools.typeText("devoid of luster.\n");GameTools.delay(0.5); 
          GameTools.delay(0.7);
       
          GameTools.typeText("It generates a gravity so strong, ");GameTools.delay(0.2);
-         GameTools.typeText("it forms a blazing ring of stolen radiance around it.\n\n");
+         GameTools.typeText("it forms a blazing ring of stolen radiance around it.\n\n", ConsoleColors.YELLOW);
          GameTools.delay(0.7);
       
          GameTools.typeText("No light reaches you, ");
          GameTools.delay(0.2);
          GameTools.typeText("it feels as if the light itself has forsaken you.", 100);
          GameTools.delay(1);
-         GameTools.typeText("\n");
-         GameTools.delay(1);
-         GameTools.typeText("\n");
-         GameTools.delay(1);
-         GameTools.typeText("Refusing to guide your way.", 100);
+         GameTools.typeText("\n\nRefusing to guide your way.", ConsoleColors.RED, 100);
       }
         
-      GameTools.pressToContinue(scanner);//
+      GameTools.pressToContinue(scanner);
       System.out.println();
       
       // Scene 2
@@ -112,34 +98,26 @@ public class Mission1 {
          GameTools.delay(0.3);
          GameTools.typeText(" right on queue - ");
          GameTools.delay(0.3);
-         GameTools.typeText(" The voice,");
+         GameTools.typeText(" The voice,", ConsoleColors.YELLOW);
          GameTools.delay(0.3);
          GameTools.typeText("\nParting the silence of the void and speaking directly into your mind.");
-
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nExactly like the first instance,");
          GameTools.delay(0.3);
          GameTools.typeText(" it sounds perfect...");
          GameTools.delay(0.5);
-         GameTools.typeText(" Too perfect.");
-
+         GameTools.typeText(" Too perfect.", ConsoleColors.RED);
          GameTools.delay(0.7);
-
-         GameTools.typeText("\n\n<Voice:>");
+         GameTools.typeText("\n\n<Voice:>", ConsoleColors.YELLOW_BOLD);
          GameTools.delay(0.3);
-         GameTools.typeText("\n\"You have awakened,");
+         GameTools.typeText("\n\"You have awakened,", ConsoleColors.YELLOW);
          GameTools.delay(0.3);
-         GameTools.typeText(" fledgeling.\"");
-
+         GameTools.typeText(" fledgeling.\"", ConsoleColors.YELLOW);
          GameTools.delay(0.7);
-
-         GameTools.typeText("\n\n\"Come,");
+         GameTools.typeText("\n\n\"Come,", ConsoleColors.YELLOW);
          GameTools.delay(0.3);
-         GameTools.typeText(" your journey awaits.\"");
-
+         GameTools.typeText(" your journey awaits.\"", ConsoleColors.YELLOW);
          GameTools.delay(0.7);
-
          GameTools.typeText("\n\nThe voice rings hollow -");
          GameTools.delay(0.3);
          GameTools.typeText(" tinny and rehearsed.");
@@ -148,133 +126,110 @@ public class Mission1 {
          GameTools.delay(0.3);
          GameTools.typeText(" you are not a newborn.");
          GameTools.delay(0.3);
-         GameTools.typeText("\n\nYou are the oldest thing here...", 70);
+         GameTools.typeText("\n\nYou are the oldest thing here...", ConsoleColors.CYAN, 70);
             
       } else {
-      // Scene 2
          GameTools.typeText("Then, ");GameTools.delay(0.2);
-         GameTools.typeText("a voice. ");GameTools.delay(0.5);
+         GameTools.typeText("a voice. ", ConsoleColors.YELLOW);GameTools.delay(0.5);
          GameTools.typeText("It parts the ever silent void.\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
+         GameTools.delay(0.7); 
          GameTools.typeText("A resonant tone emanates from the very nonexistence of it, ");GameTools.delay(0.2);
-         GameTools.typeText("\n");
-         GameTools.typeText("speaking directly into your mind.\n\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
-         GameTools.typeText("<Voice:>\n");
+         GameTools.typeText("\nspeaking directly into your mind.\n\n");GameTools.delay(0.5);
+         GameTools.delay(0.7); 
+         GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
          GameTools.delay(1);
-         GameTools.typeText("\"You Have awakened, ");GameTools.delay(0.2);
-         GameTools.typeText("fledgling.\"\n", 100);GameTools.delay(0.5);
+         GameTools.typeText("\"You Have awakened, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+         GameTools.typeText("fledgling.\"\n", ConsoleColors.YELLOW, 100);GameTools.delay(0.5);
          GameTools.delay(1);
-         GameTools.typeText("\"Come, ");GameTools.delay(0.2);
-         GameTools.typeText("your journey awaits.\"\n\n", 100);GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
+         GameTools.typeText("\"Come, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+         GameTools.typeText("your journey awaits.\"\n\n", ConsoleColors.YELLOW, 100);GameTools.delay(0.5);
+         GameTools.delay(0.7); 
          GameTools.typeText("An instinctual compulsion roots you to your purpose.\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
+         GameTools.delay(0.7); 
          GameTools.typeText("The voice has not forbidden any other paths, ");GameTools.delay(0.2);
-         GameTools.typeText("\n");
-         GameTools.typeText("yet you are given an absolute in his presence - ");
+         GameTools.typeText("\nyet you are given an absolute in his presence - ");
          GameTools.delay(1);
          GameTools.typeText("To obey is not a decision; ");GameTools.delay(0.2);
          GameTools.typeText("it is an inevitability.");GameTools.delay(0.5);
       }
       
-      GameTools.pressToContinue(scanner);//
+      GameTools.pressToContinue(scanner);
       System.out.println();
       
       // Scene 3
-         GameTools.typeText("[0] \"Journey?\"\n[Enter to Continue]");
-         scanner.nextLine();
-         System.out.println();
-      
-         GameTools.typeText("<Voice:>\n");
-         GameTools.delay(1);
-         GameTools.typeText("\"You have yes, ");GameTools.delay(0.2);
-         GameTools.typeText("all Angels have an ultimatum.\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
-         GameTools.typeText("To serve the Divine Presence, ");GameTools.delay(0.2);
-         GameTools.typeText("our Lord.\n\n", 80);GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
-         GameTools.typeText("HE resides within the Heavens, ");GameTools.delay(0.2);
-         GameTools.typeText("a mere three realms away.\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
-         GameTools.typeText("It is imperative to our purpose that ");
-         GameTools.typeText("newborns must go through a trial before being subject to the heavenly will.\n\n");GameTools.delay(0.5);
-         GameTools.delay(0.7); // paragraph break
-      
-         GameTools.typeText("You shall traverse a realm to get to the Celestial Abode: ");GameTools.delay(0.2);
-         GameTools.typeText("The realm of sinners - ");
-         GameTools.delay(1);
-         GameTools.typeText("\"Hell.\"", 100);GameTools.delay(0.5);
-         GameTools.delay(2); // long pause
-
-         if(GameState.isIfEd3()){
-
-            GameTools.typeText("\n\nHoly yappathon...\n\n");
-
-         }else{
-            
-            System.out.println();
-            System.out.println();
-         }
-      
-      //Name Scene
-      GameTools.typeText("<Voice:>\n");
-      GameTools.delay(0.7);
-      GameTools.typeText("Before proceeding... ");
-      GameTools.delay(1.5);
-      GameTools.typeText("Do you wish to name yourself?", 70);GameTools.delay(0.5);
+      GameTools.typeText("[0] \"Journey?\"\n[Enter to Continue]");
+      scanner.nextLine();
       System.out.println();
       
-     
-      System.out.print("[Y] \"Yes.\" \n[N] \"I require no name.\"\n");
+      GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
+      GameTools.delay(1);
+      GameTools.typeText("\"You have yes, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("all Angels have an ultimatum.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.delay(0.7); 
+      GameTools.typeText("To serve the Divine Presence, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("our Lord.\n\n", ConsoleColors.YELLOW, 80);GameTools.delay(0.5);
+      GameTools.delay(0.7); 
+      GameTools.typeText("HE resides within the Heavens, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("a mere three realms away.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.delay(0.7); 
+      GameTools.typeText("It is imperative to our purpose that ", ConsoleColors.YELLOW);
+      GameTools.typeText("newborns must go through a trial before being subject to the heavenly will.\n\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.delay(0.7); 
+      GameTools.typeText("You shall traverse a realm to get to the Celestial Abode: ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("The realm of sinners - ", ConsoleColors.YELLOW);
+      GameTools.delay(1);
+      GameTools.typeText("\"Hell.\"", ConsoleColors.RED_BOLD, 100);GameTools.delay(0.5);
+      GameTools.delay(2); 
+
+      if(GameState.isIfEd3()){
+         GameTools.typeText("\n\nHoly yappathon...\n\n");
+      }else{
+         System.out.println();
+         System.out.println();
+      }
+      
+      //Name Scene
+      GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
+      GameTools.delay(0.7);
+      GameTools.typeText("Before proceeding... ", ConsoleColors.YELLOW);
+      GameTools.delay(1.5);
+      GameTools.typeText("Do you wish to name yourself?", ConsoleColors.YELLOW, 70);GameTools.delay(0.5);
+      System.out.println();
+      
+      System.out.print(ConsoleColors.WHITE_BOLD + "\n[Y] \"Yes.\" \n[N] \"I require no name.\"\n" + ConsoleColors.RESET);
       char yn = GameTools.getyn(scanner);
         
       if (yn == 'Y' || yn == 'y') {
          GameTools.typeText("\n\"Yes.\"\n\n", 75);
          GameTools.delay(1.5);
-      
-         GameTools.typeText("<Voice:>\n");
+         GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
          GameTools.delay(0.7);
-         GameTools.typeText("Then Speak your chosen designation.\n\n", 75);
+         GameTools.typeText("Then Speak your chosen designation.\n\n", ConsoleColors.YELLOW, 75);
          GameTools.delay(0.5);
-      
          System.out.print("Name: ");
          String name = scanner.nextLine();
          GameState.setPlayerName(name);
          
-         
-         GameTools.typeText("\n<Voice:>\n");
+         GameTools.typeText("\n<Voice:>\n", ConsoleColors.YELLOW_BOLD);
          GameTools.delay(1);
-         GameTools.typeText("" + GameState.getPlayerName() + ". ", 100);GameTools.delay(0.5);
-         GameTools.typeText("So it shall be recorded in the Celestial Register.\n", 50);GameTools.delay(0.5);
-         
+         GameTools.typeText("" + GameState.getPlayerName() + ". ", ConsoleColors.YELLOW, 100);GameTools.delay(0.5);
+         GameTools.typeText("So it shall be recorded in the Celestial Register.\n", ConsoleColors.YELLOW, 50);GameTools.delay(0.5);
          
       } else {
          GameTools.typeText("\n\"I require no name.\"\n\n", 75);
          GameTools.delay(1.5);
-      
-         GameTools.typeText("<Voice:>\n");
+         GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
          GameTools.delay(1);
-         GameTools.typeText("Self-denial? ");GameTools.delay(0.5);
+         GameTools.typeText("Self-denial? ", ConsoleColors.YELLOW);GameTools.delay(0.5);
          GameTools.delay(1);
-         GameTools.typeText("Futile.\n");GameTools.delay(0.5);
+         GameTools.typeText("Futile.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
          GameTools.delay(0.7);
-      
-         GameTools.typeText("I am vested with the authority to name, ");GameTools.delay(0.2);
-         GameTools.typeText("therefore shall.\n");GameTools.delay(0.5);
+         GameTools.typeText("I am vested with the authority to name, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+         GameTools.typeText("therefore shall.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
          GameTools.delay(1);
-      
-         GameTools.typeText("You are... ");
+         GameTools.typeText("You are... ", ConsoleColors.YELLOW);
          GameTools.delay(1.5);
-         GameTools.typeText("Luce.", 100);GameTools.delay(0.5);
-      
+         GameTools.typeText("Luce.", ConsoleColors.WHITE_BOLD, 100);GameTools.delay(0.5);
          GameState.setPlayerName("Luce");
       }   
       GameTools.delay(2);
@@ -282,29 +237,27 @@ public class Mission1 {
       GameTools.delay(0.7);
       
       //Scene 4
-      GameTools.typeText("<Voice:>\n");
+      GameTools.typeText("<Voice:>\n", ConsoleColors.YELLOW_BOLD);
       GameTools.delay(1);
-      GameTools.typeText("" + GameState.getPlayerName() + ", ");GameTools.delay(0.2);
-      GameTools.typeText("attend carefully to my counsel.\n");GameTools.delay(0.5);
+      GameTools.typeText("" + GameState.getPlayerName() + ", ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("attend carefully to my counsel.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(0.7);
-   
-      GameTools.typeText("Hell is peril incarnate - ");
+      GameTools.typeText("Hell is peril incarnate - ", ConsoleColors.YELLOW);
       GameTools.delay(0.5);
-      GameTools.typeText("the eternal penitentiary for those who defied our Holy Father.\n");GameTools.delay(0.5);
+      GameTools.typeText("the eternal penitentiary for those who defied our Holy Father.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(0.7);
-   
-      GameTools.typeText("Under normal circumstances, ");GameTools.delay(0.2);
-      GameTools.typeText("I am to guide you throughout your journey.\n");GameTools.delay(0.2);
-      GameTools.typeText("Unfortunately the connection between the Heavens and Hell has been severed through some unknown means.");GameTools.delay(0.2);
+      GameTools.typeText("Under normal circumstances, ", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("I am to guide you throughout your journey.\n", ConsoleColors.YELLOW);GameTools.delay(0.2);
+      GameTools.typeText("Unfortunately the connection between the Heavens and Hell has been severed through some unknown means.", ConsoleColors.YELLOW);GameTools.delay(0.2);
       GameTools.typeText("\n");
-      GameTools.typeText("I cannot be your guide... ");
+      GameTools.typeText("I cannot be your guide... ", ConsoleColors.YELLOW);
       GameTools.delay(1.5);
       
-
+      // SKIP DIALOGUE LOGIC
       if(GameState.isIfEd3()){
          System.out.println();
          GameTools.typeText("");
-         GameTools.typeText("\n[Skip?]\n");
+         GameTools.typeText("\n[Skip?]\n", ConsoleColors.RED_BOLD);
          char yesn = GameTools.getyn(scanner);   
 
          if(Character.toUpperCase(yesn) == 'Y'){
@@ -316,52 +269,44 @@ public class Mission1 {
          runAdvice();
       }
 
-      
       GameTools.pressToContinue(scanner);
         
-        // Check if Ed3 is true and run Unnamed mission
       if (GameState.isIfEd3()) {
          System.out.println();
-         GameTools.typeText("A strange energy pulls you elsewhere...");
-         GameTools.typeText(" The fabric of reality shifts around you...\n\n");
+         GameTools.typeText("A strange energy pulls you elsewhere...", ConsoleColors.PURPLE);
+         GameTools.typeText("\nThe fabric of reality shifts around you...\n\n", ConsoleColors.PURPLE);
          GameTools.delay(2);
       }
-        
    }
 
    private static void runAdvice(){
-
       System.out.println();
       GameTools.delay(0.7);
-      GameTools.typeText("Such is the situation - ");
+      GameTools.typeText("Such is the situation - ", ConsoleColors.YELLOW);
       GameTools.delay(0.5);
-      GameTools.typeText("I shall give three absolute commandments to light your journey:\n\n");GameTools.delay(0.5);
+      GameTools.typeText("I shall give three absolute commandments to light your journey:\n\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(1);
-   
-      GameTools.typeText("First: ");
+      GameTools.typeText("First: ", ConsoleColors.YELLOW_BOLD);
       GameTools.delay(1);
-      GameTools.typeText("Their corruption is insidious. ");GameTools.delay(0.5);
-      GameTools.typeText("Trust nothing from the condemned.\n\n");GameTools.delay(0.5);
+      GameTools.typeText("Their corruption is insidious. ", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.typeText("Trust nothing from the condemned.\n\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(1);
-   
-      GameTools.typeText("Second: ");
+      GameTools.typeText("Second: ", ConsoleColors.YELLOW_BOLD);
       GameTools.delay(1);
-      GameTools.typeText("Your sole purpose in such a realm is to simply go through the passage.\n\n");GameTools.delay(0.5);
+      GameTools.typeText("Your sole purpose in such a realm is to simply go through the passage.\n\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(1);
-   
-      GameTools.typeText("Third: ");
+      GameTools.typeText("Third: ", ConsoleColors.YELLOW_BOLD);
       GameTools.delay(1);
-      GameTools.typeText("No unclean gifts shall be accepted. ");GameTools.delay(0.5);
-      GameTools.typeText("Their price is damnation.\n\n", 100);GameTools.delay(0.5);
+      GameTools.typeText("No unclean gifts shall be accepted. ", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.typeText("Their price is damnation.\n\n", ConsoleColors.RED, 100);GameTools.delay(0.5);
       GameTools.delay(1);
-   
-      GameTools.typeText("Under no circumstances should you gaze upon their torment with anything but contempt.\n");GameTools.delay(0.5);
-      GameTools.typeText("Their suffering is divine justice and it has been served.\n");GameTools.delay(0.5);
+      GameTools.typeText("Under no circumstances should you gaze upon their torment with anything but contempt.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
+      GameTools.typeText("Their suffering is divine justice and it has been served.\n", ConsoleColors.YELLOW);GameTools.delay(0.5);
       GameTools.delay(1);
-      GameTools.typeText("Your eyes remain only on the road.", 100);GameTools.delay(0.5);
+      GameTools.typeText("Your eyes remain only on the road.", ConsoleColors.YELLOW_BOLD, 100);GameTools.delay(0.5);
    }
 
-      private static void runZoneout(){
+   private static void runZoneout(){
       GameTools.delay(0.7);
       System.out.println();
       GameTools.typeText("You zone out of the exposition dump and finally.");
@@ -371,27 +316,21 @@ public class Mission1 {
       GameTools.typeText(" It expects you to walk into the next gate,");
       GameTools.delay(0.3);
       GameTools.typeText(" to play the game.", 60);
-
       GameTools.delay(0.7);
-
       GameTools.typeText("\n\nYou stare at the 'road' it mentioned,");
       GameTools.delay(0.3);
       GameTools.typeText(" that blazing ring of fire...");
       GameTools.delay(0.5);
       GameTools.typeText(" You really don't have the energy for this.", 60);
-
       GameTools.delay(0.7);
-
       GameTools.typeText("\n\nYou reach into your wings and take out one of the plumes,");
       GameTools.delay(0.3);
-      GameTools.typeText(" It feels cold against your skin.");
+      GameTools.typeText(" It feels cold against your skin.", ConsoleColors.CYAN);
       GameTools.delay(0.5);
       GameTools.typeText("\nReal -");
       GameTools.delay(0.3);
       GameTools.typeText(" Unlike everything else here.", 60);
-
       GameTools.delay(0.7);
-
       GameTools.typeText("\n\nThe feather reveals a tear in the curtain.");
       GameTools.delay(0.5);
       GameTools.typeText("\nA passageway void of color;");
@@ -399,22 +338,17 @@ public class Mission1 {
       GameTools.typeText(" Just a dull,", 60);
       GameTools.delay(0.3);
       GameTools.typeText(" transparent gray.", 60);
-
       GameTools.delay(0.7);
-
       GameTools.typeText("\n\nThe voice says nothing -");
       GameTools.delay(0.3);
       GameTools.typeText("\nWhy would it say anything else?");
       GameTools.delay(0.5);
       GameTools.typeText("\nIts just a puppet after all...", 60);
-
       GameTools.delay(0.7);
-
       GameTools.typeText("\n\nYou turn your back on the black hole");
       GameTools.delay(0.3);
       GameTools.typeText(" and the world disappears.");
       GameTools.delay(0.5);
-      GameTools.typeText("\n\nAs you step into the colorless void.", 60);
+      GameTools.typeText("\n\nAs you step into the colorless void.", ConsoleColors.PURPLE, 60);
    }
-
 }

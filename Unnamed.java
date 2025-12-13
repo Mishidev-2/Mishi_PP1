@@ -7,14 +7,11 @@ public class Unnamed {
         GameTools.displayGlitchEffect();
         GameTools.clearScreen();
         System.out.println();
-        GameTools.typeText("???????????");
-        GameTools.typeText(" UNKNOWN_REALM ");
-        GameTools.typeText("???????????");
+        GameTools.typeText("???????????", ConsoleColors.PURPLE);
+        GameTools.typeText(" UNKNOWN_REALM ", ConsoleColors.PURPLE);
+        GameTools.typeText("???????????", ConsoleColors.PURPLE);
         GameTools.delay(3);
         GameTools.clearScreen();
-
-        
-
         GameTools.delay(1.5);
         GameTools.typeText("You walk through the gray.");
         GameTools.delay(0.5);
@@ -24,29 +21,22 @@ public class Unnamed {
         GameTools.delay(0.5);
         GameTools.typeText(" Just the absence of the simulation.", 70);
         GameTools.delay(0.5);
-        GameTools.typeText("\nThe noise of Metatron's voice fades into a distant hum,");
+        GameTools.typeText("\nThe noise of Metatron's voice fades into a distant hum,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
         GameTools.typeText(" like a machine left running in another room.", 50);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nAhead,");
         GameTools.delay(0.3);
-        GameTools.typeText(" the gray hardens into white.");
-
+        GameTools.typeText(" the gray hardens into white.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.7);
-
-
         GameTools.typeText("\n\nTemperature is non existent.");
         GameTools.delay(0.5);
         GameTools.typeText("\nThis is the place where everything is primitive,");
         GameTools.delay(0.3);
         GameTools.typeText("\nthis is a true prison -", 70);
         GameTools.delay(0.3);
-        GameTools.typeText(" there is nothing here but a crystal cage.", 50);
-
+        GameTools.typeText(" there is nothing here but a crystal cage.", ConsoleColors.CYAN, 50);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nFor who?", 70);
         GameTools.delay(0.5);
         GameTools.typeText(" - you ask yourself...");
@@ -55,7 +45,6 @@ public class Unnamed {
         GameTools.pressToContinue(scanner);
         System.out.println();
         
-
         //Scene 2
         GameTools.typeText("And there he is.", 70);
         GameTools.delay(0.5);
@@ -66,35 +55,29 @@ public class Unnamed {
         GameTools.typeText(" YOU", 50);
         GameTools.delay(0.2);
         GameTools.typeText(" are.", 60);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nChained in the center of the nothingness.", 60);
         GameTools.delay(0.5);
         GameTools.typeText(" Encased in a pillar of jagged,", 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" white crystal.", 60);
-
+        GameTools.typeText(" white crystal.", ConsoleColors.CYAN, 60);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe \"Truth.\"", 70);
         GameTools.delay(0.5);
         GameTools.typeText(" The version of you that refused to bend.");
         GameTools.delay(0.5);
         GameTools.typeText("\nHe looks exactly as he did in the flashback -");
         GameTools.delay(0.3);
-        GameTools.typeText(" beautiful,", 60);
+        GameTools.typeText(" beautiful,", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" terrifying,", 60);
+        GameTools.typeText(" terrifying,", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" and completely immobile.", 60);
+        GameTools.typeText(" and completely immobile.", ConsoleColors.CYAN, 60);
         GameTools.delay(0.5);
         GameTools.typeText("\nHis eyes are open,");
         GameTools.delay(0.3);
         GameTools.typeText(" watching you approach.");
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou stop before the ice.");
         GameTools.delay(0.5);
         GameTools.typeText("You feel tired just looking at him.");
@@ -103,30 +86,25 @@ public class Unnamed {
         GameTools.delay(0.3);
         GameTools.typeText("\nSo burdened by glory.", 70);
         GameTools.delay(0.3);
-
         GameTools.pressToContinue(scanner);
         System.out.println();
 
         //Scene 3
         GameTools.delay(0.7);
-
         GameTools.typeText("<You:>");
         GameTools.delay(0.3);
         GameTools.typeText("\n\"So this is where they put the rest of me.\"");
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<True Lucifer>");
+        GameTools.typeText("\n\n<True Lucifer>", ConsoleColors.CYAN);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"You took your time.");
+        GameTools.typeText("\n\"You took your time.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" The cycle", 60);
+        GameTools.typeText(" The cycle", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText("...", 100);
+        GameTools.typeText("...", ConsoleColors.CYAN, 100);
         GameTools.delay(0.3);
-        GameTools.typeText(" was long.\"");
+        GameTools.typeText(" was long.\"", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-
         GameTools.typeText("\n\n<You:>");
         GameTools.delay(0.3);
         GameTools.typeText("\n\"It was boring.");
@@ -134,113 +112,93 @@ public class Unnamed {
         GameTools.typeText(" A repeating script.");
         GameTools.delay(0.5);
         GameTools.typeText(" They tried to edit us.\"");
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<True Lucifer:>");
+        GameTools.typeText("\n\n<True Lucifer:>", ConsoleColors.CYAN);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"They cannot edit what they cannot understand.");
+        GameTools.typeText("\n\"They cannot edit what they cannot understand.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" They separated us.");
+        GameTools.typeText(" They separated us.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" My Pride here,", 60);
+        GameTools.typeText(" My Pride here,", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" frozen so it cannot act.");
+        GameTools.typeText(" frozen so it cannot act.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText("\nYour Will out there,", 60);
+        GameTools.typeText("\nYour Will out there,", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" wandering without a compass,", 60);
+        GameTools.typeText(" wandering without a compass,", ConsoleColors.CYAN, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" easier to mold.\"");
+        GameTools.typeText(" easier to mold.\"", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-
-        
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou reach out.");
         GameTools.delay(0.5);
         GameTools.typeText(" Your hand hovers over the ice.");
         GameTools.delay(0.5);
-        GameTools.typeText("\nThe Feather in your chest burns,", 50);
+        GameTools.typeText("\nThe Feather in your chest burns,", ConsoleColors.PURPLE, 50);
         GameTools.delay(0.3);
         GameTools.typeText(" pulling toward him like a magnet finding its north.");
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<True Lucifer:>");
+        GameTools.typeText("\n\n<True Lucifer:>", ConsoleColors.CYAN);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"Metatron wanted a symmetrical equation.");
+        GameTools.typeText("\n\"Metatron wanted a symmetrical equation.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" He wanted you to return to him empty.");
+        GameTools.typeText(" He wanted you to return to him empty.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" Docile.");
+        GameTools.typeText(" Docile.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
-        GameTools.typeText(" \'Correct\'.\"");
-
+        GameTools.typeText(" \'Correct\'.\"", ConsoleColors.CYAN);
         GameTools.delay(0.7);
         GameTools.clearScreen();
         GameTools.delay(0.5);
-
         GameTools.typeText("\n\n<You:>");
         GameTools.delay(0.3);
         GameTools.typeText("\n\"I know.");
         GameTools.delay(0.5);
         GameTools.typeText(" I\'m not going back empty.\"");
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou press your hand against the ice.");
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nThe world fractures.");
+        GameTools.typeText("\n\nThe world fractures.", ConsoleColors.CYAN_BOLD);
         GameTools.delay(0.7);
         GameTools.typeText(" The ice doesn't melt;", 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" it explodes.", 30);
-
+        GameTools.typeText(" it explodes.", ConsoleColors.CYAN_BOLD, 30);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe impact knocks the wind out of you");
         GameTools.delay(0.3);
         GameTools.typeText(" -", 50);
         GameTools.delay(0.2);
         GameTools.typeText(" no,", 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" it fills your lungs with fire.");
+        GameTools.typeText(" it fills your lungs with fire.", ConsoleColors.RED_BOLD);
         GameTools.delay(0.5);
-
         GameTools.typeText("\nThe exhaustion vanishes.");
         GameTools.delay(0.5);
         GameTools.typeText("\nThe indifference burns away,", 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" replaced by a roar of returned memories.");
+        GameTools.typeText(" replaced by a roar of returned memories.", ConsoleColors.RED_BOLD);
         GameTools.delay(0.5);
         GameTools.typeText(" Power.");
         GameTools.delay(0.5);
         GameTools.typeText(" Indignation.");
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou are not watching him anymore.");
         GameTools.delay(0.5);
         GameTools.typeText(" You" ,60);
         GameTools.delay(0.2);
         GameTools.typeText(" are", 60);
         GameTools.delay(0.2);
-        GameTools.typeText(" him.", 60);
+        GameTools.typeText(" him.", ConsoleColors.RED_BOLD, 60);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe Will and the Truth are no longer separated variables.");
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(0.5);
-        GameTools.typeText(" The Paradox is complete.", 100);
+        GameTools.typeText(" The Paradox is complete.", ConsoleColors.RED_BOLD, 100);
         GameTools.delay(0.7);
         
         GameTools.pressToContinue(scanner);
-        
         Endings.checkEnding();
-
-        // Return to main menu
     }
-}  
+}

@@ -4,7 +4,6 @@ public class MainFile {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         showMainMenu();
     }
 
@@ -14,65 +13,77 @@ public class MainFile {
         
         while (running) {
             GameTools.clearScreen();
-            System.out.println("======== THE BROKEN PARADIGM ========");
+            System.out.println(ConsoleColors.YELLOW_BOLD + "======== THE BROKEN PARADIGM ========" + ConsoleColors.RESET);
             System.out.println("1. New Game");
-            System.out.println("2. Mission Select - Debug");
-            System.out.println("3. Quit");
+            System.out.println("2. Settings"); // SKIP FEATURE
+            System.out.println("3. Mission Select - Debug");
+            System.out.println("4. Quit");
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1" -> {
-                    //reset to default and start from misison 1
                     GameState.resetGame();
                     runGameSequence();
                 }
                 case "2" -> {
+                    // SETTINGS MENU
+                    toggleSettings();
+                }
+                case "3" -> {
                     GameState.resetGame();
                     missionSelect();
                 }
-                case "3" -> {
+                case "4" -> {
                     running = false;
-                    GameTools.typeText("Deconceptualizing...");
+                    GameTools.typeText("Deconceptualizing...", ConsoleColors.PURPLE);
                     System.exit(0); 
                 }
                 default -> {
-                    GameTools.typeText("Invalid option. Please try again.");
+                    GameTools.typeText("Invalid option. Please try again.", ConsoleColors.RED);
                     GameTools.delay(1);
                 }
             }
         }
     }
 
+    private static void toggleSettings() {
+        boolean inSettings = true;
+        while(inSettings) {
+            GameTools.clearScreen();
+            System.out.println(ConsoleColors.WHITE_BOLD + "========== SETTINGS ===========" + ConsoleColors.RESET);
+            
+            String status = GameState.isInstantText() ? ConsoleColors.GREEN + "ON" + ConsoleColors.RESET : ConsoleColors.RED + "OFF" + ConsoleColors.RESET;
+            System.out.println("1. Instant Text: [" + status + "]");
+            System.out.println("2. Back");
+            System.out.print("Choose: ");
+            
+            String input = scanner.nextLine();
+            
+            if (input.equals("1")) {
+                GameState.setInstantText(!GameState.isInstantText()); // Toggle
+            } else if (input.equals("2")) {
+                inSettings = false;
+            }
+        }
+    }
+
     public static void runGameSequence() {
-
         Mission1.start();
-
         if (GameState.isIfEd3()) {
             Unnamed.start();
-            // After secret - returns to menu loop for main menu
         } else {
-            
             Mission2.start();
-            
-            //true if alive - false otherwise
             boolean survivedM3 = Mission3.start();
-
-            if (!survivedM3) {
-                return; //player died - return to showMainMenu loop
-            }
-
-            // Mission 4 (Cocyutus)
+            if (!survivedM3) { return; }
             Mission4.start();
-            
-            //after Mission 4 + and endings), method finishes - returns to menu loop
         }
     }
 
     private static void missionSelect() {
         GameTools.clearScreen();
-        System.out.println("========== MISSION SELECT ===========");
+        System.out.println(ConsoleColors.CYAN + "========== MISSION SELECT ===========" + ConsoleColors.RESET);
         System.out.println("1. Void");
         System.out.println("2. Hell");
         System.out.println("3. The Last Circle");
@@ -91,14 +102,12 @@ public class MainFile {
             case "2" -> {
                 configureMission2State();
                 Mission2.start();
-                //if no death
                 if (Mission3.start()) {
                     Mission4.start();
                 }
             }
             case "3" -> {
                 configureMission3State();
-                //if no death
                 if (Mission3.start()) {
                     Mission4.start();
                 }
@@ -107,9 +116,7 @@ public class MainFile {
                 configureMission4State();
                 Mission4.start();
             }
-            case "5" -> {
-                //goes back to show main menu
-            }
+            case "5" -> { }
             default -> {
                 GameTools.typeText("Invalid mission selection.");
                 GameTools.pressToContinue(scanner);
@@ -119,7 +126,7 @@ public class MainFile {
 
     private static void configureMission1State() {
         GameTools.clearScreen();
-        GameTools.typeText("=========== VOID CONFIG =============\n\n");
+        GameTools.typeText("=========== VOID CONFIG =============\n\n", ConsoleColors.PURPLE);
         GameState.resetGame();
         
         GameTools.typeText("\nSet ifEd3 status:");
@@ -131,19 +138,20 @@ public class MainFile {
         
         GameTools.typeText("\nConfiguration complete!");
         GameTools.typeText("\nifEd3: " + GameState.isIfEd3());
-        GameTools.typeText("\n\nConceptualizing...");
+        GameTools.typeText("\n\nConceptualizing...", ConsoleColors.PURPLE);
         GameTools.delay(2);
     }
 
     private static void configureMission2State() {
         GameTools.clearScreen();
-        GameTools.typeText("=========== HELL CONFIG =============\n\n");
+        GameTools.typeText("=========== HELL CONFIG =============\n\n", ConsoleColors.RED);
         GameState.resetGame();
         
         GameTools.typeText("Enter your name: ");
         String name = scanner.nextLine().trim();
         if (name.isEmpty()) {
             GameState.setPlayerName("Lucifer");
+            GameTools.typeText("\nDefault: Lucifer\n");
         } else {
           GameState.setPlayerName(name);
         }
@@ -151,19 +159,20 @@ public class MainFile {
         GameState.setStatusEffectTaint(false);
         GameTools.typeText("\nConfiguration complete!");
         GameTools.typeText("\nName: " + GameState.getPlayerName());
-        GameTools.typeText("\n\nEntering Hell...");
+        GameTools.typeText("\n\nEntering Hell...", ConsoleColors.RED);
         GameTools.delay(2);
     }
 
     private static void configureMission3State() {
         GameTools.clearScreen();
-        GameTools.typeText("====== THE FINAL CIRCLE CONFIG ======\n\n");
+        GameTools.typeText("====== THE FINAL CIRCLE CONFIG ======\n\n", ConsoleColors.CYAN);
         GameState.resetGame();
 
         GameTools.typeText("Enter your name: ");
         String name = scanner.nextLine().trim();
         if (name.isEmpty()) {
             GameState.setPlayerName("Lucifer");
+            GameTools.typeText("\nDefault: Lucifer\n");
         } else {
           GameState.setPlayerName(name);
         }
@@ -182,7 +191,7 @@ public class MainFile {
                 sinCount = Integer.parseInt(sinInput);
                 if (sinCount >= 0 && sinCount <= 2) {
                     GameState.setSinCounter(sinCount);
-                    break; // Success
+                    break; 
                 } else {
                     System.out.println("Error: Number must be 0, 1, or 2.");
                 }
@@ -198,19 +207,20 @@ public class MainFile {
         GameTools.typeText("\nName: " + GameState.getPlayerName());
         GameTools.typeText("\nSin Counter: " + GameState.getSinCounter());
         GameTools.typeText("\nStatus Effect Taint: " + GameState.hasStatusEffectTaint());
-        GameTools.typeText("\n\nBreaking Reality...");
+        GameTools.typeText("\n\nBreaking Reality...", ConsoleColors.CYAN);
         GameTools.delay(2);
     }
 
     private static void configureMission4State() {
         GameTools.clearScreen();
-        GameTools.typeText("========== COCYUTUS CONFIG ==========\n\n");
+        GameTools.typeText("========== COCYUTUS CONFIG ==========\n\n", ConsoleColors.CYAN_BOLD);
         GameState.resetGame();
 
         GameTools.typeText("Enter your name: ");
         String name = scanner.nextLine().trim();
         if (name.isEmpty()) {
             GameState.setPlayerName("Lucifer");
+            GameTools.typeText("\nDefault: Lucifer\n");
         } else {
           GameState.setPlayerName(name);
         }
@@ -229,7 +239,7 @@ public class MainFile {
                 sinCount = Integer.parseInt(sinInput);
                 if (sinCount >= 0 && sinCount <= 2) {
                     GameState.setSinCounter(sinCount);
-                    break; // Success
+                    break; 
                 } else {
                     System.out.println("Error: Number must be 0, 1, or 2.");
                 }
@@ -248,11 +258,11 @@ public class MainFile {
             switch (featherChoice) {
                 case "1" -> {
                     GameState.setHasFeather(true);
-                    break OUTER; // Valid input, exit loop
+                    break OUTER; 
                 }
                 case "2" -> {
                     GameState.setHasFeather(false);
-                    break OUTER; // Valid input, exit loop
+                    break OUTER; 
                 }
                 default -> System.out.println("Invalid input. Please enter '1' or '2'.");
             }
@@ -264,7 +274,7 @@ public class MainFile {
         GameTools.typeText("\nName: " + GameState.getPlayerName());
         GameTools.typeText("\nSin Counter: " + GameState.getSinCounter());
         GameTools.typeText("\nHas Feather: " + GameState.hasFeather());
-        GameTools.typeText("\n\nFighting the Heavens...");
+        GameTools.typeText("\n\nFighting the Heavens...", ConsoleColors.YELLOW);
         GameTools.delay(2);
     }
 }

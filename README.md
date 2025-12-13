@@ -1,14 +1,15 @@
 Contributions:
 
 Idea + Story + Dialogue - Shimizu
-Text Formatting + testing - Shimizu + Gemini Pro, Calmerin (Mission 4), Cangaida (Mission 3)
+Text Formatting + testing - Shimizu, Calmerin, Cangayda, Gemini Pro
 
-General Framework + the Code - Shimizu
+General Framework/flow of game + initial code - Shimizu
 
 Only used Gemini pro for text formatting + some methods I couldnt figure out such as
     GameTools.textType();
-    GameTools.displayGlitchEffect();
+    GameTools.displayGlitchEffect();// this one especially
     GameTools.runMazeGame();
+    the atomic boolean was something new as well
 
 VS's Github copilot (i think thats what it was) suggestions were used sometimes to make the code more efficient
 But the majority of the code and logic were by a human.
@@ -19,17 +20,12 @@ Thank you...
 
 How to run the game
 > Open it up, wait for everything to load and run the MainFile
-
+> PS the colors dont work in jgrasp
 
 About the game:
 
-This has a complete story mode - pretty long, so for quicker progression - set this:
-
- // Default speed (30ms)
-   public static void typeText(String text) {
-      typeText(text, 30); //<- set this to 1
-   }
-
+This has a complete story mode
+- for pure testingg turn instant text on
 Game has a few gimmicks:
 1. Yes or No Choices
 2. Choice system that increments a counter
@@ -46,14 +42,15 @@ It has 6 endings
 
 
 Files:
-
+ConsoleColors - colors for the text and dialogue
 MainFile
 - Main menu
 1. New Game - progresses normally, resets gamestates and runs the game from Mission 1
-2. Mission Select
+2. Settings - only setting is the typetext speed being turned to instant
+3. Mission Select
 - resets gamestates
 - allows you to select which mission to start from and set their prerequisites
-3. Quit - quit
+4. Quit - quit
 
 
 Mission 1:
@@ -71,7 +68,7 @@ Mission 3:
 - Contains the feather which is required for some endings
 
 Mission 4:
-- Leads to bad end 2 if feather is given
+- Leads to bad end 2 if feather is given to the angel
 - Contains the maze
 
 Unnamed.java
@@ -84,7 +81,7 @@ GameStates
 - Stores the Booleans, setters, getters, and stuff
 
 GameTools
-- Stores the methods I use such as typeText and delay
+- Stores the methods used such as typeText and delay
 
 
 

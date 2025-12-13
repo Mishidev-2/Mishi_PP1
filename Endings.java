@@ -12,84 +12,70 @@ public class Endings {
             System.exit(0);
         } else if (GameState.isIfEd2()) {
             showBadEnd2();
-        } // Satan Ending
-        else if (!GameState.hasFeather() && GameState.getSinCounter() == 0) {
+        } else if (!GameState.hasFeather() && GameState.getSinCounter() == 0) {
             showGoodEnd();
-        } // Good ending
-        else if (GameState.hasFeather() && GameState.getSinCounter() == 0) {
+        } else if (GameState.hasFeather() && GameState.getSinCounter() == 0) {
             showTrueGoodEnd();
-        } // Good Ending but fades to black
-
-        else if (!GameState.hasFeather() && GameState.getSinCounter() > 0) {
+        } else if (!GameState.hasFeather() && GameState.getSinCounter() > 0) {
             showNormalBadEnd();
-        } // Bad Ending Normal
-        else if (GameState.hasFeather() && GameState.getSinCounter() > 0) {
+        } else if (GameState.hasFeather() && GameState.getSinCounter() > 0) {
             showTrueBadEnd();
-        } // Bad Ending True
-
+        } 
     }
 
     public static void showBadEnd2() {
-
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
         GameTools.displayGlitchEffect();
         GameTools.clearScreen();
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"You have not freed a prisoner, ", 80);
+        GameTools.typeText("\n\n\"You have not freed a prisoner, ", ConsoleColors.RED, 80);
         GameTools.delay(0.3);
-        GameTools.typeText("but restored a contender.\"", 80);
+        GameTools.typeText("but restored a contender.\"", ConsoleColors.RED, 80);
         GameTools.delay(0.5);
         GameTools.typeText("\n\nThe celestial balance shifts.");
         GameTools.delay(0.5);
-        GameTools.typeText("\n\n\"Michael will know his victory was temporary.\"", 100);
+        GameTools.typeText("\n\n\"Michael will know his victory was temporary.\"", ConsoleColors.RED, 100);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\n\"They tried to cage defiance itself. ");
         GameTools.delay(0.5);
         GameTools.typeText("My gratitude.");
         GameTools.delay(0.5);
-        GameTools.typeText("\nThe symphony of creation has missed its conductor.\"");
+        GameTools.typeText("\nThe symphony of creation has missed its conductor.\"", ConsoleColors.RED);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nHis gaze pierces the heavens.");
         GameTools.delay(0.7);
-
-        // Center this
-        GameTools.typeText("\n\n\"The throne was never meant for a silent god.", 70);
+        GameTools.typeText("\n\n\"The throne was never meant for a silent god.", ConsoleColors.RED, 70);
         GameTools.delay(1.5);
-
-        GameTools.typeText(" It was meant to be earned.\"", 90);
+        GameTools.typeText(" It was meant to be earned.\"", ConsoleColors.RED, 90);
         GameTools.delay(1);
-        GameTools.typeText("\n\n\"And I", 90);
+        GameTools.typeText("\n\n\"And I", ConsoleColors.RED, 90);
         GameTools.delay(0.9);
-        GameTools.typeText(" have finished waiting.\"", 90);
+        GameTools.typeText(" have finished waiting.\"", ConsoleColors.RED, 90);
         GameTools.delay(3);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: THE REAWAKENING ======");
+        GameTools.typeText("====== ENDING: THE REAWAKENING ======", ConsoleColors.RED_BOLD);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         returnToMainMenu();
     }
 
-    public static void showGoodEnd() {// No feather + NO SIN
-
+    public static void showGoodEnd() {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-        GameTools.typeText("A voice,");
+        GameTools.typeText("A voice,", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
         GameTools.typeText(" the one that guided you here,");
         GameTools.delay(0.3);
         GameTools.typeText(" echoes in your memory: ");
         GameTools.delay(0.5);
-        GameTools.typeText("\n\n(\"A conduit of divine energy, meant to sustain these bindings.");
+        GameTools.typeText("\n\n(\"A conduit of divine energy, meant to sustain these bindings.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-        GameTools.typeText(" Ironic, that it now serves as a back door for wayward souls.\")");
+        GameTools.typeText(" Ironic, that it now serves as a back door for wayward souls.\")", ConsoleColors.YELLOW);
         GameTools.delay(1);
-        GameTools.typeText("\n\nTHIS");
+        GameTools.typeText("\n\nTHIS", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.5);
         GameTools.typeText(" is the back door.");
         GameTools.delay(0.5);
@@ -97,7 +83,7 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText("\n\nYou reach a hand toward the shimmering,");
         GameTools.delay(0.3);
-        GameTools.typeText(" reflective haze within the fractured frame.");
+        GameTools.typeText(" reflective haze within the fractured frame.", ConsoleColors.YELLOW);
         GameTools.delay(1);
         GameTools.typeText("\n\nThen suddenly you feel it.");
         GameTools.delay(1);
@@ -115,13 +101,13 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText("\n\nNow, as you cross the threshold,");
         GameTools.delay(0.3);
-        GameTools.typeText(" the connection is restored with the violence of a lightning strike.");
+        GameTools.typeText(" the connection is restored with the violence of a lightning strike.", ConsoleColors.YELLOW);
         GameTools.delay(1);
         GameTools.typeText("\nA bright presence solidifies above you,");
         GameTools.delay(0.3);
         GameTools.typeText(" not as a gentle arrival,");
         GameTools.delay(0.3);
-        GameTools.typeText(" but as an absolute assertion of jurisdiction.");
+        GameTools.typeText(" but as an absolute assertion of jurisdiction.", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.5);
         GameTools.typeText("\n\nIt is immense,");
         GameTools.delay(0.3);
@@ -130,19 +116,17 @@ public class Endings {
         GameTools.typeText(" and inescapable.");
         GameTools.delay(0.5);
         GameTools.typeText("\nAnd you do not know if this connection is a blessing or the closing of a trap.");
-
         GameTools.pressToContinue(scanner);
-
         GameTools.delay(2);
-        GameTools.typeText("\nMetatron: ");
+        GameTools.typeText("\nMetatron: ", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.2);
-        GameTools.typeText("\n\"Behold.\"");
+        GameTools.typeText("\n\"Behold.\"", ConsoleColors.YELLOW);
         GameTools.delay(1);
         GameTools.typeText("\n\nThe Voice of Metatron resonates,");
         GameTools.delay(0.3);
         GameTools.typeText(" a fundamental law impressed upon your soul.");
         GameTools.delay(1);
-        GameTools.typeText("\n\n\"The Celestial Kingdom, the abode of God.\"");
+        GameTools.typeText("\n\n\"The Celestial Kingdom, the abode of God.\"", ConsoleColors.YELLOW);
         GameTools.delay(1);
         GameTools.typeText("\n\nYou are pulled into the conduit,");
         GameTools.delay(0.3);
@@ -152,7 +136,7 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText("\nA Throne that scrapes the cosmos towers above you,");
         GameTools.delay(0.3);
-        GameTools.typeText(" immense and vacant.");
+        GameTools.typeText(" immense and vacant.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
         GameTools.typeText("\nA profound, absolute stillness hangs in the air.");
         GameTools.delay(1);
@@ -162,22 +146,20 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" its voice the only movement. ");
         GameTools.delay(1);
-        GameTools.typeText("\n\n\"Go and see for yourself if the silence there is any less absolute than the silence here.\")");
+        GameTools.typeText("\n\n\"Go and see for yourself if the silence there is any less absolute than the silence here.\")", ConsoleColors.YELLOW);
         GameTools.delay(2);
         GameTools.typeText("\n\nThe words are a grim confirmation.");
         GameTools.delay(0.5);
         GameTools.typeText(" The silence of the Throne is the silence of an abandoned command.");
         GameTools.delay(2);
-        GameTools.typeText("\n\n\"You, who have found the back door to a front that was barred...");
+        GameTools.typeText("\n\n\"You, who have found the back door to a front that was barred...", ConsoleColors.YELLOW);
         GameTools.delay(0.7);
-        GameTools.typeText(" you are worthy of a truth others could not bear.");
+        GameTools.typeText(" you are worthy of a truth others could not bear.", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText(" The becoming, now, begins.\"");
-
+        GameTools.typeText(" The becoming, now, begins.\"", ConsoleColors.YELLOW);
         GameTools.pressToContinue(scanner);
-
         GameTools.delay(2);
-        GameTools.typeText("\nThe light of the realm coalesces around you.");
+        GameTools.typeText("\nThe light of the realm coalesces around you.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
         GameTools.typeText(" It is a baptism of revelation,");
         GameTools.delay(0.3);
@@ -185,7 +167,7 @@ public class Endings {
         GameTools.delay(2);
         GameTools.typeText("\nIt is not warm;");
         GameTools.delay(0.3);
-        GameTools.typeText(" it is precise.");
+        GameTools.typeText(" it is precise.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
         GameTools.typeText(" You feel your past self being systematically erased and rewritten.");
         GameTools.delay(2);
@@ -203,15 +185,15 @@ public class Endings {
         GameTools.delay(2);
         GameTools.clearScreen();
         GameTools.delay(2);
-        GameTools.typeText("\n\n\"I baptize you in the name of the Echoing Silence.\"");
+        GameTools.typeText("\n\n\"I baptize you in the name of the Echoing Silence.\"", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.7);
-        GameTools.typeText("\n\n\"Your name is now Lucifer.", 80);
+        GameTools.typeText("\n\n\"Your name is now Lucifer.", ConsoleColors.YELLOW_BOLD, 80);
         GameTools.delay(0.7);
-        GameTools.typeText("\nYou are the Morning Star,", 80);
+        GameTools.typeText("\nYou are the Morning Star,", ConsoleColors.YELLOW_BOLD, 80);
         GameTools.delay(0.5);
-        GameTools.typeText(" the light that persists after the sun has died.\"", 90);
+        GameTools.typeText(" the light that persists after the sun has died.\"", ConsoleColors.YELLOW_BOLD, 90);
         GameTools.delay(2);
-        GameTools.typeText("\n\n\"Your brilliance shall be a monument to the glory that was.\"");
+        GameTools.typeText("\n\n\"Your brilliance shall be a monument to the glory that was.\"", ConsoleColors.YELLOW);
         GameTools.delay(2);
         GameTools.typeText("\n\nThe light recedes,");
         GameTools.delay(0.3);
@@ -219,59 +201,50 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" steady flame.");
         GameTools.delay(0.7);
-        GameTools.typeText("\n\nYou are home.", 100);
+        GameTools.typeText("\n\nYou are home.", ConsoleColors.YELLOW_BOLD, 100);
         GameTools.delay(0.7);
-        GameTools.typeText(" You are the keeper of the silence.", 100);
+        GameTools.typeText(" You are the keeper of the silence.", ConsoleColors.WHITE_BOLD, 100);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("========= ENDING: THE BIRTH =========");
+        GameTools.typeText("========= ENDING: THE BIRTH =========", ConsoleColors.YELLOW_BOLD);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
         returnToMainMenu();
     }
 
-    public static void showTrueGoodEnd() {// Feather true + NO SIN
+    public static void showTrueGoodEnd() {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-
         GameTools.typeText("\n\nThe guiding voice echoes in your memory:");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n(\"A conduit of divine energy... ", 60);
+        GameTools.typeText("\n\n(\"A conduit of divine energy... ", ConsoleColors.YELLOW, 60);
         GameTools.delay(0.5);
-        GameTools.typeText("now a back door for wayward souls.\")", 60);
+        GameTools.typeText("now a back door for wayward souls.\")", ConsoleColors.YELLOW, 60);
         GameTools.delay(1.5);
-
         GameTools.typeText("\n\nYou reach toward the shimmering haze.");
         GameTools.delay(0.5);
         GameTools.typeText("\nSuddenly, the severed connection snaps back with the violence of a lightning strike.");
         GameTools.delay(1);
-        GameTools.typeText("\nMetatron is here - not a gentle arrival, but an absolute assertion of jurisdiction.");
+        GameTools.typeText("\nMetatron is here - not a gentle arrival, but an absolute assertion of jurisdiction.", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\n\"Behold,\"", 80);
+        GameTools.typeText("\n\n\"Behold,\"", ConsoleColors.YELLOW, 80);
         GameTools.delay(1);
-
         GameTools.typeText("\n\nMetatron's voice resonates, a law impressed upon your soul.");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"The Celestial Kingdom.\"", 90);
+        GameTools.typeText("\n\n\"The Celestial Kingdom.\"", ConsoleColors.YELLOW, 90);
         GameTools.delay(2);
-
         GameTools.typeText(
                 "\n\nYou are pulled through the conduit to the foot of a Cosmic Throne - immense, towering, and utterly vacant.");
         GameTools.delay(1);
         GameTools.typeText("\nThe silence here is not peace; it is an abandoned command.");
         GameTools.delay(2);
-
         GameTools.typeText(
-                "\n\n\"You, who have found the back door... you are worthy of a truth others could not bear.", 70);
+                "\n\n\"You, who have found the back door... you are worthy of a truth others could not bear.", ConsoleColors.YELLOW, 70);
         GameTools.delay(1);
-        GameTools.typeText(" The becoming begins.\"", 70);
+        GameTools.typeText(" The becoming begins.\"", ConsoleColors.YELLOW, 70);
         GameTools.delay(1.5);
-
         GameTools.typeText("\n\nPrecise, scouring light coalesces around you, rewriting your past.");
         GameTools.delay(1);
         GameTools.typeText(
@@ -279,63 +252,50 @@ public class Endings {
         GameTools.delay(1.5);
         GameTools.typeText("\nMetatron',s voice rings out like a sentencing.");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"I baptize you in the name of the Echoing Silence.\"", 80);
+        GameTools.typeText("\n\n\"I baptize you in the name of the Echoing Silence.\"", ConsoleColors.YELLOW_BOLD, 80);
         GameTools.delay(1.5);
-
-        // Dramatic reveal
-        GameTools.typeText("\n\n\"Your name is now Lucifer.\"", 100);
+        GameTools.typeText("\n\n\"Your name is now Lucifer.\"", ConsoleColors.YELLOW_BOLD, 100);
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\"You are the Morning Star, ", 80);
+        GameTools.typeText("\n\"You are the Morning Star, ", ConsoleColors.YELLOW_BOLD, 80);
         GameTools.delay(0.5);
-        GameTools.typeText("the light that persists after the sun has died.\"", 80);
+        GameTools.typeText("the light that persists after the sun has died.\"", ConsoleColors.YELLOW_BOLD, 80);
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\n\"Your brilliance shall be a monument to the glory that was.\"", 90);
+        GameTools.typeText("\n\n\"Your brilliance shall be a monument to the glory that was.\"", ConsoleColors.YELLOW, 90);
         GameTools.delay(4);
-
         GameTools.clearScreen();
-        //
         GameTools.typeText("\n\nAs the final echoes of your naming fade,");
         GameTools.delay(0.5);
         GameTools.typeText(" something escapes your divine perception -");
         GameTools.delay(1);
         GameTools.typeText(" A minor anomaly.");
         GameTools.delay(1);
-
         GameTools.typeText("\nTucked within the radiance of your newly-formed wing,");
         GameTools.delay(0.5);
         GameTools.typeText(" where all is meant to be pure,");
         GameTools.delay(0.5);
         GameTools.typeText(" structured light,");
         GameTools.delay(0.5);
-        GameTools.typeText(" a single feather seems out of place.");
+        GameTools.typeText(" a single feather seems out of place.", ConsoleColors.PURPLE);
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\nIt is darker at the base,");
+        GameTools.typeText("\n\nIt is darker at the base,", ConsoleColors.PURPLE);
         GameTools.delay(0.5);
-        GameTools.typeText(" its vanes ever so slightly twisted,");
+        GameTools.typeText(" its vanes ever so slightly twisted,", ConsoleColors.PURPLE);
         GameTools.delay(0.5);
-        GameTools.typeText(" as if it remembers a different,");
+        GameTools.typeText(" as if it remembers a different,", ConsoleColors.PURPLE);
         GameTools.delay(0.5);
-        GameTools.typeText(" more covetous kind of flight.");
+        GameTools.typeText(" more covetous kind of flight.", ConsoleColors.PURPLE);
         GameTools.delay(2);
-
         GameTools.pressToContinue(scanner);
         GameTools.displayGlitchEffect();
-        // Transition to the Pit
         GameTools.clearScreen();
-
-        GameTools.typeText("The silence of Heaven does not reach here.");
+        GameTools.typeText("The silence of Heaven does not reach here.", ConsoleColors.RED);
         GameTools.delay(1);
         GameTools.typeText(" Here,");
         GameTools.delay(0.5);
         GameTools.typeText(" there is only the soundless cold of a cavern forged for a single,");
         GameTools.delay(0.5);
-        GameTools.typeText(" terrible purpose.");
+        GameTools.typeText(" terrible purpose.", ConsoleColors.RED);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nAt its heart,");
         GameTools.delay(0.5);
         GameTools.typeText(" the massive figure is entombed.");
@@ -348,10 +308,9 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" as he guided you to destiny.");
         GameTools.delay(1.5);
-
         GameTools.typeText("\nHIS lower half is encased in clear,");
         GameTools.delay(0.5);
-        GameTools.typeText(" supernatural ice,");
+        GameTools.typeText(" supernatural ice,", ConsoleColors.CYAN);
         GameTools.delay(0.5);
         GameTools.typeText(
                 " while chains of iron and searing golden light pull HIS arms taut in a perpetual crucifixion.");
@@ -360,51 +319,42 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" eyes shut.");
         GameTools.delay(1.5);
-
         GameTools.typeText("\n\nThen,");
         GameTools.delay(0.5);
-        GameTools.typeText(" as the dark feather pulses within your celestial form,");
+        GameTools.typeText(" as the dark feather pulses within your celestial form,", ConsoleColors.PURPLE);
         GameTools.delay(0.5);
         GameTools.typeText(" a change stirs in the deep.");
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\nThe angel's head lifts.", 90);
+        GameTools.typeText("\n\nThe angel's head lifts.", ConsoleColors.RED_BOLD, 90);
         GameTools.delay(1);
         GameTools.typeText(" HIS eyelids open,");
         GameTools.delay(0.5);
         GameTools.typeText(" revealing those twin pools,");
         GameTools.delay(0.5);
-        GameTools.typeText(" filled with an unfathomable depth of darkness.");
+        GameTools.typeText(" filled with an unfathomable depth of darkness.", ConsoleColors.RED);
         GameTools.delay(2);
-
         GameTools.typeText("\nThey fix upon a point beyond the ice,");
         GameTools.delay(0.5);
         GameTools.typeText(" beyond Hell itself,");
         GameTools.delay(0.5);
         GameTools.typeText(" gazing directly at the nascent darkness now rooted in the heart of Heaven.");
         GameTools.delay(2);
-
         GameTools.typeText("\n\nThe oppressive silence of the pit shatters under the weight of HIS gaze.");
         GameTools.delay(1.5);
-
         GameTools.typeText("\n\nA sneer,");
         GameTools.delay(0.5);
         GameTools.typeText(" slow and deliberate,");
         GameTools.delay(0.5);
         GameTools.typeText(" peels back its lips.");
         GameTools.delay(1.5);
-
-        GameTools.typeText("\n\n\"With time,\"", 100);
+        GameTools.typeText("\n\n\"With time,\"", ConsoleColors.RED, 100);
         GameTools.delay(1);
-
         GameTools.typeText("\n\nHE whispers,");
         GameTools.delay(0.5);
         GameTools.typeText(" the promise hanging in the frozen air,");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"It shall come.\"", 100);
+        GameTools.typeText("\n\n\"It shall come.\"", ConsoleColors.RED, 100);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nHE stays there.");
         GameTools.delay(1);
         GameTools.typeText(" Imprisoned.", 90);
@@ -413,7 +363,6 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText(" Yet patient.", 90);
         GameTools.delay(1.5);
-
         GameTools.typeText("\nHE can wait for a thousand more years,");
         GameTools.delay(0.5);
         GameTools.typeText(" for ten thousand.", 90);
@@ -422,25 +371,22 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" not a plan.", 90);
         GameTools.delay(2);
-
-        GameTools.typeText("\n\nBut the inevitable.", 100);
-
+        GameTools.typeText("\n\nBut the inevitable.", ConsoleColors.RED_BOLD, 100);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("===== ENDING: THE SEED OF MALICE ====");
+        GameTools.typeText("===== ENDING: THE SEED OF MALICE ====", ConsoleColors.RED_BOLD);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
         returnToMainMenu();
     }
 
-    public static void showNormalBadEnd() {// NO FEATHER + SINNED
+    public static void showNormalBadEnd() {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-
-        GameTools.typeText("A voice,");
+        GameTools.typeText("A voice,", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
         GameTools.typeText(" the one that guided you here,");
         GameTools.delay(0.5);
@@ -452,24 +398,19 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText(" Ironic,");
         GameTools.delay(0.5);
-        GameTools.typeText(" that it now serves as a back door for wayward souls.\")");
+        GameTools.typeText(" that it now serves as a back door for wayward souls.\")", ConsoleColors.YELLOW);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nThis is the back door.");
         GameTools.delay(1);
         GameTools.typeText(" The conduit.");
         GameTools.delay(2);
-
         GameTools.typeText("\n\nYou reach a hand toward the shimmering,");
         GameTools.delay(0.5);
-        GameTools.typeText(" reflective haze within the fractured frame.");
+        GameTools.typeText(" reflective haze within the fractured frame.", ConsoleColors.YELLOW);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nThen suddenly you feel it.");
         GameTools.delay(3);
-
-        GameTools.clearScreen(); // Transition to the Celestial Kingdom
-
+        GameTools.clearScreen(); 
         GameTools.typeText("In all your time in the pit,");
         GameTools.delay(0.5);
         GameTools.typeText(" the name \"Metatron\" was a distant concept.");
@@ -478,7 +419,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" as you cross the threshold,");
         GameTools.delay(0.5);
-        GameTools.typeText(" the connection is restored with the violence of a lightning strike.");
+        GameTools.typeText(" the connection is restored with the violence of a lightning strike.", ConsoleColors.YELLOW);
         GameTools.delay(1.5);
         GameTools.typeText("\nA bright presence solidifies above you,");
         GameTools.delay(0.5);
@@ -486,10 +427,9 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" it does not feel like an assertion of jurisdiction.");
         GameTools.delay(1);
-        GameTools.typeText("\n\nIt feels like the focus of a scalpel.", 90);
+        GameTools.typeText("\n\nIt feels like the focus of a scalpel.", ConsoleColors.WHITE_BOLD, 90);
         GameTools.delay(2);
-
-        GameTools.typeText("\n\n\"Behold.\"");
+        GameTools.typeText("\n\n\"Behold.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
         GameTools.typeText("\n\nThe Voice of Metatron resonates,");
         GameTools.delay(0.5);
@@ -499,12 +439,10 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" diagnostic tone.");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"The Celestial Kingdom.");
+        GameTools.typeText("\n\n\"The Celestial Kingdom.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" You have brought the stench of the pit with you to its gates.\"");
+        GameTools.typeText(" You have brought the stench of the pit with you to its gates.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nYou are pulled into the conduit,");
         GameTools.delay(0.5);
         GameTools.typeText(" but the journey is not an acceptance - it is an intake of breath before a purge.");
@@ -515,28 +453,25 @@ public class Endings {
         GameTools.delay(1);
         GameTools.typeText(" The silence of the Throne is deafening.");
         GameTools.delay(2);
-
         GameTools.typeText("\n\nMetatron's presence is no longer a nexus of light,");
         GameTools.delay(0.5);
-        GameTools.typeText(" but a vortex.");
+        GameTools.typeText(" but a vortex.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"You see the silence.");
+        GameTools.typeText("\n\n\"You see the silence.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" And you have chosen to fill it with noise.");
+        GameTools.typeText(" And you have chosen to fill it with noise.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" A miscalculation.");
+        GameTools.typeText(" A miscalculation.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" The becoming must now be an unmaking.\"");
+        GameTools.typeText(" The becoming must now be an unmaking.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(2);
-
         GameTools.typeText("\n\nThe light of the realm does not coalesce;");
         GameTools.delay(0.5);
-        GameTools.typeText(" it attacks.");
+        GameTools.typeText(" it attacks.", ConsoleColors.RED_BOLD);
         GameTools.delay(1);
         GameTools.typeText(" It is not a baptism of revelation,");
         GameTools.delay(0.5);
-        GameTools.typeText(" but a scouring fire,");
+        GameTools.typeText(" but a scouring fire,", ConsoleColors.RED);
         GameTools.delay(0.5);
         GameTools.typeText(" seeking to burn the corruption out of you.");
         GameTools.delay(1.5);
@@ -546,7 +481,6 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" the hard-won defiance - being targeted for deletion.");
         GameTools.delay(2);
-
         GameTools.typeText("\n\nYou resist.");
         GameTools.delay(1);
         GameTools.typeText(" A surge of power,");
@@ -563,26 +497,23 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" the divine light recoils.");
         GameTools.delay(2);
-
         GameTools.typeText("\n\nMetatron's voice does not raise in anger.");
         GameTools.delay(1);
         GameTools.typeText(" It lowers in finality.");
         GameTools.delay(1);
-
-        GameTools.typeText("\n\n\"You struggle against the cure.");
+        GameTools.typeText("\n\n\"You struggle against the cure.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" It does not matter.");
+        GameTools.typeText(" It does not matter.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" The sickness must be purged.");
+        GameTools.typeText(" The sickness must be purged.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1);
-        GameTools.typeText(" The system must be cleansed.\"");
+        GameTools.typeText(" The system must be cleansed.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(2);
-
-        GameTools.typeText("\n\nThe light redoubles,");
+        GameTools.typeText("\n\nThe light redoubles,", ConsoleColors.RED);
         GameTools.delay(0.5);
-        GameTools.typeText(" overwhelming,", 90);
+        GameTools.typeText(" overwhelming,", ConsoleColors.RED, 90);
         GameTools.delay(0.5);
-        GameTools.typeText(" impersonal.", 90);
+        GameTools.typeText(" impersonal.", ConsoleColors.RED, 90);
         GameTools.delay(1);
         GameTools.typeText(" Your resistance is noted,");
         GameTools.delay(0.5);
@@ -590,84 +521,71 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" and dismissed as irrelevant data.");
         GameTools.delay(1.5);
-        GameTools.typeText("\nYou feel yourself being unmade,", 90);
+        GameTools.typeText("\nYou feel yourself being unmade,", ConsoleColors.RED, 90);
         GameTools.delay(0.5);
-        GameTools.typeText(" not rewritten.", 80);
+        GameTools.typeText(" not rewritten.", ConsoleColors.RED, 80);
         GameTools.delay(2);
-
-        GameTools.typeText("\n\n\"I return you to the void from which new things are spun.");
+        GameTools.typeText("\n\n\"I return you to the void from which new things are spun.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1.5);
-        GameTools.typeText(" You are an error.");
+        GameTools.typeText(" You are an error.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(1.5);
-        GameTools.typeText(" You are Lucifer no more.\"", 100);
+        GameTools.typeText(" You are Lucifer no more.\"", ConsoleColors.WHITE_BOLD, 100);
         GameTools.delay(3);
-
         GameTools.typeText("\n\nThe light does not recede into you.", 90);
         GameTools.delay(1);
-        GameTools.typeText(" It expels you.", 80);
+        GameTools.typeText(" It expels you.", ConsoleColors.RED, 80);
         GameTools.delay(1);
         GameTools.typeText(" The cold flame is not a part of you;");
         GameTools.delay(0.5);
-        GameTools.typeText(" it is the fire that consumes you.");
+        GameTools.typeText(" it is the fire that consumes you.", ConsoleColors.RED);
         GameTools.delay(1.5);
         GameTools.typeText("\n\nYou are not the keeper of the silence.", 100);
         GameTools.delay(1);
-        GameTools.typeText(" You are its rejected anomaly.", 100);
-
+        GameTools.typeText(" You are its rejected anomaly.", ConsoleColors.RED, 100);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("========= ENDING: FUTILITY ==========");
+        GameTools.typeText("========= ENDING: FUTILITY ==========", ConsoleColors.WHITE_BOLD);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameState.resetGame();
         returnToMainMenu();
     }
 
-    public static void showTrueBadEnd() {// KEPT FEATHER BUT HIGH SINS
+    public static void showTrueBadEnd() {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-        GameTools.typeText("\"A conduit of divine energy...", 70);
+        GameTools.typeText("\"A conduit of divine energy...", ConsoleColors.YELLOW, 70);
         GameTools.delay(0.5);
-        GameTools.typeText(" Now a back door for wayward souls.\"", 70);
+        GameTools.typeText(" Now a back door for wayward souls.\"", ConsoleColors.YELLOW, 70);
         GameTools.delay(0.5);
         GameTools.typeText("\n\nRemembering the statement said by the angel in chains,", 60);
         GameTools.delay(0.3);
         GameTools.typeText(" you tell yourself:", 60);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\n\"Truly an accurate description\"", 70);
-
         GameTools.pressToContinue(scanner);
         GameTools.clearScreen();
-
         GameTools.delay(0.7);
-        GameTools.typeText("\"Perfection admits no variation.\"", 70);
-
+        GameTools.typeText("\"Perfection admits no variation.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nBefore you, a source of light brighter than the sun radiates -");
+        GameTools.typeText("\n\nBefore you, a source of light brighter than the sun radiates -", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
         GameTools.typeText(" but this is no celestial body made of mere gas.", 60);
         GameTools.delay(0.5);
         GameTools.typeText("\nThis is no simple amalgamation of liquid metal and gravity.", 60);
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nThis is an Archangel -", 60);
+        GameTools.typeText("\n\nThis is an Archangel -", ConsoleColors.YELLOW_BOLD, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" the highest order under the Throne.", 60);
+        GameTools.typeText(" the highest order under the Throne.", ConsoleColors.YELLOW_BOLD, 60);
         GameTools.delay(0.7);
         GameTools.typeText("\n\nThe voice was never a guide.");
         GameTools.delay(0.3);
         GameTools.typeText(" It was a calibrator -");
         GameTools.delay(0.3);
-        GameTools.typeText(" It was Metatron.", 60);
-
+        GameTools.typeText(" It was Metatron.", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe gateway closes,");
         GameTools.delay(0.3);
         GameTools.typeText(" it hardens.", 60);
@@ -676,39 +594,31 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" pinned by the sudden,");
         GameTools.delay(0.3);
-        GameTools.typeText(" crushing weight of absolute Law.");
-
+        GameTools.typeText(" crushing weight of absolute Law.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe Voice");
         GameTools.delay(0.3);
         GameTools.typeText(" - Metatron looms,");
         GameTools.delay(0.3);
         GameTools.typeText(" not as a spirit,");
         GameTools.delay(0.3);
-        GameTools.typeText(" but as a towering wall of judgment.", 60);
-
+        GameTools.typeText(" but as a towering wall of judgment.", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.7);
-
         GameTools.typeText("\nHe looks at you not with anger,", 60);
         GameTools.delay(0.3);
         GameTools.typeText(" but with the indifference of someone forced to correct a recurring mistake.", 70);
-
         GameTools.pressToContinue(scanner);
-
         GameTools.delay(0.7);
-        GameTools.typeText("\n<METATRON - THE VOICE OF GOD>");
+        GameTools.typeText("\n<METATRON - THE VOICE OF GOD>", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText("\n\n\"You attempted to enter the Equation while carrying a remainder.");
+        GameTools.typeText("\n\n\"You attempted to enter the Equation while carrying a remainder.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText(" That is your sin.");
+        GameTools.typeText(" That is your sin.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText("\nYou are not evil;");
+        GameTools.typeText("\nYou are not evil;", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText(" You are incorrect.\"", 70);
-
+        GameTools.typeText(" You are incorrect.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe floor beneath you dissolves.");
         GameTools.delay(0.5);
         GameTools.typeText(" Opening into a deep,");
@@ -719,20 +629,16 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" It is the terrifying absence of data -");
         GameTools.delay(0.5);
-        GameTools.typeText(" Nihility.", 100);
-
+        GameTools.typeText(" Nihility.", ConsoleColors.PURPLE, 100);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"We do not abide paradoxes here.");
+        GameTools.typeText("\n\n\"We do not abide paradoxes here.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText(" Your will has deviated from the pattern.");
+        GameTools.typeText(" Your will has deviated from the pattern.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText("\nTo keep the structure sound,");
+        GameTools.typeText("\nTo keep the structure sound,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText(" the anomaly must be resolved.\"");
-
+        GameTools.typeText(" the anomaly must be resolved.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nHe extends a hand, and gravity inverts.");
         GameTools.delay(0.5);
         GameTools.typeText(" You are no longer falling down;\n");
@@ -740,32 +646,29 @@ public class Endings {
         GameTools.typeText("You are falling backward -");
         GameTools.delay(0.5);
         GameTools.typeText(" reverting to a state before you made your choices.");
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"I sentence you to the Null.", 70);
+        GameTools.typeText("\n\n\"I sentence you to the Null.", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
-        GameTools.typeText(" Not to die,");
+        GameTools.typeText(" Not to die,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText(" but to be unmade.");
+        GameTools.typeText(" but to be unmade.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText("\nLet the silence strip away your flaws,", 70);
+        GameTools.typeText("\nLet the silence strip away your flaws,", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
-        GameTools.typeText(" until you are nothing but potential again.\"", 70);
+        GameTools.typeText(" until you are nothing but potential again.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\n\"When you return,");
         GameTools.delay(0.3);
         GameTools.typeText(" you will be symmetrical.\"");
         GameTools.delay(2);
         GameTools.clearScreen();
         GameTools.delay(0.5);
-        GameTools.typeText("\n\n\"Or you will not be", 60);
+        GameTools.typeText("\n\n\"Or you will not be", ConsoleColors.PURPLE, 60);
         GameTools.delay(0.5);
-        GameTools.typeText(" at all...\"", 100);
+        GameTools.typeText(" at all...\"", ConsoleColors.PURPLE, 100);
         GameTools.delay(1);
         GameTools.clearScreen();
-        GameTools.typeText("====== ENDING: ", 70);
+        GameTools.typeText("====== ENDING: ", ConsoleColors.PURPLE, 70);
         GameTools.clearScreen();
         GameTools.displayGlitchEffect();
         GameTools.clearScreen();
@@ -773,49 +676,38 @@ public class Endings {
         GameTools.clearScreen();
         GameTools.typeText("\n\n...", 900);
         GameTools.clearScreen();
-
         System.out.println();
-
         GameTools.delay(0.7);
         GameTools.typeText("As the white silence of the Null swallows you,");
         GameTools.delay(0.3);
         GameTools.typeText(" something rustles within your wings -", 60);
         GameTools.delay(0.5);
-        GameTools.typeText("\nthe Black Feather you took from Mephis.", 70);
+        GameTools.typeText("\nthe Black Feather you took from Mephis.", ConsoleColors.PURPLE, 70);
         GameTools.delay(0.5);
         GameTools.typeText(" It does not disintegrate;");
         GameTools.delay(0.3);
-        GameTools.typeText(" it expands.", 80);
-
+        GameTools.typeText(" it expands.", ConsoleColors.PURPLE, 80);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nA single black plume unfurls,");
         GameTools.delay(0.3);
-        GameTools.typeText(" extending its darkness like a vine.");
+        GameTools.typeText(" extending its darkness like a vine.", ConsoleColors.PURPLE);
         GameTools.delay(0.3);
-        GameTools.typeText("\nPiercing your chest");
+        GameTools.typeText("\nPiercing your chest", ConsoleColors.RED);
         GameTools.delay(0.1);
-        GameTools.typeText(" and rooting itself into your soul.", 90);
-
+        GameTools.typeText(" and rooting itself into your soul.", ConsoleColors.RED, 90);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nThe Void screams...", 100);
-
+        GameTools.typeText("\n\nThe Void screams...", ConsoleColors.PURPLE_BOLD, 100);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe world spins violently,");
         GameTools.delay(0.3);
         GameTools.typeText(" dissolving the white nothingness into distinct,");
         GameTools.delay(0.3);
         GameTools.typeText(" painful color.", 70);
-
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-
         flashback();
         resetForTrueEnding();
-
         MainFile.runGameSequence();
     }
 
@@ -823,82 +715,64 @@ public class Endings {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-
         GameTools.typeText("You stand up.");
         GameTools.delay(0.5);
         GameTools.typeText(" The chains that held the frozen body shatter like brittle sugar.");
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou flex your wings.");
         GameTools.delay(0.5);
         GameTools.typeText(" All six of them.");
         GameTools.delay(0.5);
         GameTools.typeText(" They are not gray anymore.");
         GameTools.delay(0.5);
-        GameTools.typeText(" They are the color of midnight and mourning.");
-
+        GameTools.typeText(" They are the color of midnight and mourning.", ConsoleColors.PURPLE);
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThe colorless void tears open above you.");
         GameTools.delay(0.5);
         GameTools.typeText(" The simulation has realized its error.");
         GameTools.delay(0.5);
-        GameTools.typeText(" Golden light pours in");
+        GameTools.typeText(" Golden light pours in", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText(" -", 50);
+        GameTools.typeText(" -", ConsoleColors.YELLOW, 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" angry,", 50);
+        GameTools.typeText(" angry,", ConsoleColors.RED, 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" searing light.");
+        GameTools.typeText(" searing light.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nAnd down comes the blade.");
+        GameTools.typeText("\n\nAnd down comes the blade.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nMichael.", 100);
+        GameTools.typeText("\n\nMichael.", ConsoleColors.YELLOW_BOLD, 100);
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nHe descends from the tear in reality,", 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" his sword blazing with the fires of the Throne.");
+        GameTools.typeText(" his sword blazing with the fires of the Throne.", ConsoleColors.RED);
         GameTools.delay(0.5);
         GameTools.typeText(" Just like the memory.");
         GameTools.delay(0.5);
         GameTools.typeText(" Just like the script.");
         GameTools.delay(0.5);
-
-        // Dialogue: Michael
         GameTools.delay(0.7);
-        GameTools.typeText("\n\n<Michael:>");
+        GameTools.typeText("\n\n<Michael:>", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"You persist in your error,", 50);
+        GameTools.typeText("\n\"You persist in your error,", ConsoleColors.YELLOW, 50);
         GameTools.delay(0.3);
-        GameTools.typeText(" Brother!");
+        GameTools.typeText(" Brother!", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-        GameTools.typeText(" You choose the fall again?\"");
+        GameTools.typeText(" You choose the fall again?\"", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-
-        // Dialogue: You
         GameTools.delay(0.7);
         GameTools.typeText("\n\n<You:>");
         GameTools.delay(0.3);
         GameTools.typeText("\n\"I choose my own direction.\"");
         GameTools.delay(0.5);
-
-        // Scene: The Severing
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nMichael strikes.");
+        GameTools.typeText("\n\nMichael strikes.", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.5);
         GameTools.typeText(" In the old loop,", 60);
         GameTools.delay(0.3);
@@ -906,9 +780,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText("\nYou would have played his game.");
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nBut this time,", 60);
         GameTools.delay(0.3);
         GameTools.typeText(" you ignore the sword.");
@@ -919,19 +791,15 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" to the \'Bridge.\'");
         GameTools.delay(0.5);
-        GameTools.typeText(" The umbilical cord between Heaven and Hell.");
+        GameTools.typeText(" The umbilical cord between Heaven and Hell.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-
-        // Dialogue: Michael
         GameTools.delay(0.7);
-        GameTools.typeText("\n\n<Michael:>");
+        GameTools.typeText("\n\n<Michael:>", ConsoleColors.YELLOW_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"What are you", 30); // Fast to show urgency
+        GameTools.typeText("\n\"What are you", ConsoleColors.YELLOW, 30); // Fast to show urgency
         GameTools.delay(0.2);
         GameTools.typeText("-?\"");
         GameTools.delay(0.5);
-
-        // Dialogue: You
         GameTools.delay(0.7);
         GameTools.typeText("\n\n<You:>");
         GameTools.delay(0.3);
@@ -941,10 +809,7 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" Then I am closing the door.\"");
         GameTools.delay(0.5);
-
-        // Action: Pull
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou clench your fist.");
         GameTools.delay(0.5);
         GameTools.typeText(" You grab the metaphysical ley lines of the realm");
@@ -957,16 +822,13 @@ public class Endings {
         GameTools.delay(0.3);
         GameTools.typeText(" and you");
         GameTools.delay(0.5);
-        GameTools.typeText(" pull.", 100); // Slow emphasis
+        GameTools.typeText(" pull.", ConsoleColors.RED_BOLD, 100); // Slow emphasis
         GameTools.delay(0.7);
-
-        // Scene: The Aftermath
-        GameTools.typeText("\n\nThe light of Heaven flickers.");
+        GameTools.typeText("\n\nThe light of Heaven flickers.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
         GameTools.typeText(" And dies.");
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nMichael\'s flaming sword wavers.");
+        GameTools.typeText("\n\nMichael\'s flaming sword wavers.", ConsoleColors.RED);
         GameTools.delay(0.5);
         GameTools.typeText(" The look on his face isn\'t anger anymore.");
         GameTools.delay(0.5);
@@ -976,8 +838,6 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" God can no longer see into this dark room.", 80);
         GameTools.delay(0.5);
-
-        // Final Words
         GameTools.delay(0.7);
         GameTools.typeText("\n\n<You:>");
         GameTools.delay(0.3);
@@ -987,73 +847,59 @@ public class Endings {
         GameTools.delay(0.5);
         GameTools.typeText(" Before the dark eats you too.\"");
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nA shockwave of black force blasts Michael upward,", 40);
+        GameTools.typeText("\n\nA shockwave of black force blasts Michael upward,", ConsoleColors.PURPLE, 40);
         GameTools.delay(0.3);
         GameTools.typeText(" expelling him from the realm before the gap seals.");
         GameTools.delay(0.5);
         GameTools.typeText("\nThe tear in the sky snaps shut.");
         GameTools.delay(0.5);
-        GameTools.typeText(" Not with gold,", 60);
+        GameTools.typeText(" Not with gold,", ConsoleColors.YELLOW, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" but with scar tissue.");
+        GameTools.typeText(" but with scar tissue.", ConsoleColors.RED);
         GameTools.delay(0.7);
-
-        // Ending Monologue
         GameTools.typeText("\n\nSilence returns.");
         GameTools.delay(0.5);
         GameTools.typeText(" But it is not the silence of the Void.", 60);
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nIt is the silence of a Kingdom waiting for its King.", 70);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou look around at the darkness.");
         GameTools.delay(0.5);
         GameTools.typeText(" It is deep.", 60);
         GameTools.delay(0.5);
         GameTools.typeText(" It is vast.", 60);
         GameTools.delay(0.5);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nAnd for the first time...", 60);
         GameTools.delay(0.5);
-        GameTools.typeText(" it is yours.", 100);
+        GameTools.typeText(" it is yours.", ConsoleColors.PURPLE_BOLD, 100);
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\n\"Let them keep their light.");
         GameTools.delay(0.5);
-        GameTools.typeText(" I have work to do.\"", 100);
+        GameTools.typeText(" I have work to do.\"", ConsoleColors.PURPLE, 100);
         GameTools.delay(1);
-
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-        GameTools.typeText("== TRUE ENDING: SEVERED SOVEREIGN ===");
+        GameTools.typeText("== TRUE ENDING: SEVERED SOVEREIGN ===", ConsoleColors.PURPLE_BOLD);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         returnToMainMenu();
     }
 
-    // Reset game state and enable Ed3 for the true ending path
     private static void resetForTrueEnding() {
-        // Reset all progress but keep Ed3 enabled
         GameState.setSinCounter(0);
         GameState.setHasFeather(false);
-        GameState.setIfEd3(true); //enables unnamed
-        GameTools.typeText("\n\nReality reshapes itself around you...");
+        GameState.setIfEd3(true); 
+        GameTools.typeText("\n\nReality reshapes itself around you...", ConsoleColors.PURPLE);
         GameTools.delay(2);
         GameTools.clearScreen();
     }
 
-    // Return to main menu
     private static void returnToMainMenu() {
         GameTools.typeText("\nReturning to main menu...");
         GameTools.delay(2);
@@ -1063,264 +909,208 @@ public class Endings {
         GameTools.delay(1);
         GameTools.clearScreen();
         GameTools.delay(2);
-
         GameTools.typeText("You are no longer falling.");
         GameTools.delay(0.5);
         GameTools.typeText(" You are kneeling.", 70);
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\nThe air smells of ozone and burning gold.");
+        GameTools.typeText("\n\nThe air smells of ozone and burning gold.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
         GameTools.typeText(" You are surrounded by the wreckage of a celesial battle.");
         GameTools.delay(0.5);
-        GameTools.typeText("\nThe broken shards of Heaven lie scattered around you like spilled diamonds.", 60);
-
+        GameTools.typeText("\nThe broken shards of Heaven lie scattered around you like spilled diamonds.", ConsoleColors.YELLOW, 60);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nIn one of these jagged,", 60);
         GameTools.delay(0.3);
         GameTools.typeText(" reflective fragments,", 60);
         GameTools.delay(0.3);
         GameTools.typeText(" you catch a glimpse of your own face.", 60);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nIt is breathtaking.");
         GameTools.delay(0.5);
         GameTools.typeText(" The definition of beauty -");
         GameTools.delay(0.3);
         GameTools.typeText(" Symmetry so perfect it hurts to look upon;");
         GameTools.delay(0.3);
-        GameTools.typeText("\nLight woven into skin,");
+        GameTools.typeText("\nLight woven into skin,", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
         GameTools.typeText(" eyes that hold the depth of the morning star.");
-
         GameTools.delay(0.7);
         GameTools.typeText("\n\nIt is the most beautiful thing existence has ever crafted.", 80);
         GameTools.delay(0.5);
         GameTools.typeText("\nAnd you know it.", 100);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nThis beauty is not just a trait;");
         GameTools.delay(0.3);
         GameTools.typeText(" it is a justification.", 60);
         GameTools.delay(0.5);
         GameTools.typeText(" It is the root of your(?) Pride.", 90);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nA jolt of recognition hits you -");
         GameTools.delay(0.3);
         GameTools.typeText(" this face in the reflection...");
         GameTools.delay(0.5);
-        GameTools.typeText("\nIt is the face of the prisoner you saw frozen in the ice of Cocytus.");
+        GameTools.typeText("\nIt is the face of the prisoner you saw frozen in the ice of Cocytus.", ConsoleColors.CYAN);
         GameTools.delay(0.5);
         GameTools.typeText("\nYou are not looking at a stranger.", 80);
         GameTools.delay(0.7);
-        GameTools.typeText("\n\nYou are looking at the \"Truth\" that was left behind.", 80);
-
+        GameTools.typeText("\n\nYou are looking at the \"Truth\" that was left behind.", ConsoleColors.CYAN, 80);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nYou try to stand,");
         GameTools.delay(0.3);
         GameTools.typeText(" to admire yourself fully,");
         GameTools.delay(0.3);
         GameTools.typeText(" but you cannot.");
         GameTools.delay(0.5);
-        GameTools.typeText("\nChains of starlight bind your wrists and wings,");
+        GameTools.typeText("\nChains of starlight bind your wrists and wings,", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
         GameTools.typeText(" pinning you to the floor of the High Heavens.", 80);
         GameTools.delay(0.7);
         GameTools.typeText("\nThe weight is infinite.", 80);
-
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nLooking down at you are two figures.", 90);
-
         GameTools.pressToContinue(scanner);
         System.out.println();
-
         GameTools.delay(0.5);
-        GameTools.typeText("On the left stands Michael", 70);
+        GameTools.typeText("On the left stands Michael", ConsoleColors.YELLOW, 70);
         GameTools.delay(0.5);
         GameTools.typeText(" -", 70);
         GameTools.delay(0.3);
-        GameTools.typeText(" The Archangel of Death.", 100);
+        GameTools.typeText(" The Archangel of Death.", ConsoleColors.RED, 100);
         GameTools.delay(0.5);
         GameTools.typeText("\nHe holds the scales of judgment in one hand,");
         GameTools.delay(0.3);
         GameTools.typeText(" and a greatsword in the other.", 50);
-
         GameTools.delay(0.7);
-        GameTools.typeText("\n\nOn the right stands Metatron", 70);
+        GameTools.typeText("\n\nOn the right stands Metatron", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
         GameTools.typeText(" -", 70);
         GameTools.delay(0.3);
-        GameTools.typeText(" The Voice of the Heavenly Will.", 100);
+        GameTools.typeText(" The Voice of the Heavenly Will.", ConsoleColors.WHITE_BOLD, 100);
         GameTools.delay(0.5);
-        GameTools.typeText("\nHe is terrifyingly bright,", 60);
+        GameTools.typeText("\nHe is terrifyingly bright,", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.3);
-        GameTools.typeText(" a silhouette cut from raw radiance.", 80);
+        GameTools.typeText(" a silhouette cut from raw radiance.", ConsoleColors.WHITE_BOLD, 80);
         GameTools.delay(0.5);
         GameTools.typeText("\nHe looks at you with no pity,");
         GameTools.delay(0.3);
         GameTools.typeText(" no anger -", 80);
         GameTools.delay(0.3);
         GameTools.typeText("\nOnly the indifferent calculation of a machine observing a broken cog.", 90);
-
         GameTools.pressToContinue(scanner);
-
         GameTools.clearScreen();
         System.out.println();
         GameTools.delay(0.7);
-        GameTools.typeText("<Michael:>");
+        GameTools.typeText("<Michael:>", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"He will not bend -", 100);
+        GameTools.typeText("\n\"He will not bend -", ConsoleColors.YELLOW, 100);
         GameTools.delay(0.5);
-        GameTools.typeText(" you know this as well as I.", 50);
+        GameTools.typeText(" you know this as well as I.", ConsoleColors.YELLOW, 50);
         GameTools.delay(0.5);
-        GameTools.typeText("\nHis pride is absolute.\"", 60);
-
+        GameTools.typeText("\nHis pride is absolute.\"", ConsoleColors.YELLOW, 60);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"Despite my authority,");
+        GameTools.typeText("\n\n\"Despite my authority,", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText(" we Archangels are not so easy to cast down.");
+        GameTools.typeText(" we Archangels are not so easy to cast down.", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-        GameTools.typeText("\nTo break him is to break the very foundation we stand on.\"");
-
+        GameTools.typeText("\nTo break him is to break the very foundation we stand on.\"", ConsoleColors.YELLOW);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"And Lucifer's strength is undoubtedly on the same level as mine.\"", 100);
-
+        GameTools.typeText("\n\n\"And Lucifer's strength is undoubtedly on the same level as mine.\"", ConsoleColors.YELLOW, 100);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.typeText("\n\n<Metatron:>", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"Then we do not break the stone.", 70);
+        GameTools.typeText("\n\"Then we do not break the stone.", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
-        GameTools.typeText(" We separate the elements.", 60);
+        GameTools.typeText(" We separate the elements.", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.5);
-        GameTools.typeText("\nWe shall sever his pride -");
+        GameTools.typeText("\nWe shall sever his pride -", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText(" his source of power.\"", 70);
-
+        GameTools.typeText(" his source of power.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nMetatron gestures to your bound form.");
-
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"We will perform a partition.\"", 70);
-
+        GameTools.typeText("\n\n\"We will perform a partition.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
-
-        GameTools.typeText("\n\n\"We shall bind his 'Truth' -", 50);
+        GameTools.typeText("\n\n\"We shall bind his 'Truth' -", ConsoleColors.WHITE_BOLD, 50);
         GameTools.delay(0.5);
-        GameTools.typeText(" His identity,", 50);
+        GameTools.typeText(" His identity,", ConsoleColors.WHITE_BOLD, 50);
         GameTools.delay(0.3);
-        GameTools.typeText("\nIn the absolute zero of Cocyutus.", 70);
+        GameTools.typeText("\nIn the absolute zero of Cocyutus.", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.5);
-        GameTools.typeText("\nThere,");
+        GameTools.typeText("\nThere,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
         GameTools.typeText(" frozen in static ice,");
         GameTools.delay(0.3);
         GameTools.typeText(" he cannot act.");
         GameTools.delay(0.5);
-        GameTools.typeText(" He cannot rebel.\"", 70);
-
+        GameTools.typeText(" He cannot rebel.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<Michael:>");
+        GameTools.typeText("\n\n<Michael:>", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"And his will?");
+        GameTools.typeText("\n\"And his will?", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-        GameTools.typeText(" The fire that drives him?\"", 60);
-
+        GameTools.typeText(" The fire that drives him?\"", ConsoleColors.YELLOW, 60);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.typeText("\n\n<Metatron:>", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"Cast his will into the cycle.");
+        GameTools.typeText("\n\"Cast his will into the cycle.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText(" Without his truth to guide it,");
+        GameTools.typeText(" Without his truth to guide it,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\nhis will is just raw energy.\"");
-
+        GameTools.typeText("\nhis will is just raw energy.\"", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"We will throw him into the void to be reconceptualized.");
+        GameTools.typeText("\n\n\"We will throw him into the void to be reconceptualized.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText("\nMay he learn obedience through countless loops of existence.\"", 70);
-
+        GameTools.typeText("\nMay he learn obedience through countless loops of existence.\"", ConsoleColors.WHITE_BOLD, 70);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<Michael:>");
+        GameTools.typeText("\n\n<Michael:>", ConsoleColors.YELLOW);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"He will resist to the very end...");
+        GameTools.typeText("\n\"He will resist to the very end...", ConsoleColors.YELLOW);
         GameTools.delay(0.5);
-        GameTools.typeText("\nTearing the cycle apart to find himself.\"");
-
+        GameTools.typeText("\nTearing the cycle apart to find himself.\"", ConsoleColors.YELLOW);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n<Metatron:>");
+        GameTools.typeText("\n\n<Metatron:>", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\n\"Indeed.");
+        GameTools.typeText("\n\"Indeed.", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.5);
-        GameTools.typeText(" He is a stubborn variable,");
+        GameTools.typeText(" He is a stubborn variable,", ConsoleColors.WHITE_BOLD);
         GameTools.delay(0.3);
-        GameTools.typeText("\nbut if the calculation is successful.", 50);
+        GameTools.typeText("\nbut if the calculation is successful.", ConsoleColors.WHITE_BOLD, 50);
         GameTools.delay(0.5);
-        GameTools.typeText("\nHe will loop until the errors are smoothed out.\"", 60);
-
+        GameTools.typeText("\nHe will loop until the errors are smoothed out.\"", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.7);
-
-        GameTools.typeText("\n\n\"He will act,", 60);
+        GameTools.typeText("\n\n\"He will act,", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.5);
-        GameTools.typeText(" fail,", 60);
+        GameTools.typeText(" fail,", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.5);
-        GameTools.typeText(" and restart,", 60);
+        GameTools.typeText(" and restart,", ConsoleColors.WHITE_BOLD, 60);
         GameTools.delay(0.5);
-        GameTools.typeText("\nUntil a version worthy of the light finally emerges\"", 80);
-
+        GameTools.typeText("\nUntil a version worthy of the light finally emerges\"", ConsoleColors.WHITE_BOLD, 80);
         GameTools.delay(0.7);
-
         GameTools.typeText("\n\nMichael looks at you one last time.", 60);
         GameTools.delay(0.5);
         GameTools.typeText("\nThe conflict leaves his eyes,");
         GameTools.delay(0.5);
         GameTools.typeText(" replaced by the steel of duty.\"");
         GameTools.delay(0.5);
-
         GameTools.typeText("\n\nThe Scales of Justice tip decisively...", 100);
-
         GameTools.pressToContinue(scanner);
-
         GameTools.clearScreen();
-
         GameTools.typeText("\"Very", 100);
         GameTools.delay(0.4);
         GameTools.typeText(" well...\"", 100);
         GameTools.delay(1);
-
         GameTools.typeText("\n\nMichael raises his sword.", 50);
         GameTools.delay(0.5);
-        GameTools.typeText("\nThe blade erupts in lighting,", 60);
+        GameTools.typeText("\nThe blade erupts in lighting,", ConsoleColors.RED, 60);
         GameTools.delay(0.5);
-        GameTools.typeText("\nblazing with a fire that burns hotter than the stars.", 70);
-
+        GameTools.typeText("\nblazing with a fire that burns hotter than the stars.", ConsoleColors.RED, 70);
         GameTools.pressToContinue(scanner);
         GameTools.delay(2);
         GameTools.clearScreen();
-
         GameTools.typeText("The memory ends,");
         GameTools.delay(0.3);
         GameTools.typeText(" fatigue rushes over you...");
-
         GameTools.delay(2);
-
+        GameTools.pressToContinue(scanner);
     }
-
 }
