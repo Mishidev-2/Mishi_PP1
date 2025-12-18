@@ -297,16 +297,12 @@ public class MainFile {
             System.out.println(ConsoleColors.GREEN+ "========== MESSAGE ===========" + ConsoleColors.RESET);
             GameTools.delay(2);
             GameTools.clearScreen();
-            GameTools.typeText("The concept of the game is basically just a story game inside the console,");
+            GameTools.typeText("To Sir Tupas,");GameTools.delay(1);
+
+            GameTools.typeText("\n\nGood day/night sir, this is our output:");
+            GameTools.typeText(" at its simplest form, it is a story game inside the console with");
             GameTools.typeText("\ndifferent endings depending on the choices you make (6 endings in total!).");
-            GameTools.typeText("\n\nI also just wanted to thank you for everything you have done for us,");
-            GameTools.typeText(" \nI actually had no prior experience in coding whatsoever before I came to your class,");
-            GameTools.typeText("\nwhich is why I am so thankful for the beginner-friendly way you taught us,");
-            GameTools.typeText("\nbecause of this I have learned so much, and was also inspired to do some advance learning.");
-            GameTools.typeText("\nFor the first time in a while,");
-            GameTools.typeText(" I was actually enjoying the process of learning,");
-            GameTools.typeText(" so for this I thank you.");
-            GameTools.typeText("\n\nAnyway, back to the game.");
+            GameTools.delay(0.7);
             GameTools.typeText("\nSince this game is very dialogue heavy -");
             GameTools.typeText(" if you only wish to test it,");
             GameTools.typeText("\nI recommend you turn on the instant text in the settings ");
@@ -314,11 +310,20 @@ public class MainFile {
             GameTools.typeText("\nI had a lot of fun writing the plot.");
             GameTools.typeText("\n\nThere were some bugs; sometimes the same thing would print over again,");
             GameTools.typeText(" but It rarely happens -\nmight be a bug from the IDE itself or something.");
-            GameTools.typeText("\nMaybe I should've done this in a jframe or whatever like the other guys, ");
+            GameTools.typeText("\n\nMaybe I should've done this in a jframe or whatever like the other guys, ");
             GameTools.typeText("\nbut I didn't really want to rely on AI too much so I just winged it.");
             GameTools.typeText("\n\nI hope you enjoy the output,");
-            GameTools.typeText("even if it is a bit underwhelming compared to the rest - as I have seen,");
+            GameTools.typeText(" even if it is a bit underwhelming compared to the rest - as I have seen,");
             GameTools.typeText("\nmost if not all of them were doing GUIs and stuff. ");
+            GameTools.delay(0.7);
+            GameTools.typeText("\n\nI also just wanted to thank you for everything you have done for us,");
+            GameTools.typeText(" \nI actually had no prior experience in coding whatsoever before I came to your class,");
+            GameTools.typeText("\nwhich is why I am so thankful for the beginner-friendly way you taught us,");
+            GameTools.typeText("\nbecause of this I have learned so much, and was also inspired to do some advance learning.");
+            GameTools.typeText("\nFor the first time in a while,");
+            GameTools.typeText(" I was actually enjoying the process of learning,");
+            GameTools.typeText(" so for this I thank you.");
+            
             GameTools.typeText("\n\nThank you sir for being our PP1 professor!");
             GameTools.delay(1);
 
