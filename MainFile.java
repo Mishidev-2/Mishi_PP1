@@ -87,6 +87,10 @@ public class MainFile {
     }
 
     private static void missionSelect() {
+        boolean inmission = true;
+
+
+        while(inmission){
         GameTools.clearScreen();
         System.out.println(ConsoleColors.CYAN + "========== MISSION SELECT ===========" + ConsoleColors.RESET);
         System.out.println("1. Void");
@@ -98,33 +102,35 @@ public class MainFile {
 
         String choice = scanner.nextLine();
 
-        switch (choice) {
-            case "1" -> {
-                GameState.resetGame();
-                configureMission1State();
-                runGameSequence();
-            }
-            case "2" -> {
-                configureMission2State();
-                Mission2.start();
-                if (Mission3.start()) {
+            switch (choice) {
+                case "1" -> {
+                    GameState.resetGame();
+                    configureMission1State();
+                    runGameSequence();
+                }
+                case "2" -> {
+                    configureMission2State();
+                    Mission2.start();
+                    if (Mission3.start()) {
+                        Mission4.start();
+                    }
+                }
+                case "3" -> {
+                    configureMission3State();
+                    if (Mission3.start()) {
+                        Mission4.start();
+                    }
+                }
+                case "4" -> {
+                    configureMission4State();
                     Mission4.start();
                 }
-            }
-            case "3" -> {
-                configureMission3State();
-                if (Mission3.start()) {
-                    Mission4.start();
+                case "5" -> {
+                    inmission = false;
                 }
-            }
-            case "4" -> {
-                configureMission4State();
-                Mission4.start();
-            }
-            case "5" -> { }
-            default -> {
-                GameTools.typeText("Invalid mission selection.");
-                GameTools.pressToContinue(scanner);
+                default -> {
+                
+                }
             }
         }
     }
